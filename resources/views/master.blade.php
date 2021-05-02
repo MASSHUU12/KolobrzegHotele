@@ -9,6 +9,19 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <div class="header-logo">KołobrzegHotele</div>
+            <div class="header-links">
+                <ul>
+                    <li>one</li>
+                    <li>one</li>
+                    <li><img src="{{ asset('img/polish.png') }}" class="language-flag" alt="language"></li>
+                </ul>
+            </div>
+        </header>
         @yield('content')
+        <footer>
+        footer
+        </footer>
     </body>
 </html>
