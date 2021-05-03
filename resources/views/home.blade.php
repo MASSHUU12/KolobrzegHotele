@@ -115,7 +115,7 @@
                         <p class="filter-value">dowolny</p>
                     </div>
                 </div>
-                <button class="searchbar-button"><i class="fas fa-water fa-1x"></i> &nbsp szukaj</button>
+                <button class="searchbar-button"><i class="fas fa-search-location fa-1x"></i> &nbsp szukaj</button>
             </div>
         </form>
     </div>
