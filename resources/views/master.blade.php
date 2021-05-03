@@ -19,7 +19,7 @@
             <ul>
                 <li><img src="{{ asset('img/ico_pl.png') }}" class="language-flag" alt="language"></li>
                 <li><img src="{{ asset('img/ico_ge.png') }}" class="language-flag" alt="language"></li>
-                <li><img src="{{ asset('img/ico_ge.png') }}" class="language-flag" alt="language"></li>
+                <li><img src="{{ asset('img/ico_us.png') }}" class="language-flag" alt="language"></li>
             </ul>
         </div>
     </header>
