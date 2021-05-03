@@ -17,7 +17,7 @@
                     <input type="hidden" name="distance-from-sea" class="search-input">
                     <div class="filter-icon"><i class="fas fa-umbrella-beach fa-1x"></i></div>
                     <div class="filter-text">
-                        <p class="filter-label">Morze</p>
+                        <p class="filter-label">Plaża</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
