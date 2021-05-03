@@ -175,6 +175,14 @@ header ul li {
   padding-bottom: 2px;
 }
 
+#search-iconify {
+  position: absolute;
+  top: 15px;
+  left: 22px;
+  font-size: 19px;
+  color: white;
+}
+
 .filter-text, .filter-dropdown {
   text-align: left;
 }
@@ -242,6 +250,7 @@ header ul li {
 }
 
 .searchbar-button {
+  position: relative;
   height: 80%;
   width: 110px;
   margin-left: 10px;
@@ -333,5 +342,36 @@ header ul li {
 
 .feature-right .feature-text {
   padding: 0 20px 0 60px;
+}
+
+.search-page-search {
+  height: 40vh;
+}
+
+.search-page-search .search-container {
+  height: 88px;
+  -webkit-transform: translateY(17vh);
+          transform: translateY(17vh);
+}
+
+.search-results-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-results-container-inner {
+  width: 1200px;
+  margin: 100px 0 200px 0;
+  padding: 50px 0 50px 0;
+  background-color: #F4F9FC;
+  border-radius: 20px;
 }
 /*# sourceMappingURL=app.css.map */
