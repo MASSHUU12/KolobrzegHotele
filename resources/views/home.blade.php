@@ -111,7 +111,7 @@
                 <div class="searchbar-filter searchbar-standard">
                     <div class="filter-icon"><span class="iconify" data-icon="clarity:star-solid" data-inline="false"></span></div>
                     <div class="filter-text">
-                        <p class="filter-label">standard</p>
+                        <p class="filter-label">Standard</p>
                         <p class="filter-value">dowolny</p>
                     </div>
                 </div>
