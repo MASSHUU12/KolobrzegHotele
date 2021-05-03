@@ -324,4 +324,17 @@ header ul li {
 .feature-right .feature-text {
   padding: 0 20px 0 60px;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background-color: #1C2541;
+  color: white;
+  border-radius: 50px 50px 0 0;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  -ms-border-radius: 50px 50px 0 0;
+  -o-border-radius: 50px 50px 0 0;
+}
 /*# sourceMappingURL=app.css.map */
