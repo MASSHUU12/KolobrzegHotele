@@ -15,7 +15,7 @@
             <div class="searchbar">
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-sea" class="search-input">
-                    <div class="filter-icon"><i class="fas fa-umbrella-beach fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">Plaża</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-bicycle" class="search-input">
-                    <div class="filter-icon"><i class="fas fa-bicycle fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="cil:bike" data-inline="false"></span></i></div>
                     <div class="filter-text">
                         <p class="filter-label">Rowery Miejskie</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-parking" class="search-input">
-                    <div class="filter-icon"><i class="fas fa-car fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="fluent:vehicle-car-16-filled" data-inline="false"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">Parkingi</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-playground" class="search-input">
-                    <div class="filter-icon"><i class="fas fa-volleyball-ball fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="map:playground" data-inline="false"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">Place zabaw</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-dog" class="search-input">
-                    <div class="filter-icon"><i class="fas fa-dog fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">Wybiegi dla psów</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>
@@ -109,13 +109,13 @@
                     </div>
                 </div>
                 <div class="searchbar-filter searchbar-standard">
-                    <div class="filter-icon"><i class="fas fa-stars fa-1x"></i></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="clarity:star-solid" data-inline="false"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">standard</p>
                         <p class="filter-value">dowolny</p>
                     </div>
                 </div>
-                <button class="searchbar-button"><i class="fas fa-search-location fa-1x"></i> &nbsp szukaj</button>
+                <button class="searchbar-button"><span class="iconify" data-icon="fa-solid:search-location" data-inline="false"></span>&nbsp szukaj</button>
             </div>
         </form>
     </div>
