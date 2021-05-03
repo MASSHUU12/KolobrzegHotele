@@ -35,7 +35,7 @@
                 <div class="searchbar-filter">
                     <div class="filter-icon"></div>
                     <div class="filter-text">
-                        <p class="filter-label">Stacja Rowerów Miejskich</p>
+                        <p class="filter-label">Rowery Miejskie</p>
                         <p class="filter-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
@@ -119,7 +119,7 @@
 <div class="features-container">
     <div class="feature-both">
         <div class="feature-image">
-            <img class="feature-img" src="{{ asset('img/port.png') }}" />
+            <img class="feature-img" src="{{ asset('img/ico_main1.png') }}" />
         </div>
         <div class="feature-text">
             <h1>Wyszukiwarka od <br> turystów dla turystów</h1>
@@ -129,7 +129,7 @@
     </div>
     <div class="feature-both feature-right">
         <div class="feature-image">
-            <img class="feature-img" src="{{ asset('img/port.png') }}" />
+            <img class="feature-img" src="{{ asset('img/ico_main2.png') }}" />
         </div>
         <div class="feature-text">
             <h1>Znajdź swoje <br> wymarzone miejsce</h1>
@@ -138,7 +138,7 @@
     </div>
     <div class="feature-both">
         <div class="feature-image">
-            <img class="feature-img" src="{{ asset('img/port.png') }}" />
+            <img class="feature-img" src="{{ asset('img/ico_main3.png') }}" />
         </div>
         <div class="feature-text">
             <h1>Jak to działa?</h1>
