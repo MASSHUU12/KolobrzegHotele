@@ -22,7 +22,7 @@
                     </div>
                     <div class="filter-dropdown">
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;250m</p>
+                            <p class="filter-value">Bez znaczenia</p>
                         </div>
                         <div class="filter-dropdown-element">
                             <p class="filter-value">&lt;500m</p>
@@ -33,74 +33,78 @@
                     </div>
                 </div>
                 <div class="searchbar-filter">
+                    <input type="hidden" name="distance-from-bicycle" class="search-input">
                     <div class="filter-icon"></div>
                     <div class="filter-text">
                         <p class="filter-label">Rowery Miejskie</p>
-                        <p class="filter-value">Bez znaczenia</p>
+                        <p class="filter-value filter-end-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;250m</p>
+                            <p class="filter-value">Bez znaczenia</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;500m</p>
+                            <p class="filter-value">Ważne</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">+500m</p>
+                            <p class="filter-value">Bardzo ważne</p>
                         </div>
                     </div>
                 </div>
                 <div class="searchbar-filter">
+                    <input type="hidden" name="distance-from-parking" class="search-input">
                     <div class="filter-icon">P</div>
                     <div class="filter-text">
                         <p class="filter-label">Parkingi</p>
-                        <p class="filter-value">Bez znaczenia</p>
+                        <p class="filter-value filter-end-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;250m</p>
+                            <p class="filter-value">Bez znaczenia</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;500m</p>
+                            <p class="filter-value">Ważne</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">+500m</p>
+                            <p class="filter-value">Bardzo ważne</p>
                         </div>
                     </div>
                 </div>
                 <div class="searchbar-filter">
+                    <input type="hidden" name="distance-from-playground" class="search-input">
                     <div class="filter-icon">P</div>
                     <div class="filter-text">
                         <p class="filter-label">Place zabaw</p>
-                        <p class="filter-value">Bez znaczenia</p>
+                        <p class="filter-value filter-end-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;250m</p>
+                            <p class="filter-value">Bez znaczenia</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;500m</p>
+                            <p class="filter-value">Ważne</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">+500m</p>
+                            <p class="filter-value">Bardzo ważne</p>
                         </div>
                     </div>
                 </div>
                 <div class="searchbar-filter">
+                    <input type="hidden" name="distance-from-dog" class="search-input">
                     <div class="filter-icon">P</div>
                     <div class="filter-text">
                         <p class="filter-label">Wybiegi dla psów</p>
-                        <p class="filter-value">Bez znaczenia</p>
+                        <p class="filter-value filter-end-value">Bez znaczenia</p>
                     </div>
                     <div class="filter-dropdown">
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;250m</p>
+                            <p class="filter-value">Bez znaczenia</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">&lt;500m</p>
+                            <p class="filter-value">Ważne</p>
                         </div>
                         <div class="filter-dropdown-element">
-                            <p class="filter-value">+500m</p>
+                            <p class="filter-value">Bardzo ważne</p>
                         </div>
                     </div>
                 </div>
