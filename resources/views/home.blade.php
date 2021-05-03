@@ -15,7 +15,7 @@
             <div class="searchbar">
                 <div class="searchbar-filter">
                     <input type="hidden" name="distance-from-sea" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span></div>
+                    <div class="filter-icon"><span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span></div>
                     <div class="filter-text">
                         <p class="filter-label">Plaża</p>
                         <p class="filter-value filter-end-value">Bez znaczenia</p>

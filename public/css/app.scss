@@ -10,8 +10,9 @@ $big-font: 48px;
 $extrabig-font: 64px;
 
 $search-background: rgba(231, 231, 231, 0.9);
-$light-blue: #F4F9FC;
 $tip-color: #00385E;
+$light-blue: #F4F9FC;
+$transparent-blue: rgba(0, 75, 125, 0.7);
 $light-text: #606060;
 
 $radius-small: 5px;
@@ -140,7 +141,16 @@ header ul {
 .filter-icon {
     z-index: 10;
     position: absolute;
-    left: 15px;
+    left: 12px;
+}
+
+.iconify {
+    color: $tip-color;
+}
+
+#beach-icon {
+    font-size: 14px;
+    padding-bottom: 2px;
 }
 
 .filter-text, .filter-dropdown {
@@ -150,6 +160,7 @@ header ul {
         position: absolute;
         top: 9px;
         font-size: $extrasmall-font;
+        color: $transparent-blue;
     }
     .filter-value {
         font-size: $smaller-font;
