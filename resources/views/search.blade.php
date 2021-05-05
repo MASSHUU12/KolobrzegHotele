@@ -121,22 +121,34 @@
 
 <section class="search-results-container">
     <div class="search-results-container-inner">
-        asdf
-        <table border="1">
-            <th>
-                <td>ulica</td>
-                <td>1</td>
-                <td>1</td>
-            </th>
-            @foreach ($results as $item)
-                <tr>
-                    <td>{{$item['nazwa_obiektu']}}</td>
-                    <td>{{$item['ulica']}}</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            @endforeach
-        </table>
+        @foreach ($results as $item)
+        @php
+            $name = substr($item['nazwa_obiektu'], 0, 24);
+        @endphp
+            <div class="search-single-listing">
+                <div class="listing-image">
+
+                </div>
+                <div class="listing-below">
+                    <div class="listing-name">
+                        <h3>{{$name}}</h3>
+                    </div>
+                    <div class="listing-bars">
+                        <p>Dopasowanie do kryteriów</p>
+                        <div class="large-bar"><div class="large-bar inner-large-bar"></div></div>
+                        <div class="small-listing-bars">
+                            @for ($i = 0; $i < 6; $i++)
+                                <div>
+                                    <p>hotel</p>
+                                    <div class="small-bar"><div class="small-bar inner-small-bar"></div></div>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                    <a href="/search/{{$item['_id']}}"><button>pokaz</button></a>
+                </div>
+            </div>
+        @endforeach
     </div>
 </section>
 
