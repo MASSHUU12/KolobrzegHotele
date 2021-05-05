@@ -26,7 +26,7 @@
     @yield('content')
     <div class="cookie-banner">
         <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, korzystając z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
-            Więcej informacji znajdziesz w <a class="cookie-banner-a" href="#" target="_blank" rel="noreferrer noopener">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="#" target="_blank" rel="noreferrer noopener">polityce prywatności.</a></p>
+            Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
         <button class="cookie-btn">Rozumiem</button>
     </div>
     <script src="{{ asset('js/cookieConsent.js') }}"></script>
@@ -34,15 +34,15 @@
         <div class="footer-container">
             <div class="footer-item">
                 <h1>Przydatne Linki</h1>
-                <p><a href="#">Strona główna</a></p>
+                <p><a href="./home">Strona główna</a></p>
                 <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Portal UM Kołobrzeg</a></p>
                 <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Kołobrzeskie Otwarte Dane</a></p>
             </div>
             <div class="footer-item">
                 <h1>Informacje</h1>
-                <p><a href="#">O Nas</a></p>
-                <p><a href="#">Polityka Cookies</a></p>
-                <p><a href="#">Polityka Prywatności</a></p>
+                <p><a href="./about">O Nas</a></p>
+                <p><a href="./cookies">Polityka Cookies</a></p>
+                <p><a href="./privacy">Polityka Prywatności</a></p>
             </div>
             <div class="footer-item">
                 <h1>Kontakt</h1>
