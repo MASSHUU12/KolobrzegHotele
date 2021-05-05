@@ -12,8 +12,10 @@ class Results extends Controller
         $responseString = $response;
         $responseString = $responseString['result']['records'];
 
+        $result = array_slice($responseString, 0, 8, true);
 
-        return view('search', ['results'=>$responseString]);
+
+        return view('search', ['results'=>$result]);
     }
 
     function singleResult($id) {

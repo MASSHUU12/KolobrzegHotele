@@ -414,7 +414,7 @@ header ul {
 
 .single-left {
     width: 800px;
-    height: 700px;
+    height: 850px;
     padding: 30px 40px;
     background-color: $light-gray;
     border-radius: $radius-medium;
@@ -422,25 +422,33 @@ header ul {
         font-size: $medium-font;
         font-weight: 400;
     }
+    h2 {
+        font-size: $mediumsmall-font;
+        font-weight: 400;
+    }
+    p {
+        font-size: $mediumsmall-font;
+    }
 }
 
 #single-hotel-img {
     max-width: 100%;
     border-radius: $radius-medium;
     margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .single-hotel-info {
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .single-right {
     width: 400px;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 30px;
+    padding: 90px 30px 10px 30px;
     background-color: $light-gray;
     border-radius: $radius-medium;
 }
@@ -452,6 +460,10 @@ header ul {
 
 .single-distances {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     margin-top: 20px;
+    font-size: $small-font;
 }
 
