@@ -635,6 +635,7 @@ header ul li {
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 50px;
+  color: #00385E;
 }
 
 .info-top div {
@@ -723,7 +724,7 @@ footer {
   width: 100%;
   background-color: #1C2541;
   color: white;
-  padding-top: 20px;
+  padding-top: 10px;
   border-radius: 50px 50px 0 0;
   -webkit-border-radius: 50px 50px 0 0;
   -moz-border-radius: 50px 50px 0 0;
@@ -739,6 +740,7 @@ footer {
 .footer-item {
   height: 100%;
   flex-basis: 25%;
+  padding-top: 25px;
   padding: 50px;
   text-align: left;
 }
