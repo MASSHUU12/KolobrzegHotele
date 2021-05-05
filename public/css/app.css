@@ -562,4 +562,124 @@ header ul li {
   margin-top: 20px;
   font-size: 12px;
 }
+
+.info-page {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 150px 50px;
+}
+
+.info-page-inner {
+  width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+}
+
+.info-title {
+  position: absolute;
+  left: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-width: 50vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 40px 50px 70px 70px;
+  background-color: #F4F9FC;
+  border-radius: 0 30px 30px 0;
+}
+
+.info-title h1 {
+  font-size: 64px;
+  font-weight: 600;
+  color: #00385E;
+  margin-bottom: 20px;
+}
+
+.info-title p {
+  font-size: 16px;
+}
+
+.info-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+  margin-top: 300px;
+}
+
+.info-top h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.info-top div {
+  width: 50%;
+}
+
+.info-main-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-long {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+  margin-top: 120px;
+}
+
+.info-long h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #00385E;
+}
+
+.info-long p {
+  font-size: 16px;
+}
 /*# sourceMappingURL=app.css.map */
