@@ -526,6 +526,7 @@ header ul li {
 .single-distances {
   width: 100%;
   margin-top: 20px;
+}
 
 .cookie-banner {
   background-color: rgb(231, 231, 231);
@@ -603,4 +604,5 @@ a {
 
 a:visited {
   color: whitesmoke;
+}
 /*# sourceMappingURL=app.css.map */
