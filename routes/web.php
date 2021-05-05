@@ -22,8 +22,8 @@ Route::get('/search',[Results::class, 'getResults']);
 
 Route::get('/search/{id}',[Results::class, 'singleResult']);
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
+Route::get('/about', function () {
+    return view('about');
 });
 
 Route::get('/cookies', function () {
