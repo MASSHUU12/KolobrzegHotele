@@ -28,6 +28,7 @@ $radius-big: 30px;
 }
 
 header {
+    z-index: 20;
     width: 100%;
     position: fixed;
     display: flex;
@@ -35,6 +36,10 @@ header {
     align-items: center;
     padding: 30px 150px 30px 120px;
     color: white;
+    a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .header-logo {

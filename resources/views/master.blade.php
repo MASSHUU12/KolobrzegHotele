@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <div class="header-logo">KołobrzegHotele</div>
+        <div class="header-logo"><a href="/">KołobrzegHotele</a></div>
         <div class="header-links">
             <ul>
                 <li><img src="{{ asset('img/ico_pl.png') }}" class="language-flag" alt="language"></li>
