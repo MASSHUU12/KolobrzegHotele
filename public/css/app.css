@@ -163,16 +163,7 @@ header ul li {
 .filter-icon {
   z-index: 10;
   position: absolute;
-  left: 12px;
-}
-
-.iconify {
-  color: #00385E;
-}
-
-#beach-icon {
-  font-size: 14px;
-  padding-bottom: 2px;
+  left: 15px;
 }
 
 #search-iconify {
@@ -192,7 +183,6 @@ header ul li {
   position: absolute;
   top: 9px;
   font-size: 7px;
-  color: rgba(0, 75, 125, 0.7);
 }
 
 .filter-text .filter-value, .filter-dropdown .filter-value {
@@ -536,5 +526,81 @@ header ul li {
 .single-distances {
   width: 100%;
   margin-top: 20px;
+
+.cookie-banner {
+  background-color: rgb(231, 231, 231);
+  color: #00385E;
+  font-size: 16px;
+  font-weight: 400;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  padding: 20px 32px;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
 }
+
+.cookie-banner-a {
+  color: #00385E;
+}
+
+.cookie-banner-a:visited {
+  color: #1C2541;
+}
+
+.cookie-banner.active {
+  bottom: 0;
+}
+
+.cookie-btn {
+  background: #1C2541;
+  color: whitesmoke;
+  font-size: 21px;
+  font-weight: 700;
+  border: 0;
+  padding: 6px 24px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  background-color: #1C2541;
+  color: white;
+  padding-top: 20px;
+  border-radius: 50px 50px 0 0;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  -ms-border-radius: 50px 50px 0 0;
+  -o-border-radius: 50px 50px 0 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  height: 100%;
+  flex-basis: 25%;
+  padding: 50px;
+  text-align: left;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: whitesmoke;
 /*# sourceMappingURL=app.css.map */
