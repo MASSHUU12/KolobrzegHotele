@@ -41,7 +41,6 @@
                 {{ ceil(calculateDistance($results['x'], $results['y'], 54.1890882076046, 15.6084522886298)*0.014)}} minut do wybiegu dla psów
             </div>
         </div>
-
     </div>
 </section>
 

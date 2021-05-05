@@ -115,7 +115,7 @@
                         <p class="filter-value">dowolny</p>
                     </div>
                 </div>
-                <button class="searchbar-button"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" id="search-iconify"></span>&nbsp&nbsp&nbsp&nbsp&nbsp szukaj</button>
+                <button class="searchbar-button"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" id="search-iconify"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; szukaj</button>
             </div>
         </form>
     </div>
