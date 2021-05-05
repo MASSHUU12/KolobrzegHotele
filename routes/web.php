@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('search',[Results::class, 'getResults']);
+Route::get('/search',[Results::class, 'getResults']);
+
+Route::get('/search/{id}',[Results::class, 'singleResult']);
