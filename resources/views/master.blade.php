@@ -24,6 +24,7 @@
                 <li><img src="{{ asset('img/ico_us.png') }}" class="language-flag" alt="language"></li>
             </ul>
         </div>
+        <script src="{{ asset('js/headerAnim.js') }}"></script>
     </header>
     @yield('content')
     <div class="cookie-banner">

@@ -683,17 +683,6 @@ header ul li {
   font-size: 16px;
 }
 
-.info-cookie-anim {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  bottom: 100%;
-}
-
-.cookiecrumb-1 {
-  bottom: 100%;
-}
-
 .cookie-banner {
   background-color: #e7e7e7;
   color: #00385E;
