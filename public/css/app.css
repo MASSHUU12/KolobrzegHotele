@@ -169,7 +169,16 @@ header ul li {
 .filter-icon {
   z-index: 10;
   position: absolute;
-  left: 15px;
+  left: 12px;
+}
+
+.iconify {
+  color: #00385E;
+}
+
+#beach-icon {
+  font-size: 14px;
+  padding-bottom: 2px;
 }
 
 #search-iconify {
@@ -189,6 +198,7 @@ header ul li {
   position: absolute;
   top: 9px;
   font-size: 7px;
+  color: rgba(0, 75, 125, 0.7);
 }
 
 .filter-text .filter-value, .filter-dropdown .filter-value {
@@ -635,7 +645,6 @@ header ul li {
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 50px;
-  color: #00385E;
 }
 
 .info-top div {
@@ -675,7 +684,7 @@ header ul li {
 }
 
 .cookie-banner {
-  background-color: rgb(231, 231, 231);
+  background-color: #e7e7e7;
   color: #00385E;
   font-size: 16px;
   font-weight: 400;
@@ -733,13 +742,18 @@ footer {
 }
 
 .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer-item {
   height: 100%;
-  flex-basis: 25%;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   padding-top: 25px;
   padding: 50px;
   text-align: left;
