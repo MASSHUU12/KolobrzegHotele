@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="single-right">
-        <img src="{{ asset('img/tempmap.png') }}" id="single-map-img">
+        <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$results['x']."%2C".$results['y']."/15?mapSize=400,400&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" id="single-map-img">
         <div class="single-distances">
             <div> 
                 <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>

@@ -245,7 +245,7 @@ header ul {
     flex-direction: column;
     align-items: center;
     gap: 70px;
-    margin-top: 150px;
+    padding: 150px 0;
 }
 
 .feature-both {
@@ -354,6 +354,12 @@ header ul {
     border-radius: $radius-medium;
 }
 
+.search-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: $radius-medium;
+}
+
 .listing-name {
     height: 20px;
 }
@@ -454,7 +460,8 @@ header ul {
 }
 
 #single-map-img {
-    max-width: 100%;
+    width: 100%;
+    max-height: 280px;
     border-radius: $radius-medium;
 }
 
@@ -513,11 +520,12 @@ header ul {
     display: flex;
     justify-content: center;
     gap: 100px;
-    margin-top: 300px;
+    margin-top: 450px;
     h2 {
         font-size: $big-font;
         font-weight: 600;
         margin-bottom: 50px;
+        color: $tip-color;
     }
 }
 
@@ -545,3 +553,41 @@ header ul {
         font-size: $mediumsmall-font;
     }
 }
+
+//footer
+
+footer {
+    width: 100%;
+    background-color: #1C2541;
+    color: white;
+    padding-top: 20px;
+    border-radius: 50px 50px 0 0;
+    a {
+        color: white;
+        text-decoration: none;
+      }
+    h1 {
+        font-size: $medium-font;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: $small-font;
+        margin-bottom: 5px;
+    }
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 40px 0 80px 0;
+  }
+  
+  .footer-item {
+    height: 100%;
+    width: 300px;
+    padding: 50px;
+    text-align: left;
+  }
+

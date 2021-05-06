@@ -8,8 +8,8 @@
     <div class="info-page-inner">
         <div class="info-title">
             <div>
-                <h1>Polityka prywatności</h1>
-                <p>Niniejsza Polityka Prywatnośći informuje jak przetwarzamy
+                <h1>Polityka <br> prywatności</h1>
+                <p>Niniejsza Polityka Prywatnośći informuje jak przetwarzamy <br>
                     dane osobowe naszych Użytkowników.</p>
             </div>
         </div>

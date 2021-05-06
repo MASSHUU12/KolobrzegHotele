@@ -8,8 +8,8 @@
     <div class="info-page-inner">
         <div class="info-title">
             <div>
-                <h1>Polityka plików "cookies"</h1>
-                <p>Niniejsza Polityka dotyczy plików "cookies" i odnosi się do wszystkich podstron tego serwisu.</p>
+                <h1>Polityka plików <br> "cookies"</h1>
+                <p>Niniejsza Polityka dotyczy plików "cookies" i odnosi się do <br> wszystkich podstron tego serwisu.</p>
             </div>
         </div>
         <div class="info-top">

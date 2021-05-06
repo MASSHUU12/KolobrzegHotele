@@ -4,12 +4,6 @@
 
 @section('content')
 
-@extends('master')
-
-@section('title', 'szukaj noclegu')
-
-@section('content')
-
 <section class="info-page">
     <div class="info-page-inner">
         <div class="info-title">
@@ -43,7 +37,5 @@
         </div>
     </div>
 </section>
-
-@endsection
 
 @endsection

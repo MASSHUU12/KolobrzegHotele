@@ -127,7 +127,7 @@
         @endphp
             <div class="search-single-listing">
                 <div class="listing-image">
-
+                    <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$item['x']."%2C".$item['y']."/15?mapSize=300,200&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" class="search-img" >
                 </div>
                 <div class="listing-below">
                     <div class="listing-name">
