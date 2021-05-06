@@ -1,9 +1,10 @@
 var timer;
+var tl = gsap.timeline();
 
 function anim() {
-    gsap.to(".maincookie-crumb", { duration: 3, 360: rotation, ease: "none" });
-    gsap.to(".maincookie-crumb", { duration: 3, 0: rotation, ease: "none" });
+    tl.to(".cookiecrumb-1", { duration: 20, rotation: 360, ease: "none" })
+        .to(".cookiecrumb-1", { duration: 0, rotation: 0, ease: "none" })
+        .eventCallback(anim())
 }
 
-anim();
-timer = setInterval(anim, 6000);
+//anim();
