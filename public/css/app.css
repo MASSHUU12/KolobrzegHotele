@@ -550,10 +550,29 @@ header ul li {
   border-radius: 20px;
 }
 
+.signle-map-image {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 #single-map-img {
   width: 100%;
   max-height: 280px;
   border-radius: 20px;
+}
+
+#single-pin {
+  z-index: 20;
+  position: absolute;
+  left: 49%;
+  top: 49%;
+  font-size: 24px;
+  color: #00385E;
 }
 
 .single-distances {
