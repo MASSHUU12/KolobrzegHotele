@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="single-right">
-        <div class="signle-map-image">
+        <div class="single-map-image">
             <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$results['x']."%2C".$results['y']."/15?mapSize=400,400&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" id="single-map-img">
             <span class="iconify" data-icon="eva:pin-fill" data-inline="false" id="single-pin"></span>
         </div>

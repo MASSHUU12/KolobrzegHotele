@@ -126,26 +126,63 @@
             $name = substr($item['nazwa_obiektu'], 0, 24);
         @endphp
             <div class="search-single-listing">
-                <div class="listing-image">
-                    <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$item['x']."%2C".$item['y']."/15?mapSize=300,200&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" class="search-img" >
-                </div>
-                <div class="listing-below">
-                    <div class="listing-name">
-                        <h3>{{$name}}</h3>
+                <div class="search-single-listing-inner">
+                    <div class="listing-image">
+                        <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$item['x']."%2C".$item['y']."/15?mapSize=400,300&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" class="search-img" >
+                        <span class="iconify" data-icon="eva:pin-fill" data-inline="false" id="single-pin"></span>
                     </div>
-                    <div class="listing-bars">
-                        <p>Dopasowanie do kryteriów</p>
-                        <div class="large-bar"><div class="large-bar inner-large-bar"></div></div>
-                        <div class="small-listing-bars">
-                            @for ($i = 0; $i < 6; $i++)
+                    <div class="listing-right">
+                        <div class="listing-name">
+                            <h3>*****</h3>
+                            <h3>{{$name}}</h3>
+                        </div>
+                        <div class="listing-bar">
+                            <p>dopasowanie do kryteriów</p>
+                            <div class="large-bar"><div class="large-bar large-inner-bar"></div></div>
+                        </div>
+                        <div class="listing-bottom">
+                            <div class="listing-bottom-icons">
                                 <div>
-                                    <p>hotel</p>
-                                    <div class="small-bar"><div class="small-bar inner-small-bar"></div></div>
+                                    <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                    <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
                                 </div>
-                            @endfor
+                                <div>
+                                    <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
+                                    <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1790882076046, 15.6084522886298)*0.014)}} min do rowerów</p>
+                                </div>
+                                <div class="listing-bottom-icons-dropdown">
+                                    <div>
+                                        <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                    </div>
+                                    <div>
+                                        <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                    </div>
+                                    <div>
+                                        <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="show-more-button">więcej</button>
                         </div>
                     </div>
-                    <a href="/search/{{$item['_id']}}"><button>pokaz</button></a>
+                    <div class="listing-active-bottom">
+                        <p>{{$item['adrespelny'].", ".$item['kod_pocz']." ".$item['miejscowosc']}}</p>
+                        <div>
+                            @if ($item['telefon'] !== "")
+                                <div>
+                                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{$item['telefon']}}</p>
+                                </div>
+                            @endif
+                            @if ($item['mail'] !== "")
+                                <div>
+                                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{$item['mail']}}</p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         @endforeach
@@ -154,7 +191,9 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 <script src="{{ asset('js/searchbarDropdown.js') }}"></script>
 <script src="{{ asset('js/homeLoading.js') }}"></script>
+<script src="{{ asset('js/searchDetails.js') }}"></script>
 
 @endsection

@@ -10,6 +10,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Icons -->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 </head>
 
 <body>
@@ -22,6 +24,7 @@
                 <li><img src="{{ asset('img/ico_us.png') }}" class="language-flag" alt="language"></li>
             </ul>
         </div>
+        <script src="{{ asset('js/headerAnim.js') }}"></script>
     </header>
     @yield('content')
     <div class="cookie-banner">
@@ -34,15 +37,15 @@
         <div class="footer-container">
             <div class="footer-item">
                 <h1>Przydatne Linki</h1>
-                <p><a href="./home">Strona główna</a></p>
+                <p><a href="/">Strona główna</a></p>
                 <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Portal UM Kołobrzeg</a></p>
                 <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Kołobrzeskie Otwarte Dane</a></p>
             </div>
             <div class="footer-item">
                 <h1>Informacje</h1>
-                <p><a href="./about">O Nas</a></p>
-                <p><a href="./cookies">Polityka Cookies</a></p>
-                <p><a href="./privacy">Polityka Prywatności</a></p>
+                <p><a href="/about">O Nas</a></p>
+                <p><a href="/cookies">Polityka Cookies</a></p>
+                <p><a href="/privacy">Polityka Prywatności</a></p>
             </div>
             <div class="footer-item">
                 <h1>Kontakt</h1>
