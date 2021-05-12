@@ -7,15 +7,50 @@ use Illuminate\Support\Facades\Http;
 
 class Results extends Controller
 {
-    function getResults() {
+    function getResults(Request $request) {
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20');
         $responseString = $response;
-        $responseString = $responseString['result']['records'];
+        $result = $responseString['result']['records'];
 
-        $result = array_slice($responseString, 0, 6, true);
+        $fromSea = $request->sea;
+        $fromBike = $request->bike;
+        
+
+        //gets the arrays with information about objects        
+        $bike = $this->getHttp('bike');
+        $playground = $this->getHttp('playground');
+        $dogPark = $this->getHttp('dogpark');
 
 
-        return view('search', ['results'=>$result]);
+        for ($i=0; $i < count($result); $i++) { 
+            $result[$i]['from_sea'] = ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186413, $result[$i]['y'])*0.014);
+
+            $nearestBike = $this->nearestObject($result[$i], $bike);
+            $result[$i]['from_bike'] = $nearestBike;
+
+            $nearestPlayground = $this->nearestObject($result[$i], $playground);
+            $result[$i]['from_playground'] = $nearestPlayground;
+
+            $nearestDogpark = $this->nearestObject($result[$i], $dogPark);
+            $result[$i]['from_dogpark'] = $nearestDogpark;
+
+            //accuracy of the result
+            $accuracy = 0;
+
+            if ($fromSea != null) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*2;
+            if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*2;
+
+            $result[$i]['accuracy'] = $accuracy/10;
+        }
+
+        $accuracyKey = array_column($result, 'accuracy');
+
+        array_multisort($accuracyKey, SORT_ASC, $result);
+        
+
+        $finalResult = array_slice($result, 0, 8, true);
+
+        return view('search', ['results'=>$finalResult]);
     }
 
     function singleResult($id) {
@@ -40,13 +75,13 @@ class Results extends Controller
                 $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431');
                 break;
             case 'park':
-                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431');
+                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431'); //need to select parks only
                 break;  
             case 'playground':
-                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431');
+                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=36f2b1ed-580f-4c76-962d-6d4f4aae0dd8');
                 break;     
             case 'dogpark':
-                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431');
+                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=6a170f39-ffe4-4bc2-9b27-05a7d14a1b12');
                 break;     
             default:
                 $response = null;
@@ -54,10 +89,31 @@ class Results extends Controller
         }
 
         if ($response !== null) {
-            $responseString = $response['result']['records'];
+            $response = $response['result']['records'];
+            
+        }
+        
+        return $response;
+
+        
+    }
+
+    function nearestObject($hotel, $objects) {
+        // stop the function if given variables aren't arrays
+        if (!is_array($hotel) || !is_array($objects)) {
+            return null;
         }
 
-        return $response;
+
+        for ($j=0; $j < count($objects); $j++) { 
+            $locations[$j] = calculateDistance($hotel['x'], $hotel['y'], $objects[$j]['x'], $objects[$j]['y']);
+        }
+        asort($locations);
+        $closestLocation = $locations[0];
+
+        return ceil($closestLocation*0.014);
     }
 
 }
+
+    

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 $extrasmall-font: 7px;
 $xsmaller-font: 9px;
@@ -10,9 +10,9 @@ $big-font: 48px;
 $extrabig-font: 64px;
 
 $search-background: rgba(231, 231, 231, 0.9);
-$tip-color: #00385E;
-$light-blue: #F4F9FC;
-$light-gray: #F8F8F8;
+$tip-color: #00385e;
+$light-blue: #f4f9fc;
+$light-gray: #f8f8f8;
 $transparent-blue: rgba(0, 75, 125, 0.7);
 $light-text: #606060;
 
@@ -22,7 +22,7 @@ $radius-medium: 20px;
 $radius-big: 30px;
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -77,7 +77,7 @@ header ul {
     padding-top: 18vh;
     margin-bottom: 50px;
     text-align: center;
-    h1 {   
+    h1 {
         font-size: $extrabig-font;
         font-weight: 500;
         line-height: 90px;
@@ -140,7 +140,6 @@ header ul {
     padding-left: 35px;
     border-radius: $radius-medium;
     cursor: pointer;
-
 }
 
 .searchbar-standard {
@@ -150,7 +149,7 @@ header ul {
 }
 
 .filter-icon {
-    z-index: 10;
+    z-index: 20;
     position: absolute;
     left: 12px;
 }
@@ -172,10 +171,11 @@ header ul {
     color: white;
 }
 
-.filter-text, .filter-dropdown {
+.filter-text,
+.filter-dropdown {
     text-align: left;
     .filter-label {
-        z-index: 10;
+        z-index: 20;
         position: absolute;
         top: 9px;
         font-size: $extrasmall-font;
@@ -187,12 +187,12 @@ header ul {
 }
 
 .filter-dropdown {
-    z-index: 9;
+    z-index: 19;
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    height: 130px;
+    height: fit-content;
     width: 125px;
     display: none;
     flex-direction: column;
@@ -314,7 +314,10 @@ header ul {
     height: fit-content;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 100px 0 200px 0;
     background-color: $light-gray;
 }
 
@@ -324,7 +327,7 @@ header ul {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     row-gap: 40px;
-    margin: 100px 0 200px 0;
+    margin-bottom: 50px;
     background-color: $light-gray;
     border-radius: $radius-medium;
 }
@@ -347,7 +350,6 @@ header ul {
     border-radius: $radius-medium;
 }
 
-
 .listing-image {
     z-index: 10;
     position: relative;
@@ -368,6 +370,9 @@ header ul {
 .listing-name {
     z-index: 1;
     margin-bottom: 10px;
+    h3 {
+        font-weight: 500;
+    }
 }
 
 .listing-bar {
@@ -388,7 +393,7 @@ header ul {
 }
 
 .large-inner-bar {
-    width: 80%;
+    width: 0%;
     background-color: $tip-color;
 }
 
@@ -442,7 +447,7 @@ header ul {
     p {
         font-size: $smaller-font;
     }
-    >div {
+    > div {
         display: flex;
         flex-direction: column;
         gap: 2px;
@@ -458,7 +463,6 @@ header ul {
 .listing-active-bottom.active {
     display: block;
 }
-
 
 //single listing page
 
@@ -623,36 +627,36 @@ header ul {
 }
 
 .cookie-banner {
-  background-color: rgb(231, 231, 231);
-  color: #00385E;
-  font-size: 16px;
-  font-weight: 400;
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  padding: 20px 32px;
-  transition: 300ms;
-  -webkit-transition: 300ms;
-  -moz-transition: 300ms;
-  -ms-transition: 300ms;
-  -o-transition: 300ms;
+    background-color: rgb(231, 231, 231);
+    color: #00385e;
+    font-size: 16px;
+    font-weight: 400;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    padding: 20px 32px;
+    transition: 300ms;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
 }
 
 .cookie-banner-a {
-  color: #00385E;
+    color: #00385e;
 }
 
 .cookie-banner-a:visited {
-  color: #1C2541;
+    color: #1c2541;
 }
 
 .cookie-banner.active {
-  bottom: 0;
+    bottom: 0;
 }
 
 .cookie-btn {
-    background: #1C2541;
+    background: #1c2541;
     color: whitesmoke;
     font-size: 21px;
     font-weight: 700;
@@ -670,14 +674,14 @@ header ul {
 
 footer {
     width: 100%;
-    background-color: #1C2541;
+    background-color: #1c2541;
     color: white;
     padding-top: 20px;
     border-radius: 50px 50px 0 0;
     a {
         color: white;
         text-decoration: none;
-      }
+    }
     h1 {
         font-size: $medium-font;
         font-weight: 500;
@@ -687,21 +691,20 @@ footer {
         font-size: $small-font;
         margin-bottom: 5px;
     }
-  }
-  
-  .footer-container {
+}
+
+.footer-container {
     display: flex;
     justify-content: center;
     gap: 120px;
     padding: 40px 0 80px 0;
-  }
-  
-  .footer-item {
+}
+
+.footer-item {
     height: 100%;
     width: 300px;
     padding: 50px;
     text-align: left;
-  }
 }
 
 a:visited {

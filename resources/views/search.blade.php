@@ -9,113 +9,7 @@
         <img src="{{ asset('img/port-low-res.png') }}" data-src="{{ asset('img/port.png') }}" id="main-image">
     </div>
     <div class="search-container">
-        <form action="/search" method="get">
-            <div class="searchbar">
-                <div class="searchbar-filter">
-                    <input type="hidden" name="distance-from-sea" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span></div>
-                    <div class="filter-text">
-                        <p class="filter-label">Plaża</p>
-                        <p class="filter-value filter-end-value">Bez znaczenia</p>
-                    </div>
-                    <div class="filter-dropdown">
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bez znaczenia</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Ważne</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bardzo ważne</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar-filter">
-                    <input type="hidden" name="distance-from-bicycle" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="cil:bike" data-inline="false"></span></i></div>
-                    <div class="filter-text">
-                        <p class="filter-label">Rowery Miejskie</p>
-                        <p class="filter-value filter-end-value">Bez znaczenia</p>
-                    </div>
-                    <div class="filter-dropdown">
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bez znaczenia</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Ważne</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bardzo ważne</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar-filter">
-                    <input type="hidden" name="distance-from-parking" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="fluent:vehicle-car-16-filled" data-inline="false"></span></div>
-                    <div class="filter-text">
-                        <p class="filter-label">Parkingi</p>
-                        <p class="filter-value filter-end-value">Bez znaczenia</p>
-                    </div>
-                    <div class="filter-dropdown">
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bez znaczenia</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Ważne</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bardzo ważne</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar-filter">
-                    <input type="hidden" name="distance-from-playground" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="map:playground" data-inline="false"></span></div>
-                    <div class="filter-text">
-                        <p class="filter-label">Place zabaw</p>
-                        <p class="filter-value filter-end-value">Bez znaczenia</p>
-                    </div>
-                    <div class="filter-dropdown">
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bez znaczenia</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Ważne</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bardzo ważne</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar-filter">
-                    <input type="hidden" name="distance-from-dog" class="search-input">
-                    <div class="filter-icon"><span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span></div>
-                    <div class="filter-text">
-                        <p class="filter-label">Wybiegi dla psów</p>
-                        <p class="filter-value filter-end-value">Bez znaczenia</p>
-                    </div>
-                    <div class="filter-dropdown">
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bez znaczenia</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Ważne</p>
-                        </div>
-                        <div class="filter-dropdown-element">
-                            <p class="filter-value">Bardzo ważne</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar-filter searchbar-standard">
-                    <div class="filter-icon"><span class="iconify" data-icon="clarity:star-solid" data-inline="false"></span></div>
-                    <div class="filter-text">
-                        <p class="filter-label">standard</p>
-                        <p class="filter-value">dowolny</p>
-                    </div>
-                </div>
-                <button class="searchbar-button"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" id="search-iconify"></span>&nbsp&nbsp&nbsp&nbsp&nbsp szukaj</button>
-            </div>
-        </form>
+        @include('searchbar')
     </div>
 </section>
 
@@ -123,7 +17,7 @@
     <div class="search-results-container-inner">
         @foreach ($results as $item)
         @php
-            $name = substr($item['nazwa_obiektu'], 0, 24);
+            $name = substr($item['nazwa_obiektu'], 0, 30);
         @endphp
             <div class="search-single-listing">
                 <div class="search-single-listing-inner">
@@ -137,31 +31,31 @@
                             <h3>{{$name}}</h3>
                         </div>
                         <div class="listing-bar">
-                            <p>dopasowanie do kryteriów</p>
-                            <div class="large-bar"><div class="large-bar large-inner-bar"></div></div>
+                            <p>dopasowanie do kryteriów:</p>
+                            <div class="large-bar"><div class="large-bar large-inner-bar" accuracy="{{$item['accuracy']}}"></div></div>
                         </div>
                         <div class="listing-bottom">
                             <div class="listing-bottom-icons">
                                 <div>
                                     <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                    <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                    <p>{{ $item['from_sea'] }} min do plazy</p>
                                 </div>
                                 <div>
                                     <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
-                                    <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1790882076046, 15.6084522886298)*0.014)}} min do rowerów</p>
+                                    <p>{{ $item['from_bike'] }} min do rowerów</p>
                                 </div>
                                 <div class="listing-bottom-icons-dropdown">
                                     <div>
                                         <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                        <p>{{ 'null' }} min do --</p>
                                     </div>
                                     <div>
                                         <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                        <p>{{ $item['from_playground'] }} min do placu zabaw</p>
                                     </div>
                                     <div>
                                         <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                        <p>{{ ceil(calculateDistance($item['x'], $item['y'], 54.1890882076046, 15.6084522886298)*0.014)}} min do plazy</p>
+                                        <p>{{ $item['from_dogpark'] }} min do wybiegu dla psów</p>
                                     </div>
                                 </div>
                             </div>
@@ -187,6 +81,7 @@
             </div>
         @endforeach
     </div>
+    <p>pokaż mniej trafne rezultaty</p>
 </section>
 
 
@@ -195,5 +90,6 @@
 <script src="{{ asset('js/searchbarDropdown.js') }}"></script>
 <script src="{{ asset('js/homeLoading.js') }}"></script>
 <script src="{{ asset('js/searchDetails.js') }}"></script>
+<script src="{{ asset('js/accuracyBars.js') }}"></script>
 
 @endsection

@@ -25,7 +25,7 @@
         <div class="single-distances">
             <div> 
                 <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
-                {{ ceil(calculateDistance($results['x'], $results['y'], 54.1890882076046, 15.6084522886298)*0.014)}} minut do plazy
+                {{ ceil(calculateDistance($results['x'], $results['y'], 54.185878, 15.553748)*0.014)}} minut do plazy
             </div>
             <div> 
                 <span class="iconify" data-icon="cil:bike" data-inline="false"></span>

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -123,7 +123,7 @@ header ul li {
 
 .search-container p {
   font-size: 12px;
-  color: #00385E;
+  color: #00385e;
 }
 
 .searchbar {
@@ -171,13 +171,13 @@ header ul li {
 }
 
 .filter-icon {
-  z-index: 10;
+  z-index: 20;
   position: absolute;
   left: 12px;
 }
 
 .iconify {
-  color: #00385E;
+  color: #00385e;
 }
 
 #beach-icon {
@@ -193,29 +193,34 @@ header ul li {
   color: white;
 }
 
-.filter-text, .filter-dropdown {
+.filter-text,
+.filter-dropdown {
   text-align: left;
 }
 
-.filter-text .filter-label, .filter-dropdown .filter-label {
-  z-index: 10;
+.filter-text .filter-label,
+.filter-dropdown .filter-label {
+  z-index: 20;
   position: absolute;
   top: 9px;
   font-size: 7px;
   color: rgba(0, 75, 125, 0.7);
 }
 
-.filter-text .filter-value, .filter-dropdown .filter-value {
+.filter-text .filter-value,
+.filter-dropdown .filter-value {
   font-size: 10px;
 }
 
 .filter-dropdown {
-  z-index: 9;
+  z-index: 19;
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
-  height: 130px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 125px;
   display: none;
   -webkit-box-orient: vertical;
@@ -225,7 +230,7 @@ header ul li {
   padding-top: 25px;
   gap: 4px;
   background-color: white;
-  border: 1px #F4F9FC solid;
+  border: 1px #f4f9fc solid;
   border-radius: 20px;
   cursor: default;
 }
@@ -248,7 +253,7 @@ header ul li {
 }
 
 .filter-dropdown div:hover {
-  border: 1px #F4F9FC solid;
+  border: 1px #f4f9fc solid;
 }
 
 .searchbar-standard .filter-text .filter-label {
@@ -265,7 +270,7 @@ header ul li {
   width: 110px;
   margin-left: 10px;
   color: white;
-  background-color: #00385E;
+  background-color: #00385e;
   border: none;
   cursor: pointer;
   border-radius: 20px;
@@ -297,7 +302,7 @@ header ul li {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   gap: 20px;
-  background-color: #F4F9FC;
+  background-color: #f4f9fc;
   border-radius: 30px;
 }
 
@@ -373,10 +378,18 @@ header ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #F8F8F8;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 100px 0 200px 0;
+  background-color: #f8f8f8;
 }
 
 .search-results-container-inner {
@@ -387,8 +400,8 @@ header ul li {
       grid-template-columns: 1fr 1fr;
   justify-items: center;
   row-gap: 40px;
-  margin: 100px 0 200px 0;
-  background-color: #F8F8F8;
+  margin-bottom: 50px;
+  background-color: #f8f8f8;
   border-radius: 20px;
 }
 
@@ -441,6 +454,10 @@ header ul li {
   margin-bottom: 10px;
 }
 
+.listing-name h3 {
+  font-weight: 500;
+}
+
 .listing-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -460,13 +477,13 @@ header ul li {
 .large-bar {
   height: 15px;
   width: 250px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 5px;
 }
 
 .large-inner-bar {
-  width: 80%;
-  background-color: #00385E;
+  width: 0%;
+  background-color: #00385e;
 }
 
 .listing-bottom {
@@ -485,7 +502,7 @@ header ul li {
 
 .listing-bottom button {
   padding: 10px 30px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -592,7 +609,7 @@ header ul li {
   width: 800px;
   height: 850px;
   padding: 30px 40px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 20px;
 }
 
@@ -635,7 +652,7 @@ header ul li {
       -ms-flex-align: center;
           align-items: center;
   padding: 90px 30px 10px 30px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 20px;
 }
 
@@ -661,7 +678,7 @@ header ul li {
   left: 49%;
   top: 49%;
   font-size: 24px;
-  color: #00385E;
+  color: #00385e;
 }
 
 .single-distances {
@@ -730,14 +747,14 @@ header ul li {
       -ms-flex-align: end;
           align-items: flex-end;
   padding: 40px 50px 70px 70px;
-  background-color: #F4F9FC;
+  background-color: #f4f9fc;
   border-radius: 0 30px 30px 0;
 }
 
 .info-title h1 {
   font-size: 64px;
   font-weight: 600;
-  color: #00385E;
+  color: #00385e;
   margin-bottom: 20px;
 }
 
@@ -760,6 +777,7 @@ header ul li {
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 50px;
+  color: #00385e;
 }
 
 .info-top div {
@@ -791,7 +809,7 @@ header ul li {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: #00385E;
+  color: #00385e;
 }
 
 .info-long p {
@@ -800,7 +818,7 @@ header ul li {
 
 .cookie-banner {
   background-color: #e7e7e7;
-  color: #00385E;
+  color: #00385e;
   font-size: 16px;
   font-weight: 400;
   position: fixed;
@@ -816,11 +834,11 @@ header ul li {
 }
 
 .cookie-banner-a {
-  color: #00385E;
+  color: #00385e;
 }
 
 .cookie-banner-a:visited {
-  color: #1C2541;
+  color: #1c2541;
 }
 
 .cookie-banner.active {
@@ -828,7 +846,7 @@ header ul li {
 }
 
 .cookie-btn {
-  background: #1C2541;
+  background: #1c2541;
   color: whitesmoke;
   font-size: 21px;
   font-weight: 700;
@@ -846,7 +864,7 @@ header ul li {
 
 footer {
   width: 100%;
-  background-color: #1C2541;
+  background-color: #1c2541;
   color: white;
   padding-top: 20px;
   border-radius: 50px 50px 0 0;
@@ -884,5 +902,9 @@ footer p {
   width: 300px;
   padding: 50px;
   text-align: left;
+}
+
+a:visited {
+  color: whitesmoke;
 }
 /*# sourceMappingURL=app.css.map */
