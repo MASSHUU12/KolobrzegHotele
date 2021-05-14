@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="show-more-button">więcej</button>
+                            <button class="button-secondary">więcej</button>
                         </div>
                     </div>
                     <div class="listing-active-bottom">

@@ -16,7 +16,7 @@ filterBoxes.forEach((filterBox) => {
         const endValue = filterBox.querySelectorAll(".filter-end-value");
         gsap.from(endValue[0], {duration: 1, opacity: '0', ease: 'slowmo'});
         gsap.from(endValue[0], {duration: 0.2, y: '5px', ease: 'slowmo'});
-        
+
         dropdownActive = 0;
       }
       else {
@@ -30,7 +30,7 @@ filterBoxes.forEach((filterBox) => {
         dropdownActive = 1;
         var delay = 0.2;
         options.forEach((option) => {
-            gsap.from(option, {delay: delay, duration: 0.4, opacity: '0', x: '-5px', ease: 'slowmo'})    
+            gsap.from(option, {delay: delay, duration: 0.4, opacity: '0', x: '-5px', ease: 'slowmo'})
             delay = delay+0.1;
             const optionValue = option.querySelectorAll("p");
             option.addEventListener('click', () => {

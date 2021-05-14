@@ -1,7 +1,7 @@
 const listings = document.querySelectorAll(".search-single-listing-inner");
 
 listings.forEach((listing) => {
-    const button = listing.querySelector(".show-more-button");
+    const button = listing.querySelector(".button-secondary");
     const image = listing.querySelector("img");
     const icons = listing.querySelector(".listing-bottom-icons");
     const name = listing.querySelector(".listing-name");

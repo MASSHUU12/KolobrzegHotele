@@ -31,7 +31,7 @@
     <div class="cookie-banner">
         <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, korzystając z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
             Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
-        <button class="cookie-btn">Rozumiem</button>
+        <button class="button-primary" id="cookie-btn">Rozumiem</button>
     </div>
     <script src="{{ asset('js/cookieConsent.js') }}"></script>
     <footer>

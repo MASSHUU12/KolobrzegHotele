@@ -1,5 +1,5 @@
 const cookieBanner = document.querySelector(".cookie-banner");
-const cookieButton = document.querySelector(".cookie-btn");
+const cookieButton = document.getElementById("cookie-btn");
 
 cookieButton.addEventListener("click", () => {
     cookieBanner.classList.remove("active");

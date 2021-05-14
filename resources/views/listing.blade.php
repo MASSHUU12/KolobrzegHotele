@@ -14,67 +14,74 @@
             <p>{{$results['adrespelny'].", ".$results['kod_pocz']." ".$results['miejscowosc']}}</p>
             <div class="single-left-distances">
                 <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['from_sea'] }} min do plazy</p>
+                    <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
+                    <p>{{ $results['from_sea'] }} min do plazy</p>
                 </div>
                 <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['from_bike'] }} min do rowerów</p>
+                    <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
+                    <p>{{ $results['from_bike'] }} min do rowerów</p>
                 </div>
                 <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['from_bike'] }}</p>
+                    <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
+                    <p>{{ $results['from_bike'] }}</p>
                 </div>
                 <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['from_bike'] }}</p>
+                    <span class="iconify" data-icon="map:playground" data-inline="false"></span>
+                    <p>{{ $results['from_bike'] }}</p>
                 </div>
                 <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['from_bike'] }}</p>
+                    <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
+                    <p>{{ $results['from_bike'] }}</p>
                 </div>
             </div>
         </div>
         <div class="single-left-bottom">
             <h1>Zabytki warte zobaczenia</h1>
-                <div class="single-left-bottom-element">
-                    <div>
-                        <h2>zabytek</h2>
-                        <p>aka zabytek</p>
-                    </div>
-                    <p>tylko 10 minut od tego noclegu</p>
-                    <button>123</button>
+            <div class="single-left-bottom-element">
+                <div>
+                    <h2>zabytek</h2>
+                    <p>aka zabytek</p>
                 </div>
-                <hr>
-                <div class="single-left-bottom-element">
-                    <div>
-                        <h2>zabytek</h2>
-                        <p>aka zabytek</p>
-                    </div>
-                    <p>tylko 10 minut od tego noclegu</p>
-                    <button>123</button>
+                <p>tylko 10 minut od tego noclegu</p>
+                <button class="button-primary">123</button>
+            </div>
+            <hr>
+            <div class="single-left-bottom-element">
+                <div>
+                    <h2>zabytek</h2>
+                    <p>aka zabytek</p>
                 </div>
-                <hr>
-                <div class="single-left-bottom-element">
-                    <div>
-                        <h2>zabytek</h2>
-                        <p>aka zabytek</p>
-                    </div>
-                    <p>tylko 10 minut od tego noclegu</p>
-                    <button>123</button>
-                </div>     
+                <p>tylko 10 minut od tego noclegu</p>
+                <button class="button-primary">123</button>
+            </div>
+            <hr>
+            <div class="single-left-bottom-element">
+                <div>
+                    <h2>zabytek</h2>
+                    <p>aka zabytek</p>
+                </div>
+                <p>tylko 10 minut od tego noclegu</p>
+                <button class="button-primary">123</button>
+            </div>
         </div>
     </div>
     <div class="single-right">
         <div class="single-contact">
             <h1>Dane kontaktowe</h1>
             @if ($results['telefon'] !== "")
-                <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['telefon'] }}</p>
-                </div>
+            <div>
+                <span class="iconify" data-icon="ant-design:phone-filled" data-inline="false"></span>
+                <p>{{ $results['telefon'] }}</p>
+            </div>
             @endif
             @if ($results['mail'] !== "")
-                <div>
-                    <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{ $results['mail'] }}</p>
-                </div>
+            <div>
+                <span class="iconify" data-icon="entypo:mail" data-inline="false"></span>
+                <p>{{ $results['mail'] }}</p>
+            </div>
             @endif
             @if ($results['www'] !== "")
-                <button>strona</button>
+            <span class="iconify" data-icon="mdi:web" data-inline="false"></span><button class="button-primary">strona</button>
             @endif
         </div>
         <div class="single-nearby-container">
@@ -98,7 +105,6 @@
 </section>
 
 <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&setLang=pl&setMkt=pl-PL&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_' async defer></script>
-<script type="text/javascript" src="{{ asset('js/singleMap.js') }}" ></script>
+<script type="text/javascript" src="{{ asset('js/singleMap.js') }}"></script>
 
 @endsection
-
