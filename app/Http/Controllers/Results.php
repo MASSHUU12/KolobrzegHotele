@@ -12,6 +12,7 @@ class Results extends Controller
         $responseString = $response;
         $result = $responseString['result']['records'];
 
+        //gets the variables from URL
         $fromSea = $request->sea;
         $fromBike = $request->bike;
         
@@ -21,7 +22,7 @@ class Results extends Controller
         $playground = $this->getHttp('playground');
         $dogPark = $this->getHttp('dogpark');
 
-
+        //gets the arrays with information about objects for each hotel
         for ($i=0; $i < count($result); $i++) { 
             $result[$i]['from_sea'] = ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186413, $result[$i]['y'])*0.014);
 
@@ -43,11 +44,11 @@ class Results extends Controller
             $result[$i]['accuracy'] = $accuracy/10;
         }
 
+        //sort the results by accuracy
         $accuracyKey = array_column($result, 'accuracy');
-
         array_multisort($accuracyKey, SORT_ASC, $result);
         
-
+        //get only a certain number of hotels
         $finalResult = array_slice($result, 0, 8, true);
 
         return view('search', ['results'=>$finalResult]);
@@ -57,16 +58,35 @@ class Results extends Controller
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20WHERE%20_id%20=%20%27'.$id.'%27');
         $arrayResponse = json_decode($response->body(), true);
 
+
+        //check if the given id is valid
         if (array_key_exists('result', $arrayResponse) == true && array_key_exists('records', $arrayResponse['result']) && array_key_exists(0, $arrayResponse['result']['records'])) {
-            $results = $arrayResponse['result']['records'][0];
+            $result = $arrayResponse['result']['records'][0];
+
+            //gets the arrays with information about objects 
+            $bike = $this->getHttp('bike');
+            $playground = $this->getHttp('playground');
+            $dogPark = $this->getHttp('dogpark');
+
+
+            //get the neartest object
+            $result['from_sea'] = ceil(calculateDistance($result['x'], $result['y'], 54.186413, $result['y'])*0.014);
+
+            $nearestBike = $this->nearestObject($result, $bike);
+            $result['from_bike'] = $nearestBike;
+
+            $nearestPlayground = $this->nearestObject($result, $playground);
+            $result['from_playground'] = $nearestPlayground;
+
+            $nearestDogpark = $this->nearestObject($result, $dogPark);
+            $result['from_dogpark'] = $nearestDogpark;
         }
         else {
             return redirect('/404');
         }
 
         
-        
-        return view('listing', ['results'=>$results]);
+        return view('listing', ['results'=>$result]);
     }
 
     function getHttp($id) {

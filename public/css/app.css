@@ -7,12 +7,21 @@
           box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #383838;
+}
+
 p {
   font-size: 12px;
 }
 
 header {
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
   position: fixed;
   display: -webkit-box;
@@ -413,6 +422,12 @@ header ul li {
   border-radius: 20px;
 }
 
+.map-pin {
+  position: absolute;
+  top: 49%;
+  left: 49%;
+}
+
 .search-single-listing-inner {
   position: absolute;
   width: 100%;
@@ -602,44 +617,110 @@ header ul li {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 20px;
-  padding: 200px 0 100px 0;
+  padding: 150px 0 100px 0;
+  background-color: #f8f8f8;
+}
+
+.single-whole h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.single-whole h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.single-whole hr {
+  border: 1px solid #f8f8f8;
 }
 
 .single-left {
-  width: 800px;
-  height: 850px;
-  padding: 30px 40px;
-  background-color: #f8f8f8;
-  border-radius: 20px;
+  width: 760px;
 }
 
 .single-left h1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.single-left h2 {
-  font-size: 16px;
-  font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .single-left p {
-  font-size: 16px;
+  font-size: 12px;
 }
 
-#single-hotel-img {
-  max-width: 100%;
+.single-left-top {
+  height: 850px;
+  width: 100%;
+  padding: 30px 30px;
   border-radius: 20px;
+  background-color: white;
+}
+
+.single-left-distances {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.single-left-distances div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single-left-bottom {
+  height: 400px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
   margin-top: 20px;
+  padding: 40px 30px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.single-left-bottom-element {
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single-map {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  overflow: hidden;
   margin-bottom: 5px;
 }
 
-.single-hotel-info {
-  margin-top: 70px;
-}
-
 .single-right {
-  width: 400px;
+  width: 340px;
   height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -648,41 +729,38 @@ header ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  gap: 20px;
+}
+
+.single-contact,
+.single-nearby-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.single-contact {
+  height: 200px;
+  padding: 30px 30px;
+}
+
+.single-contact h1 {
+  margin-bottom: 15px;
+}
+
+.single-contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 90px 30px 10px 30px;
-  background-color: #f8f8f8;
-  border-radius: 20px;
 }
 
-.signle-map-image {
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-#single-map-img {
-  width: 100%;
-  max-height: 280px;
-  border-radius: 20px;
-}
-
-#single-pin {
-  z-index: 20;
-  position: absolute;
-  left: 49%;
-  top: 49%;
-  font-size: 24px;
-  color: #00385e;
-}
-
-.single-distances {
-  width: 100%;
+.single-nearby-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -690,9 +768,13 @@ header ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 5px;
-  margin-top: 20px;
-  font-size: 12px;
+  padding: 20px 30px;
+}
+
+.single-nearby {
+  width: 100%;
+  height: 90px;
+  padding: 20px 0;
 }
 
 .info-page {
@@ -831,6 +913,7 @@ header ul li {
   -moz-transition: 300ms;
   -ms-transition: 300ms;
   -o-transition: 300ms;
+  z-index: 1000;
 }
 
 .cookie-banner-a {
@@ -906,5 +989,80 @@ footer p {
 
 a:visited {
   color: whitesmoke;
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 150px;
+}
+
+.sub-container h1 {
+  color: whitesmoke;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  background-color: #00385e;
+}
+
+.sub-container .all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-top: 150px;
+}
+
+.sub-container .all .map-container {
+  text-align: center;
+  margin-right: 25px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 25px;
+}
+
+.sub-container .all .map-container #sub-map {
+  height: 400px;
+  width: 600px;
+}
+
+.sub-container .all .links {
+  padding-left: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: left;
+  font-size: 24px;
+  height: 100%;
+  width: 25%;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.sub-container .all p {
+  color: #234b63;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sub-container .all a {
+  color: #234b63;
+}
+
+.sub-container .all p:hover {
+  color: #1c2541;
 }
 /*# sourceMappingURL=app.css.map */

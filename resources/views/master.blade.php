@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <!-- Fonts -->
@@ -46,6 +47,13 @@
                 <p><a href="/about">O Nas</a></p>
                 <p><a href="/cookies">Polityka Cookies</a></p>
                 <p><a href="/privacy">Polityka Prywatności</a></p>
+            </div>
+            <div class="footer-item">
+                <h1>Pozostałe</h1>
+                <p><a href="/maps?type=bike">Mapa Stacji Rowerów Miejskich</a></p>
+                <p><a href="/maps?type=recreation">Mapa Terenów Rekreacyjnych</a></p>
+                <p><a href="/maps?type=playground">Mapa Placów Zabaw</a></p>
+                <p><a href="/maps?type=dog">Mapa Wybiegów dla Psów</a></p>
             </div>
             <div class="footer-item">
                 <h1>Kontakt</h1>

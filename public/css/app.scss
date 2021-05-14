@@ -28,12 +28,21 @@ $radius-big: 30px;
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    color: #383838;
+}
+
 p {
     font-size: $small-font;
 }
 
 header {
-    z-index: 100;
+    z-index: 1000;
     width: 100%;
     position: fixed;
     display: flex;
@@ -340,6 +349,12 @@ header ul {
     border-radius: $radius-medium;
 }
 
+.map-pin {
+    position: absolute;
+    top: 49%;
+    left: 49%;
+}
+
 .search-single-listing-inner {
     position: absolute;
     width: 100%;
@@ -472,78 +487,117 @@ header ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 200px 0 100px 0;
-}
-
-.single-left {
-    width: 800px;
-    height: 850px;
-    padding: 30px 40px;
+    padding: 150px 0 100px 0;
     background-color: $light-gray;
-    border-radius: $radius-medium;
     h1 {
         font-size: $medium-font;
-        font-weight: 400;
+        font-weight: 500;
     }
     h2 {
         font-size: $mediumsmall-font;
         font-weight: 400;
     }
-    p {
-        font-size: $mediumsmall-font;
+    hr {
+        border: 1px solid $light-gray;
     }
 }
 
-#single-hotel-img {
-    max-width: 100%;
+.single-left {
+    width: 760px;
+    h1 {
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: $small-font;
+    }
+}
+
+.single-left-top {
+    height: 850px;
+    width: 100%;
+    padding: 30px 30px;
     border-radius: $radius-medium;
+    background-color: white;
+}
+
+.single-left-distances {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.single-left-bottom {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
+    padding: 40px 30px;
+    background-color: white;
+    border-radius: $radius-medium;
+}
+
+.single-left-bottom-element {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.single-map {
+    height: fit-content;
+    width: fit-content;
+    border-radius: $radius-medium;
+    overflow: hidden;
     margin-bottom: 5px;
 }
 
-.single-hotel-info {
-    margin-top: 70px;
-}
-
 .single-right {
-    width: 400px;
+    width: 340px;
     height: 600px;
     display: flex;
     flex-direction: column;
+    align-items: left;
+    gap: 20px;
+}
+
+.single-contact,
+.single-nearby-container {
+    width: 100%;
+    background-color: white;
+    border-radius: $radius-medium;
+}
+
+.single-contact {
+    height: 200px;
+    padding: 30px 30px;
+    h1 {
+        margin-bottom: 15px;
+    }
+}
+
+.single-contact div {
+    display: flex;
     align-items: center;
-    padding: 90px 30px 10px 30px;
-    background-color: $light-gray;
-    border-radius: $radius-medium;
 }
 
-.signle-map-image {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-}
-
-#single-map-img {
-    width: 100%;
-    max-height: 280px;
-    border-radius: $radius-medium;
-}
-
-#single-pin {
-    z-index: 20;
-    position: absolute;
-    left: 49%;
-    top: 49%;
-    font-size: $medium-font;
-    color: $tip-color;
-}
-
-.single-distances {
-    width: 100%;
+.single-nearby-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-top: 20px;
-    font-size: $small-font;
+    padding: 20px 30px;
+}
+
+.single-nearby {
+    width: 100%;
+    height: 90px;
+    padding: 20px 0;
 }
 
 //info pages
@@ -641,6 +695,7 @@ header ul {
     -moz-transition: 300ms;
     -ms-transition: 300ms;
     -o-transition: 300ms;
+    z-index: 1000;
 }
 
 .cookie-banner-a {
@@ -709,4 +764,76 @@ footer {
 
 a:visited {
     color: whitesmoke;
+}
+
+//subpages
+.sub-container {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 150px;
+
+    h1 {
+        color: whitesmoke;
+        text-align: center;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 35px;
+        background-color: $tip-color;
+    }
+
+    .all {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: 150px;
+
+        .map-container {
+            text-align: center;
+            margin-right: 25px;
+            background-color: $light-gray;
+            border-radius: $radius-medium;
+            -webkit-border-radius: $radius-medium;
+            -moz-border-radius: $radius-medium;
+            -ms-border-radius: $radius-medium;
+            -o-border-radius: $radius-medium;
+            padding: 25px;
+
+            #sub-map {
+                height: 400px;
+                width: 600px;
+            }
+        }
+
+        .links {
+            padding-left: 25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: left;
+            font-size: $medium-font;
+            height: 100%;
+            width: 25%;
+            background-color: $light-gray;
+            border-radius: $radius-medium;
+            -webkit-border-radius: $radius-medium;
+            -moz-border-radius: $radius-medium;
+            -ms-border-radius: $radius-medium;
+            -o-border-radius: $radius-medium;
+        }
+
+        p {
+            color: #234b63;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: $mediumsmall-font;
+            font-weight: 600;
+        }
+
+        a {
+            color: #234b63;
+        }
+
+        p:hover {
+            color: #1c2541;
+        }
+    }
 }

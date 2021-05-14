@@ -33,3 +33,7 @@ Route::get('/cookies', function () {
 Route::get('/privacy', function () {
     return view('privacy');
 });
+
+Route::get('/maps', function () {
+    return view('maps');
+});

@@ -23,7 +23,7 @@
                 <div class="search-single-listing-inner">
                     <div class="listing-image">
                         <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$item['x']."%2C".$item['y']."/15?mapSize=400,300&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"}}" alt="Bing Map" class="search-img" >
-                        <span class="iconify" data-icon="eva:pin-fill" data-inline="false" id="single-pin"></span>
+                        <span class="iconify map-pin" data-icon="eva:pin-fill" data-inline="false"></span>
                     </div>
                     <div class="listing-right">
                         <div class="listing-name">
