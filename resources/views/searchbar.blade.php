@@ -1,4 +1,4 @@
-<form action="/search" method="get">
+<form action="/search" method="get" data-swup-form>
     <div class="searchbar">
         <div class="searchbar-filter">
             <input type="hidden" name="sea" class="search-input">
@@ -58,9 +58,9 @@
         </div>
         <div class="searchbar-filter">
             <input type="hidden" name="parking" class="search-input">
-            <div class="filter-icon"><span class="iconify" data-icon="fluent:vehicle-car-16-filled" data-inline="false"></span></div>
+            <div class="filter-icon"><span class="iconify" data-icon="maki:park-11" data-inline="false"></span></div>
             <div class="filter-text">
-                <p class="filter-label">Parkingi</p>
+                <p class="filter-label">Parki</p>
                 <p class="filter-value filter-end-value">Bez znaczenia</p>
             </div>
             <div class="filter-dropdown">

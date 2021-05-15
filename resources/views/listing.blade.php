@@ -7,28 +7,32 @@
 <section class="single-whole">
     <div class="single-left">
         <div class="single-left-top">
-            <h1>{{$results['nazwa_obiektu']}}</h1>
+            <h1>{{ preg_replace('/\*{2,}/', '', $results['nazwa_obiektu']).' '.substr_count($results['nazwa_obiektu'], "*") }}</h1>
             <div class="single-map">
                 <div id="my-map" x="{{$results['x']}}" y="{{$results['y']}}" style="position:relative;width:700px;height:500px;"></div>
             </div>
             <p>{{$results['adrespelny'].", ".$results['kod_pocz']." ".$results['miejscowosc']}}</p>
             <div class="single-left-distances">
                 <div>
-                    <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
+                    <span class="iconify" id="beach-icon" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
                     <p>{{ $results['from_sea'] }} min do plazy</p>
                 </div>
+                <hr>
                 <div>
                     <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
                     <p>{{ $results['from_bike'] }} min do rowerów</p>
                 </div>
+                <hr>
                 <div>
                     <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
                     <p>{{ $results['from_bike'] }}</p>
                 </div>
+                <hr>
                 <div>
                     <span class="iconify" data-icon="map:playground" data-inline="false"></span>
                     <p>{{ $results['from_bike'] }}</p>
                 </div>
+                <hr>
                 <div>
                     <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
                     <p>{{ $results['from_bike'] }}</p>
@@ -37,32 +41,20 @@
         </div>
         <div class="single-left-bottom">
             <h1>Zabytki warte zobaczenia</h1>
-            <div class="single-left-bottom-element">
-                <div>
-                    <h2>zabytek</h2>
-                    <p>aka zabytek</p>
+            @for ($i = 0; $i < 3; $i++)
+                <div class="single-left-bottom-element">
+                    <div>
+                        <h2>{{ $landmarks[$i]['nazwa'] }}</h2>
+                        <p>{{ $landmarks[$i]['nazwa_alternatywna'] }}</p>
+                    </div>
+                    <p>tylko 10 minut od tego noclegu</p>
+                    <a href="" class="btn btn-bottom-element">
+                        <div class="div-1">pokaz</div>
+                        <div class="div-2">na mapie</div>
+                    </a> 
                 </div>
-                <p>tylko 10 minut od tego noclegu</p>
-                <button class="button-primary">123</button>
-            </div>
-            <hr>
-            <div class="single-left-bottom-element">
-                <div>
-                    <h2>zabytek</h2>
-                    <p>aka zabytek</p>
-                </div>
-                <p>tylko 10 minut od tego noclegu</p>
-                <button class="button-primary">123</button>
-            </div>
-            <hr>
-            <div class="single-left-bottom-element">
-                <div>
-                    <h2>zabytek</h2>
-                    <p>aka zabytek</p>
-                </div>
-                <p>tylko 10 minut od tego noclegu</p>
-                <button class="button-primary">123</button>
-            </div>
+                <hr>
+            @endfor
         </div>
     </div>
     <div class="single-right">
@@ -81,7 +73,10 @@
             </div>
             @endif
             @if ($results['www'] !== "")
-            <span class="iconify" data-icon="mdi:web" data-inline="false"></span><button class="button-primary">strona</button>
+            <a target="_blank" rel="noopener noreferrer" href="{{ 'http://'.$results['www'] }}" class="btn">
+                <div class="div-1">strona</div>
+                <div class="div-2">strona</div>
+            </a> 
             @endif
         </div>
         <div class="single-nearby-container">

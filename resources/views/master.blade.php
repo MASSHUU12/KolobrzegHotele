@@ -13,6 +13,11 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="{{ asset('js/swup.js') }}" defer></script>
+    <script src="{{ asset('js/swupScriptsPlugin.min.js') }}" defer></script>
+    <script src="{{ asset('js/swupFormsPlugin.min.js') }}" defer></script>
+    <script src="{{ asset('js/swupTransitions.js') }}" defer></script>
+    
 </head>
 
 <body>
@@ -20,20 +25,22 @@
         <div class="header-logo"><a href="/">KołobrzegHotele</a></div>
         <div class="header-links">
             <ul>
+                <li>szukaj</li>
+                <li>lokalizacje</li>
                 <li><img src="{{ asset('img/ico_pl.png') }}" class="language-flag" alt="language"></li>
-                <li><img src="{{ asset('img/ico_ge.png') }}" class="language-flag" alt="language"></li>
-                <li><img src="{{ asset('img/ico_us.png') }}" class="language-flag" alt="language"></li>
             </ul>
         </div>
         <script src="{{ asset('js/headerAnim.js') }}"></script>
     </header>
-    @yield('content')
+    <main id="swup" class="transition-main">
+        @yield('content')
+    </main>
     <div class="cookie-banner">
         <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, korzystając z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
             Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
         <button class="button-primary" id="cookie-btn">Rozumiem</button>
     </div>
-    <script src="{{ asset('js/cookieConsent.js') }}"></script>
+    <script data-swup-ignore-script src="{{ asset('js/cookieConsent.js') }}"></script>
     <footer>
         <div class="footer-container">
             <div class="footer-item">
@@ -61,6 +68,13 @@
             </div>
         </div>
     </footer>
-</body>
+    <script src="{{ asset('js/accuracyBars.js') }}"></script>
+    <script src="{{ asset('js/searchDetails.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+
+    <script src="{{ asset('js/searchbarDropdown.js') }}"></script>
+    <script src="{{ asset('js/homeLoading.js') }}" defer></script>
+</body>
 </html>

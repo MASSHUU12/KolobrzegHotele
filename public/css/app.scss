@@ -75,6 +75,35 @@ header ul {
     border-radius: 4px;
 }
 
+//swup
+
+.transition-main {
+    opacity: 1;
+    transition: 1000ms;
+}
+
+html.is-animating .transition-main {
+    opacity: 0;
+}
+
+.transition-main-image {
+    transform: translateY(0);
+    transition: 1000ms;
+}
+
+html.is-animating .transition-main-image {
+    transform: translateY(-330px);
+}
+
+.transition-main-image-search {
+    height: 40vh;
+    transition: 1000ms;
+}
+
+html.is-animating .transition-main-image-search {
+    height: 50vh;
+}
+
 .home-search {
     position: relative;
     width: 100%;
@@ -247,8 +276,8 @@ header ul {
     background-color: $tip-color;
     border: none;
     cursor: pointer;
-    border-radius: $radius-medium;
-    padding: 15px 30px;
+    border-radius: $radius-mediumsmall;
+    padding: 10px 25px;
     text-align: center;
 }
 
@@ -256,19 +285,87 @@ header ul {
     color: black;
     border: none;
     cursor: pointer;
-    padding: 15px 30px;
+    padding: 10px 25px;
     text-align: center;
     background-color: $light-gray;
     border-radius: $radius-mediumsmall;
 }
-//end
 
+.btn {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: $light-gray;
+    border-radius: $radius-mediumsmall;
+    .div-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        transform: translateY(0) scale(1);
+        transition-duration: 0.4s;
+    }
+    .div-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: absolute;
+        border-radius: 100px;
+        border-radius: inherit;
+        width: 100%;
+        height: 120%;
+        top: -10%;
+        left: 0;
+        color: white;
+        transform: translateY(100%) scale(0.8);
+        background-color: $tip-color;
+        transition-duration: 0.4s;
+    }
+}
+
+.btn-bottom-element {
+    width: 100px;
+}
+
+.btn:hover {
+    .div-1 {
+        transform: translateY(-100%) scale(0.8);
+    }
+    .div-2 {
+        animation: btn-animation 0.5s forwards;
+    }
+}
+
+@keyframes btn-animation {
+    0% {
+        transform: translateY(100%) scale(0.8);
+    }
+    60% {
+        transform: translateY(-8%) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+//end
 
 .searchbar-button {
     position: relative;
     height: 80%;
     width: 110px;
     margin-left: 10px;
+    border-radius: $radius-medium;
 }
 
 .features-container {
@@ -283,6 +380,7 @@ header ul {
 .feature-both {
     overflow: hidden;
     height: 400px;
+    max-width: 100%;
     width: 1100px;
     display: flex;
     justify-content: space-around;
@@ -329,7 +427,12 @@ header ul {
 
 //search page
 
+.search-page-whole {
+    background-color: $light-gray;
+}
+
 .search-page-search {
+    z-index: 20;
     height: 40vh;
     .search-container {
         height: 88px;
@@ -353,7 +456,7 @@ header ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    row-gap: 40px;
+    row-gap: 30px;
     margin-bottom: 50px;
     background-color: $light-gray;
     border-radius: $radius-medium;
@@ -403,6 +506,15 @@ header ul {
 .listing-name {
     z-index: 1;
     margin-bottom: 10px;
+    div {
+        height: 27px;
+        margin-top: 5px;
+        margin-bottom: -5px;
+        .iconify {
+            color: rgb(231, 208, 0);
+            margin-right: -3px;
+        }
+    }
     h3 {
         font-weight: 500;
     }
@@ -539,6 +651,7 @@ header ul {
     div {
         display: flex;
         align-items: center;
+        gap: 7px;
     }
 }
 
@@ -560,6 +673,9 @@ header ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    div {
+        width: 40%;
+    }
 }
 
 .single-map {
@@ -588,9 +704,12 @@ header ul {
 
 .single-contact {
     height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     padding: 30px 30px;
     h1 {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 }
 
@@ -745,9 +864,9 @@ footer {
 }
 
 .footer-container {
+    max-width: 100%;
     display: flex;
     justify-content: center;
-    gap: 120px;
     padding: 40px 0 80px 0;
 }
 

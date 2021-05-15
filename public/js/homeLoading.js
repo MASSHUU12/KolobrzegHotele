@@ -1,15 +1,15 @@
-const image = document.getElementById("main-image");
+var image = document.getElementById("main-image");
 
-const newImage = image.getAttribute("data-src");
+var newImage = image.getAttribute("data-src");
+
 image.src = newImage
 
-
 gsap.registerPlugin(ScrollTrigger);
-const features = document.querySelectorAll(".feature-both");
+var features = document.querySelectorAll(".feature-both");
 
 features.forEach((feature) => {
-    const img = feature.querySelector(".feature-image");
-    const text = feature.querySelector(".feature-text");
+    var img = feature.querySelector(".feature-image");
+    var text = feature.querySelector(".feature-text");
     
 
     gsap.from(feature, {
@@ -44,5 +44,6 @@ features.forEach((feature) => {
     });
 
 });
+
 
 

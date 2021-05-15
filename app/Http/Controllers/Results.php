@@ -42,6 +42,10 @@ class Results extends Controller
             if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*2;
 
             $result[$i]['accuracy'] = $accuracy/10;
+
+            //extract stars from the name
+            $result[$i]['stars'] = substr_count($result[$i]['nazwa_obiektu'], "*");
+            $result[$i]['nazwa_obiektu'] = preg_replace('/\*{2,}/', '', $result[$i]['nazwa_obiektu']);
         }
 
         //sort the results by accuracy
@@ -80,13 +84,16 @@ class Results extends Controller
 
             $nearestDogpark = $this->nearestObject($result, $dogPark);
             $result['from_dogpark'] = $nearestDogpark;
+
+            //get the landmarks to show
+            $landmarks = $this->getHttp('landmarks');
         }
         else {
             return redirect('/404');
         }
 
         
-        return view('listing', ['results'=>$result]);
+        return view('listing', ['results'=>$result, 'landmarks'=>$landmarks]);
     }
 
     function getHttp($id) {
@@ -102,6 +109,9 @@ class Results extends Controller
                 break;     
             case 'dogpark':
                 $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=6a170f39-ffe4-4bc2-9b27-05a7d14a1b12');
+                break;     
+            case 'landmarks':
+                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=3c1ec4e7-5f34-419e-a0c2-8a97bba7c2bb');
                 break;     
             default:
                 $response = null;
