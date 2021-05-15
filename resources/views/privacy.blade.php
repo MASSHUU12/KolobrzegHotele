@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'szukaj noclegu')
+@section('title', 'Polityka Prywatności')
 
 @section('content')
 

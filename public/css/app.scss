@@ -281,6 +281,10 @@ html.is-animating .transition-main-image-search {
     text-align: center;
 }
 
+.button-primary:hover {
+    background-color: #003050;
+}
+
 .button-secondary {
     color: black;
     border: none;
@@ -289,6 +293,10 @@ html.is-animating .transition-main-image-search {
     text-align: center;
     background-color: $light-gray;
     border-radius: $radius-mediumsmall;
+}
+
+.button-secondary:hover {
+    background-color: #d8d6d6;
 }
 
 .btn {
@@ -749,7 +757,7 @@ html.is-animating .transition-main-image-search {
     gap: 50px;
 }
 
-.info-title {
+.info-title, .info-title-about {
     position: absolute;
     left: 0;
     height: fit-content;
@@ -772,6 +780,11 @@ html.is-animating .transition-main-image-search {
     }
 }
 
+.info-title-about {
+    left: -15%;
+    padding: 50px 50px 50px 0px;
+}
+
 .info-top {
     display: flex;
     justify-content: center;
@@ -782,6 +795,11 @@ html.is-animating .transition-main-image-search {
         font-weight: 600;
         margin-bottom: 50px;
         color: $tip-color;
+    }
+    div {
+        p {
+            font-size: $mediumsmall-font;
+        }
     }
 }
 
@@ -810,8 +828,33 @@ html.is-animating .transition-main-image-search {
     }
 }
 
+.info-about, .info-top-about {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 100px;
+    h2 {
+        font-size: $big-font;
+        font-weight: 600;
+        margin-bottom: 50px;
+        color: $tip-color;
+    }
+    p {
+        font-size: $medium-font;
+    }
+}
+
+.info-about div {
+    width: 50%;
+}
+
+.info-top-about {
+    padding-top: 350px;
+    gap: 0;
+}
+
 .cookie-banner {
-    background-color: rgb(231, 231, 231);
+    background-color: #e9f5f8;
     color: #00385e;
     position: fixed;
     bottom: -100%;
@@ -823,7 +866,7 @@ html.is-animating .transition-main-image-search {
     -moz-transition: 300ms;
     -ms-transition: 300ms;
     -o-transition: 300ms;
-    z-index: 1000;
+    z-index: 100;
     p {
         font-size: 16px;
     }
@@ -839,6 +882,45 @@ html.is-animating .transition-main-image-search {
 
 .cookie-banner.active {
     bottom: 0;
+}
+
+.help-banner {
+    background-color: rgba(233,245,248,0.9);
+    position: fixed;
+    bottom: 70%;
+    left: 200%;
+    width: 20%;
+    right: 0;
+    padding: 20px 32px;
+    transition: 300ms;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    z-index: 100;
+    border-radius: $radius-medium 0 0 $radius-medium;
+    -webkit-border-radius: $radius-medium 0 0 $radius-medium;
+    -moz-border-radius: $radius-medium 0 0 $radius-medium;
+    -ms-border-radius: $radius-medium 0 0 $radius-medium;
+    -o-border-radius: $radius-medium 0 0 $radius-medium;
+
+    #help-btn {
+        font-size: $medium-font;
+        color: #00385E;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        color: #00385e;
+        padding-bottom: 15px;
+    }
+}
+
+.help-banner.active {
+    left: 85%;
 }
 
 footer {
