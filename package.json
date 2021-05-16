@@ -11,8 +11,13 @@
     },
     "devDependencies": {
         "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.19",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "@swup/forms-plugin": "^1.1.1",
+        "@swup/scripts-plugin": "^1.1.0",
+        "swup": "^2.0.14"
     }
 }
