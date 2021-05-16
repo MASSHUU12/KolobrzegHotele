@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Strona główna')
+@section('title', 'KołobrzegHotele')
 
 @section('content')
 

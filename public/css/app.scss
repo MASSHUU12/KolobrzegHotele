@@ -1007,6 +1007,41 @@ footer {
     }
 }
 
+.footer-wave, .footer-wave-2, .footer-wave-3, .footer-sun, .footer-cloud {
+    position: relative;
+    left: -80px;
+    bottom: -45px;
+}
+
+.footer-wave-2, .footer-wave-3 {
+    width: 23em;
+    height: 13em;
+    left: -450px;
+    bottom: -200px;
+    color: #202B4E;
+}
+
+.footer-wave-3 {
+    width: 20em;
+    height: 13em;
+    left: 550px;
+    bottom: -250px;
+}
+
+.footer-sun {
+    bottom: 200px;
+    left: 300px;
+    width: 200px;
+    height: 200px;
+}
+
+.footer-cloud{
+    width: 200px;
+    height: 150px;
+    left: -500px;
+    bottom: 200px;
+}
+
 .footer-container {
     max-width: 100%;
     display: flex;
