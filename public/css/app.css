@@ -341,6 +341,10 @@ html.is-animating .transition-search-container {
   text-align: center;
 }
 
+.button-primary:hover {
+  background-color: #003050;
+}
+
 .button-secondary {
   color: black;
   border: none;
@@ -349,6 +353,10 @@ html.is-animating .transition-search-container {
   text-align: center;
   background-color: #f8f8f8;
   border-radius: 10px;
+}
+
+.button-secondary:hover {
+  background-color: #d8d6d6;
 }
 
 .btn {
@@ -1044,7 +1052,7 @@ html.is-animating .transition-search-container {
   gap: 50px;
 }
 
-.info-title {
+.info-title, .info-title-about {
   position: absolute;
   left: 0;
   height: -webkit-fit-content;
@@ -1069,15 +1077,20 @@ html.is-animating .transition-search-container {
   border-radius: 0 30px 30px 0;
 }
 
-.info-title h1 {
+.info-title h1, .info-title-about h1 {
   font-size: 64px;
   font-weight: 600;
   color: #00385e;
   margin-bottom: 20px;
 }
 
-.info-title p {
+.info-title p, .info-title-about p {
   font-size: 16px;
+}
+
+.info-title-about {
+  left: -15%;
+  padding: 50px 50px 50px 0px;
 }
 
 .info-top {
@@ -1096,6 +1109,10 @@ html.is-animating .transition-search-container {
   font-weight: 600;
   margin-bottom: 50px;
   color: #00385e;
+}
+
+.info-top div p {
+  font-size: 16px;
 }
 
 .info-top div {
@@ -1134,6 +1151,37 @@ html.is-animating .transition-search-container {
   font-size: 16px;
 }
 
+.info-about, .info-top-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+  padding-top: 100px;
+}
+
+.info-about h2, .info-top-about h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #00385e;
+}
+
+.info-about p, .info-top-about p {
+  font-size: 24px;
+}
+
+.info-about div {
+  width: 50%;
+}
+
+.info-top-about {
+  padding-top: 350px;
+  gap: 0;
+}
+
 .cookie-banner {
   position: fixed;
   display: -webkit-box;
@@ -1156,7 +1204,7 @@ html.is-animating .transition-search-container {
   -moz-transition: 500ms;
   -ms-transition: 500ms;
   -o-transition: 500ms;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .cookie-banner p {
@@ -1181,6 +1229,45 @@ html.is-animating .transition-search-container {
 
 #cookie-btn {
   height: 40px;
+}
+
+.help-banner {
+  background-color: rgba(233, 245, 248, 0.9);
+  position: fixed;
+  bottom: 70%;
+  left: 200%;
+  width: 20%;
+  right: 0;
+  padding: 20px 32px;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+  z-index: 100;
+  border-radius: 20px 0 0 20px;
+  -webkit-border-radius: 20px 0 0 20px;
+  -moz-border-radius: 20px 0 0 20px;
+  -ms-border-radius: 20px 0 0 20px;
+  -o-border-radius: 20px 0 0 20px;
+}
+
+.help-banner #help-btn {
+  font-size: 24px;
+  color: #00385E;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.help-banner p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #00385e;
+  padding-bottom: 15px;
+}
+
+.help-banner.active {
+  left: 85%;
 }
 
 footer {

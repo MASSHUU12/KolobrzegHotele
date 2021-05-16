@@ -17,7 +17,6 @@
     <script src="{{ asset('js/swupScriptsPlugin.min.js') }}" defer></script>
     <script src="{{ asset('js/swupFormsPlugin.min.js') }}" defer></script>
     <script src="{{ asset('js/swupTransitions.js') }}" defer></script>
-    
 </head>
 
 <body>
@@ -40,6 +39,11 @@
         <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, korzystając z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
             Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
         <button class="button-primary" id="cookie-btn">Rozumiem</button>
+    </div>
+    <div class="help-banner">
+        <span class="iconify" id="help-btn" data-icon="bi:x" data-inline="false"></span>
+        <p>Jesteś tu nowy?<br />Sprawdź jak to działa.</p>
+        <button class="button-primary">Pomoc</button>
     </div>
     <script data-swup-ignore-script src="{{ asset('js/cookieConsent.js') }}"></script>
     <footer>
@@ -65,7 +69,7 @@
             </div>
             <div class="footer-item">
                 <h1>Kontakt</h1>
-                <p>kontakt@kontakt.com</p>
+                <p><a href="mailto: kontakt@kontakt.com">kontakt@kontakt.com</a></p>
             </div>
         </div>
     </footer>

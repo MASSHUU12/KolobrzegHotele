@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Wybiegi dla Psów')
+@section('title', 'Mapa')
 
 @section('content')
 

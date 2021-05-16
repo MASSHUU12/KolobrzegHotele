@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'szukaj noclegu')
+@section('title', 'Szukaj noclegu')
 
 @section('content')
 
@@ -88,7 +88,7 @@
                 </div>
             @endforeach
         </div>
-        <p>pokaż mniej trafne rezultaty</p>
+        <button class="button-secondary">Pokaż mniej trafne rezultaty</button>
     </section>
 </div>
 
