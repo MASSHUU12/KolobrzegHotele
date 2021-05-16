@@ -554,8 +554,9 @@ html.is-animating .transition-search-container {
   font-weight: 500;
 }
 
-.feature-text p {
+.feature-text p, .feature-text a {
   color: #606060;
+  text-decoration: none;
 }
 
 .feature-right .feature-text {

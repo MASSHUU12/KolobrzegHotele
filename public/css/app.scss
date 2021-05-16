@@ -454,8 +454,9 @@ html.is-animating .transition-search-container {
     h1 {
         font-weight: 500;
     }
-    p {
+    p, a {
         color: $light-text;
+        text-decoration: none;
     }
 }
 

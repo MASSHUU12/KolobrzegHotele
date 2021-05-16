@@ -16,13 +16,13 @@
                 <div>
                     <div>
                         <span class="iconify" id="beach-icon" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
-                        <p>{{ $results['from_sea'] }} min do plazy</p>
+                        <p>{{ $results['from_sea'] }} min do plaży</p>
                     </div>
                     <div onclick="GetMap(54.1865043890074, 15.5855419904263, 'plaza');" class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaz</div>
+                            <div class="div-1">pokaż</div>
                             <div class="div-2">na mapie</div>
-                        </a>  
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -33,13 +33,13 @@
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaz</div>
+                            <div class="div-1">pokaż</div>
                             <div class="div-2">na mapie</div>
-                        </a> 
+                        </a>
                         <a href="/maps?type=bike" class="btn btn-mini">
                             <div class="div-1">wszystkie</div>
                             <div class="div-2">stacje</div>
-                        </a> 
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -50,13 +50,13 @@
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaz</div>
+                            <div class="div-1">pokaż</div>
                             <div class="div-2">na mapie</div>
-                        </a> 
+                        </a>
                         <a href="/maps?type=recreation" class="btn btn-mini">
                             <div class="div-1">wszystkie</div>
                             <div class="div-2">parki</div>
-                        </a> 
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -67,13 +67,13 @@
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaz</div>
+                            <div class="div-1">pokaż</div>
                             <div class="div-2">na mapie</div>
-                        </a> 
+                        </a>
                         <a href="/maps?type=playground" class="btn btn-mini">
                             <div class="div-1">wszystkie</div>
                             <div class="div-2">place zabaw</div>
-                        </a> 
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -84,13 +84,13 @@
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaz</div>
+                            <div class="div-1">pokaż</div>
                             <div class="div-2">na mapie</div>
-                        </a> 
+                        </a>
                         <a href="/maps?type=dog" class="btn btn-mini">
                             <div class="div-1">wszystkie</div>
                             <div class="div-2">wybiegi</div>
-                        </a> 
+                        </a>
                     </div>
                 </div>
             </div>
@@ -105,9 +105,9 @@
                     </div>
                     <p>tylko {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} minut od tego noclegu</p>
                     <a onclick="GetMap({{ $landmarks[$i]['y'] }}, {{ $landmarks[$i]['x'] }}, 'zabytek');" class="btn btn-bottom-element">
-                        <div class="div-1">pokaz</div>
+                        <div class="div-1">pokaż</div>
                         <div class="div-2">na mapie</div>
-                    </a> 
+                    </a>
                 </div>
                 <hr>
             @endfor
@@ -132,7 +132,7 @@
             <a target="_blank" rel="noopener noreferrer" href="{{ 'http://'.$results['www'] }}" class="btn">
                 <div class="div-1">strona</div>
                 <div class="div-2">strona</div>
-            </a> 
+            </a>
             @endif
         </div>
         <div class="single-nearby-container">
