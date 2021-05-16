@@ -33,7 +33,7 @@
                                         <span class="iconify" data-icon="ant-design:star-filled" data-inline="false"></span>
                                     @endfor
                                 </div>
-                                <a href="/search/1">
+                                <a href="{{ '/search/'.$item['_id'] }}">
                                 <h3>{{$name}}</h3>
                                 </a>
                             </div>

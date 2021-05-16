@@ -68,10 +68,19 @@
                     <p class="filter-value">Bez znaczenia</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Ważne</p>
+                    <p class="filter-value">1</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Bardzo ważne</p>
+                    <p class="filter-value">2</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">3</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">4</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">5</p>
                 </div>
             </div>
         </div>
@@ -87,10 +96,19 @@
                     <p class="filter-value">Bez znaczenia</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Ważne</p>
+                    <p class="filter-value">1</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Bardzo ważne</p>
+                    <p class="filter-value">2</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">3</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">4</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">5</p>
                 </div>
             </div>
         </div>
@@ -106,10 +124,19 @@
                     <p class="filter-value">Bez znaczenia</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Ważne</p>
+                    <p class="filter-value">1</p>
                 </div>
                 <div class="filter-dropdown-element">
-                    <p class="filter-value">Bardzo ważne</p>
+                    <p class="filter-value">2</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">3</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">4</p>
+                </div>
+                <div class="filter-dropdown-element">
+                    <p class="filter-value">5</p>
                 </div>
             </div>
         </div>

@@ -15,6 +15,9 @@ class Results extends Controller
         //gets the variables from URL
         $fromSea = $request->sea;
         $fromBike = $request->bike;
+        $fromPark = $request->parking;
+        $fromPlayground = $request->playground;
+        $fromDogpark = $request->dogpark;
         
 
         //gets the arrays with information about objects        
@@ -24,7 +27,7 @@ class Results extends Controller
 
         //gets the arrays with information about objects for each hotel
         for ($i=0; $i < count($result); $i++) { 
-            $result[$i]['from_sea'] = ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186413, $result[$i]['y'])*0.014);
+            $result[$i]['from_sea'] = ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186413, $result[$i]['y'])*0.016);
 
             $nearestBike = $this->nearestObject($result[$i], $bike);
             $result[$i]['from_bike'] = $nearestBike;
@@ -37,9 +40,12 @@ class Results extends Controller
 
             //accuracy of the result
             $accuracy = 0;
-
-            if ($fromSea != null) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*2;
-            if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*2;
+            $multiplier = 0.5;
+            if ($fromSea != null) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*$multiplier;
+            if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
+            if ($fromPark != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
+            if ($fromPlayground != null) $accuracy = $accuracy + ($nearestPlayground * $fromPlayground)*$multiplier;
+            if ($fromDogpark != null) $accuracy = $accuracy + ($nearestDogpark * $fromDogpark)*$multiplier;
 
             $result[$i]['accuracy'] = $accuracy/10;
 
@@ -74,7 +80,7 @@ class Results extends Controller
 
 
             //get the neartest object
-            $result['from_sea'] = ceil(calculateDistance($result['x'], $result['y'], 54.186413, $result['y'])*0.014);
+            $result['from_sea'] = ceil(calculateDistance($result['x'], $result['y'], 54.186413, $result['y'])*0.016);
 
             $nearestBike = $this->nearestObject($result, $bike);
             $result['from_bike'] = $nearestBike;
@@ -141,7 +147,7 @@ class Results extends Controller
         asort($locations);
         $closestLocation = $locations[0];
 
-        return ceil($closestLocation*0.014);
+        return ceil($closestLocation*0.016);
     }
 
 }

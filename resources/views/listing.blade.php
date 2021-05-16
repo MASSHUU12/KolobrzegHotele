@@ -14,28 +14,84 @@
             <p>{{$results['adrespelny'].", ".$results['kod_pocz']." ".$results['miejscowosc']}}</p>
             <div class="single-left-distances">
                 <div>
-                    <span class="iconify" id="beach-icon" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
-                    <p>{{ $results['from_sea'] }} min do plazy</p>
+                    <div>
+                        <span class="iconify" id="beach-icon" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
+                        <p>{{ $results['from_sea'] }} min do plazy</p>
+                    </div>
+                    <div onclick="GetMap(54.1865043890074, 15.5855419904263, 'plaza');" class="div-buttons">
+                        <a class="btn btn-mini">
+                            <div class="div-1">pokaz</div>
+                            <div class="div-2">na mapie</div>
+                        </a>  
+                    </div>
                 </div>
                 <hr>
                 <div>
-                    <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
-                    <p>{{ $results['from_bike'] }} min do rowerów</p>
+                    <div>
+                        <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
+                        <p>{{ $results['from_bike'] }} min do rowerów miejskich</p>
+                    </div>
+                    <div class="div-buttons">
+                        <a class="btn btn-mini">
+                            <div class="div-1">pokaz</div>
+                            <div class="div-2">na mapie</div>
+                        </a> 
+                        <a href="/maps?type=bike" class="btn btn-mini">
+                            <div class="div-1">wszystkie</div>
+                            <div class="div-2">stacje</div>
+                        </a> 
+                    </div>
                 </div>
                 <hr>
                 <div>
-                    <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
-                    <p>{{ $results['from_bike'] }}</p>
+                    <div>
+                        <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
+                        <p>{{ $results['from_bike'] }}</p>
+                    </div>
+                    <div class="div-buttons">
+                        <a class="btn btn-mini">
+                            <div class="div-1">pokaz</div>
+                            <div class="div-2">na mapie</div>
+                        </a> 
+                        <a href="/maps?type=recreation" class="btn btn-mini">
+                            <div class="div-1">wszystkie</div>
+                            <div class="div-2">parki</div>
+                        </a> 
+                    </div>
                 </div>
                 <hr>
                 <div>
-                    <span class="iconify" data-icon="map:playground" data-inline="false"></span>
-                    <p>{{ $results['from_bike'] }}</p>
+                    <div>
+                        <span class="iconify" data-icon="map:playground" data-inline="false"></span>
+                        <p>{{ $results['from_playground'] }} min do placu zabaw</p>
+                    </div>
+                    <div class="div-buttons">
+                        <a class="btn btn-mini">
+                            <div class="div-1">pokaz</div>
+                            <div class="div-2">na mapie</div>
+                        </a> 
+                        <a href="/maps?type=playground" class="btn btn-mini">
+                            <div class="div-1">wszystkie</div>
+                            <div class="div-2">place zabaw</div>
+                        </a> 
+                    </div>
                 </div>
                 <hr>
                 <div>
-                    <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
-                    <p>{{ $results['from_bike'] }}</p>
+                    <div>
+                        <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
+                        <p>{{ $results['from_dogpark'] }} min do wybiegu dla psów</p>
+                    </div>
+                    <div class="div-buttons">
+                        <a class="btn btn-mini">
+                            <div class="div-1">pokaz</div>
+                            <div class="div-2">na mapie</div>
+                        </a> 
+                        <a href="/maps?type=dog" class="btn btn-mini">
+                            <div class="div-1">wszystkie</div>
+                            <div class="div-2">wybiegi</div>
+                        </a> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,8 +103,8 @@
                         <h2>{{ $landmarks[$i]['nazwa'] }}</h2>
                         <p>{{ $landmarks[$i]['nazwa_alternatywna'] }}</p>
                     </div>
-                    <p>tylko 10 minut od tego noclegu</p>
-                    <a href="" class="btn btn-bottom-element">
+                    <p>tylko {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} minut od tego noclegu</p>
+                    <a onclick="GetMap({{ $landmarks[$i]['y'] }}, {{ $landmarks[$i]['x'] }}, 'zabytek');" class="btn btn-bottom-element">
                         <div class="div-1">pokaz</div>
                         <div class="div-2">na mapie</div>
                     </a> 
