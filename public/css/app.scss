@@ -15,6 +15,7 @@ $light-blue: #f4f9fc;
 $light-gray: #f8f8f8;
 $transparent-blue: rgba(0, 75, 125, 0.7);
 $light-text: #606060;
+$lighter-text: #b1b1b1;
 
 $radius-small: 5px;
 $radius-mediumsmall: 10px;
@@ -100,8 +101,26 @@ html.is-animating .transition-main-image {
     transition: 1000ms;
 }
 
+html.is-animating .transition-search-text {
+    opacity: 0;
+}
+
+.transition-search-text {
+    opacity: 1;
+    transition: 300ms;
+}
+
 html.is-animating .transition-main-image-search {
     height: 50vh;
+}
+
+.transition-search-container {
+    height: 120px;
+    transition: 700ms;
+}
+
+html.is-animating .transition-search-container {
+    height: 88px;
 }
 
 .home-search {
@@ -139,16 +158,21 @@ html.is-animating .transition-main-image-search {
 }
 
 .search-container {
+    position: relative;
     height: 120px;
     width: 960px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 12px 0 17px 0;
     background-color: $search-background;
     border-radius: $radius-medium;
+    .search-p {
+        position: absolute;
+        top: 12px;
+    }
     p {
         font-size: $small-font;
         color: $tip-color;
@@ -354,12 +378,18 @@ html.is-animating .transition-main-image-search {
     }
 }
 
+.btn-mini {
+    width: 150px;
+    height: 30px;
+    font-size: $smaller-font;
+}
+
 @keyframes btn-animation {
     0% {
         transform: translateY(100%) scale(0.8);
     }
     60% {
-        transform: translateY(-8%) scale(1.05);
+        transform: translateY(-2%) scale(1.02);
     }
     100% {
         transform: translateY(0) scale(1);
@@ -644,7 +674,7 @@ html.is-animating .transition-main-image-search {
 }
 
 .single-left-top {
-    height: 850px;
+    height: 920px;
     width: 100%;
     padding: 30px 30px;
     border-radius: $radius-medium;
@@ -656,10 +686,22 @@ html.is-animating .transition-main-image-search {
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
-    div {
+    > div {
+        position: relative;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 7px;
+        div {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+        .div-buttons {
+            width: 170px;
+        }
+    }
+    .btn-mini {
+        width: 80px;
     }
 }
 
@@ -683,6 +725,9 @@ html.is-animating .transition-main-image-search {
     align-items: center;
     div {
         width: 40%;
+        p {
+            color: $lighter-text;
+        }
     }
 }
 
@@ -716,14 +761,14 @@ html.is-animating .transition-main-image-search {
     flex-direction: column;
     gap: 5px;
     padding: 30px 30px;
+    div {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
     h1 {
         margin-bottom: 10px;
     }
-}
-
-.single-contact div {
-    display: flex;
-    align-items: center;
 }
 
 .single-nearby-container {
@@ -736,6 +781,9 @@ html.is-animating .transition-main-image-search {
     width: 100%;
     height: 90px;
     padding: 20px 0;
+    p {
+        color: $lighter-text;
+    }
 }
 
 //info pages
@@ -854,22 +902,31 @@ html.is-animating .transition-main-image-search {
 }
 
 .cookie-banner {
-    background-color: #e9f5f8;
-    color: #00385e;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
     bottom: -100%;
     left: 0;
     right: 0;
-    padding: 20px 32px;
-    transition: 300ms;
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -ms-transition: 300ms;
-    -o-transition: 300ms;
+    background-color: white;
+    border-top: 1px solid rgb(240, 240, 240);
+    color: #00385e;
+    padding: 30px 0;
+    max-width: 100%;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
     z-index: 100;
     p {
-        font-size: 16px;
+        font-size: $small-font;
     }
+}
+
+#cookie-icon {
+    font-size: 40px;
 }
 
 .cookie-banner-a {
@@ -882,6 +939,10 @@ html.is-animating .transition-main-image-search {
 
 .cookie-banner.active {
     bottom: 0;
+}
+
+#cookie-btn {
+    height: 40px;
 }
 
 .help-banner {

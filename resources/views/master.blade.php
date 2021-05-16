@@ -35,6 +35,7 @@
         @yield('content')
     </main>
     <div class="cookie-banner">
+        <span class="iconify" id="cookie-icon" data-icon="la:cookie-bite" data-inline="false"></span>
         <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, korzystając z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
             Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies </a>oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
         <button class="button-primary" id="cookie-btn">Rozumiem</button>
@@ -80,5 +81,6 @@
 
     <script src="{{ asset('js/searchbarDropdown.js') }}"></script>
     <script src="{{ asset('js/homeLoading.js') }}" defer></script>
+
 </body>
 </html>

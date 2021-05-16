@@ -1,7 +1,7 @@
 var map;
 var directionsManager;
 
-function GetMap() {
+function GetMap(x1, y1, name) {
     map = new Microsoft.Maps.Map('#my-map', {});
 
     //Load the directions module.
@@ -18,7 +18,13 @@ function GetMap() {
             var seattleWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Ten nocleg', location: new Microsoft.Maps.Location(x, y) });
             directionsManager.addWaypoint(seattleWaypoint);
 
-            var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Nazwa2', location: new Microsoft.Maps.Location(54.1885043890074, 15.5995419904263) });
+            if (x1 == null || x1 == '' || y1 == null || y1 == '') {
+                x1 = 54.1885043890074;
+                y1 = 15.5995419904263;
+                name = 'test';
+            }
+
+            var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: name, location: new Microsoft.Maps.Location(x1, y1) });
             directionsManager.addWaypoint(workWaypoint);
 
             //Specify the element in which the itinerary will be rendered.

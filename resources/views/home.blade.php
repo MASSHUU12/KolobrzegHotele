@@ -9,8 +9,8 @@
             <img src="{{ asset('img/port-low-res.png') }}" data-src="{{ asset('img/port.png') }}" id="main-image">
         </div>
         <h1 class="main-text">Twój wypoczynek <br> w Kołobrzegu</h1>
-        <div class="search-container">
-            <p>Zaznacz co jest dla ciebie najważniejsze, a my znajdziemy twój idealny nocleg.</p>
+        <div class="search-container transition-search-container">
+            <p class="search-p transition-search-text">Zaznacz co jest dla ciebie najważniejsze, a my znajdziemy twój idealny nocleg.</p>
             @include('searchbar')
         </div>
     </section>
