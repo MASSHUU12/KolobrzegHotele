@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="searchbar-filter">
-            <input type="hidden" name="parking" class="search-input">
+            <input type="hidden" name="park" class="search-input">
             <div class="filter-icon"><span class="iconify" data-icon="maki:park-11" data-inline="false"></span></div>
             <div class="filter-text">
                 <p class="filter-label">Parki</p>

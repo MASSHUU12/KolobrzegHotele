@@ -256,6 +256,7 @@ html.is-animating .transition-search-container {
     left: 0;
     height: fit-content;
     width: 125px;
+    min-height: 100px;
     display: none;
     flex-direction: column;
     padding-top: 25px;
@@ -320,7 +321,7 @@ html.is-animating .transition-search-container {
 }
 
 .button-secondary:hover {
-    background-color: #d8d6d6;
+    background-color: #f5f5f5;
 }
 
 .btn {
@@ -454,7 +455,8 @@ html.is-animating .transition-search-container {
     h1 {
         font-weight: 500;
     }
-    p, a {
+    p,
+    a {
         color: $light-text;
         text-decoration: none;
     }
@@ -543,6 +545,8 @@ html.is-animating .transition-search-container {
 }
 
 .listing-name {
+    position: absolute;
+    top: 20px;
     z-index: 1;
     margin-bottom: 10px;
     div {
@@ -559,26 +563,24 @@ html.is-animating .transition-search-container {
     }
 }
 
-.listing-bar {
-    display: flex;
-    flex-direction: column;
+.listing-features {
+    display: inline-flex;
+    justify-content: flex-start;
     gap: 5px;
+    margin-top: 65px;
+    min-height: 20px;
+}
+
+.listing-feature {
+    padding: 4px 10px;
+    background-color: rgba(240, 192, 68, 0.43);
+    border-radius: 6px;
+    user-select: none;
     p {
         font-size: $smaller-font;
-        color: $light-text;
+        color: #c7a141;
+        font-weight: 500;
     }
-}
-
-.large-bar {
-    height: 15px;
-    width: 250px;
-    background-color: $light-gray;
-    border-radius: $radius-small;
-}
-
-.large-inner-bar {
-    width: 0%;
-    background-color: $tip-color;
 }
 
 .listing-bottom {
@@ -619,7 +621,7 @@ html.is-animating .transition-search-container {
 
 .listing-active-bottom {
     position: absolute;
-    top: 305px;
+    top: 345px;
     display: none;
     p {
         font-size: $smaller-font;
@@ -806,7 +808,8 @@ html.is-animating .transition-search-container {
     gap: 50px;
 }
 
-.info-title, .info-title-about {
+.info-title,
+.info-title-about {
     position: absolute;
     left: 0;
     height: fit-content;
@@ -877,7 +880,8 @@ html.is-animating .transition-search-container {
     }
 }
 
-.info-about, .info-top-about {
+.info-about,
+.info-top-about {
     display: flex;
     justify-content: center;
     gap: 100px;
@@ -947,7 +951,7 @@ html.is-animating .transition-search-container {
 }
 
 .help-banner {
-    background-color: rgba(233,245,248,0.9);
+    background-color: rgba(233, 245, 248, 0.9);
     position: fixed;
     bottom: 70%;
     left: 200%;
@@ -968,7 +972,7 @@ html.is-animating .transition-search-container {
 
     #help-btn {
         font-size: $medium-font;
-        color: #00385E;
+        color: #00385e;
         cursor: pointer;
         z-index: 101;
     }
@@ -1007,18 +1011,23 @@ footer {
     }
 }
 
-.footer-wave, .footer-wave-2, .footer-wave-3, .footer-sun, .footer-cloud {
+.footer-wave,
+.footer-wave-2,
+.footer-wave-3,
+.footer-sun,
+.footer-cloud {
     position: relative;
     left: -80px;
     bottom: -45px;
 }
 
-.footer-wave-2, .footer-wave-3 {
+.footer-wave-2,
+.footer-wave-3 {
     width: 23em;
     height: 13em;
     left: -450px;
     bottom: -200px;
-    color: #202B4E;
+    color: #202b4e;
 }
 
 .footer-wave-3 {
@@ -1035,7 +1044,7 @@ footer {
     height: 200px;
 }
 
-.footer-cloud{
+.footer-cloud {
     width: 200px;
     height: 150px;
     left: -500px;

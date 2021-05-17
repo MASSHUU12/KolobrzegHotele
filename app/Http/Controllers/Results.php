@@ -15,7 +15,7 @@ class Results extends Controller
         //gets the variables from URL
         $fromSea = $request->sea;
         $fromBike = $request->bike;
-        $fromPark = $request->parking;
+        $fromPark = $request->park;
         $fromPlayground = $request->playground;
         $fromDogpark = $request->dogpark;
         
@@ -23,6 +23,7 @@ class Results extends Controller
         //gets the arrays with information about objects        
         $bike = $this->getHttp('bike');
         $playground = $this->getHttp('playground');
+        $park = $this->getHttp('park');
         $dogPark = $this->getHttp('dogpark');
 
         //gets the arrays with information about objects for each hotel
@@ -35,6 +36,9 @@ class Results extends Controller
             $nearestPlayground = $this->nearestObject($result[$i], $playground);
             $result[$i]['from_playground'] = $nearestPlayground;
 
+            $nearestPark = $this->nearestObject($result[$i], $park);
+            $result[$i]['from_park'] = $nearestPark;
+
             $nearestDogpark = $this->nearestObject($result[$i], $dogPark);
             $result[$i]['from_dogpark'] = $nearestDogpark;
 
@@ -43,15 +47,23 @@ class Results extends Controller
             $multiplier = 0.5;
             if ($fromSea != null) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*$multiplier;
             if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
-            if ($fromPark != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
+            if ($fromPark != null) $accuracy = $accuracy + ($nearestPark * $fromPark)*$multiplier;
             if ($fromPlayground != null) $accuracy = $accuracy + ($nearestPlayground * $fromPlayground)*$multiplier;
             if ($fromDogpark != null) $accuracy = $accuracy + ($nearestDogpark * $fromDogpark)*$multiplier;
 
+            if ($result[$i]['nazwa_obiektu'] == null || $result[$i]['nazwa_obiektu'] == '') $accuracy = 1000;
+            
             $result[$i]['accuracy'] = $accuracy/10;
 
             //extract stars from the name
             $result[$i]['stars'] = substr_count($result[$i]['nazwa_obiektu'], "*");
             $result[$i]['nazwa_obiektu'] = preg_replace('/\*{2,}/', '', $result[$i]['nazwa_obiektu']);
+
+            //assign the features
+            if ($result[$i]['stars'] > 3) $result[$i]['features']['high_standard'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.181981, 15.570071))*0.015 < 8 || ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.175182, 15.559306))*0.015 < 8) $result[$i]['features']['train'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.179897, 15.569713))*0.015 < 10) $result[$i]['features']['city_center'] = true;
+            if ($nearestPark < 10) $result[$i]['features']['greenery'] = true;
         }
 
         //sort the results by accuracy
@@ -108,7 +120,7 @@ class Results extends Controller
                 $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431');
                 break;
             case 'park':
-                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=4a25e4e2-6a34-47ce-b68b-6517b4b1e431'); //need to select parks only
+                $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=3a2fe7f5-7d84-414c-9f34-a49e84b8fc4f'); //need to select parks only
                 break;  
             case 'playground':
                 $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search?resource_id=36f2b1ed-580f-4c76-962d-6d4f4aae0dd8');

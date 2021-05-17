@@ -37,9 +37,21 @@
                                 <h3>{{$name}}</h3>
                                 </a>
                             </div>
-                            <div class="listing-bar">
-                                <p>dopasowanie do kryteriów:</p>
-                                <div class="large-bar"><div class="large-bar large-inner-bar" accuracy="{{$item['accuracy']}}"></div></div>
+                            <div class="listing-features">
+                                @if ( array_key_exists('features', $item))
+                                    @if ( array_key_exists('high_standard', $item['features']))
+                                        <div class="listing-feature feature-standard"><p>wysoki standard</p></div>
+                                    @endif
+                                    @if ( array_key_exists('train', $item['features']))
+                                        <div class="listing-feature feature-train"><p>dworzec w poblizu</p></div>
+                                    @endif
+                                    @if ( array_key_exists('city_center', $item['features']))
+                                        <div class="listing-feature feature-center"><p>blisko centrum</p></div>
+                                    @endif
+                                    @if ( array_key_exists('greenery', $item['features']))
+                                        <div class="listing-feature feature-center"><p>blisko zieleni</p></div>
+                                    @endif
+                                @endif
                             </div>
                             <div class="listing-bottom">
                                 <div class="listing-bottom-icons">
@@ -54,7 +66,7 @@
                                     <div class="listing-bottom-icons-dropdown">
                                         <div>
                                             <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ 'null' }} min do --</p>
+                                            <p>{{ $item['from_park'] }} min do parku</p>
                                         </div>
                                         <div>
                                             <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
@@ -71,18 +83,6 @@
                         </div>
                         <div class="listing-active-bottom">
                             <p>{{$item['adrespelny'].", ".$item['kod_pocz']." ".$item['miejscowosc']}}</p>
-                            <div>
-                                @if ($item['telefon'] !== "")
-                                    <div>
-                                        <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{$item['telefon']}}</p>
-                                    </div>
-                                @endif
-                                @if ($item['mail'] !== "")
-                                    <div>
-                                        <span class="iconify" data-icon="eva:pin-fill" data-inline="false"></span><p>{{$item['mail']}}</p>
-                                    </div>
-                                @endif
-                            </div>
                         </div>
                     </div>
                 </div>

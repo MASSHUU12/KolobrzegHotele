@@ -32,7 +32,7 @@ function searchDetails() {
                     listing.classList.add("active");
                     icons.classList.add("active");
                     gsap.to(listing, {duration: 0.8, height: '420px', ease: 'power4'});
-                    gsap.to(image, {duration: 0.8, height: '230px', width: '350px', y: '50px', ease: 'power4'});
+                    gsap.to(image, {duration: 0.8, height: '270px', width: '350px', y: '50px', ease: 'power4'});
                     gsap.to(listing, {duration: 0.01, zIndex: 50});
                     gsap.to(button, {duration: 0.8, y:'180px', ease: 'power4'});
                     gsap.to(icons, {duration: 0, opacity: 0});
