@@ -45,11 +45,11 @@ class Results extends Controller
             //accuracy of the result
             $accuracy = 0;
             $multiplier = 0.5;
-            if ($fromSea != null) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*$multiplier;
-            if ($fromBike != null) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
-            if ($fromPark != null) $accuracy = $accuracy + ($nearestPark * $fromPark)*$multiplier;
-            if ($fromPlayground != null) $accuracy = $accuracy + ($nearestPlayground * $fromPlayground)*$multiplier;
-            if ($fromDogpark != null) $accuracy = $accuracy + ($nearestDogpark * $fromDogpark)*$multiplier;
+            if ($fromSea != null && is_numeric($fromSea)) $accuracy = $accuracy + ($result[$i]['from_sea'] * $fromSea)*$multiplier;
+            if ($fromBike != null && is_numeric($fromBike)) $accuracy = $accuracy + ($nearestBike * $fromBike)*$multiplier;
+            if ($fromPark != null && is_numeric($fromPark)) $accuracy = $accuracy + ($nearestPark * $fromPark)*$multiplier;
+            if ($fromPlayground != null && is_numeric($fromPlayground)) $accuracy = $accuracy + ($nearestPlayground * $fromPlayground)*$multiplier;
+            if ($fromDogpark != null && is_numeric($fromDogpark)) $accuracy = $accuracy + ($nearestDogpark * $fromDogpark)*$multiplier;
 
             if ($result[$i]['nazwa_obiektu'] == null || $result[$i]['nazwa_obiektu'] == '') $accuracy = 1000;
             
