@@ -13,6 +13,7 @@
         <p class="search-p transition-search-text">Zaznacz co jest dla ciebie najważniejsze, a my znajdziemy twój idealny nocleg.</p>
         @include('searchbar')
     </div>
+    <button class="button-secondary search-mobile">Rozpocznij</button>
 </section>
 <div class="features-container">
     <div class="feature-both">
