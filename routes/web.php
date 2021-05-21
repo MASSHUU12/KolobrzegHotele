@@ -37,3 +37,7 @@ Route::get('/privacy', function () {
 Route::get('/maps', function () {
     return view('maps');
 });
+
+Route::get('/mobileSearch', function () {
+    return view('mobileSearch');
+});

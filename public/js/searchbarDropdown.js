@@ -1,5 +1,5 @@
 function searchbarDropdown() {
-    if (window.location.pathname == "/" || window.location.pathname == "/search") {
+    if (window.location.pathname == "/" || window.location.pathname == "/search" || window.location.pathname == "/mobileSearch") {
         var filterBoxes = document.querySelectorAll(".searchbar-filter");
         var dropdowns = document.querySelectorAll(".filter-dropdown");
         var dropdownActive = 0;

@@ -331,6 +331,10 @@ html.is-animating .transition-search-container {
   font-size: 11px;
 }
 
+.search-mobile {
+  display: none;
+}
+
 .button-primary {
   color: white;
   background-color: #00385e;
@@ -1440,12 +1444,80 @@ a:visited {
   .home-search h1 {
     font-size: 48px;
   }
-  .home-search button {
-    padding: 15px 50px;
+  .home-search button, .home-search a {
+    display: block;
+    padding: 5px 30px;
     font-size: 24px;
+    text-decoration: none;
+    color: #606060;
   }
   .search-container {
     display: none;
+  }
+  .mobile-search-all {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-image: url("../img/port.png");
+    background-size: cover;
+  }
+  .mobile-search-all .mobile-search-all-p {
+    color: whitesmoke;
+    text-align: center;
+    width: 100%;
+    padding: 120px 0 15px 0;
+    background-color: #00385e;
+  }
+  .mobile-search-container {
+    width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 15px 0;
+    margin: 15px 0;
+    background-color: rgba(231, 231, 231, 0.9);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+  .searchbar {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 85%;
+    background-color: rgba(231, 231, 231, 0);
+  }
+  .searchbar-filter {
+    width: 95%;
+    background-color: white;
+  }
+  .filter-dropdown {
+    z-index: 100;
+    padding-top: 0;
+    gap: 0;
+    width: 100%;
+  }
+  .filter-dropdown div {
+    padding-left: 20px;
+  }
+  .searchbar-standard {
+    width: 95%;
+    margin-left: 0;
+  }
+  .searchbar-button {
+    width: 95%;
+    margin-left: 0;
   }
   header {
     width: 100%;

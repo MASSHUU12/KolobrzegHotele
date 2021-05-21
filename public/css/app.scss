@@ -294,6 +294,10 @@ html.is-animating .transition-search-container {
     }
 }
 
+.search-mobile {
+    display: none;
+}
+
 //buttons
 .button-primary {
     color: white;
@@ -1143,14 +1147,80 @@ a:visited {
         h1 {
             font-size: $big-font;
         }
-        button {
-            padding: 15px 50px;
+        button, a {
+            display: block;
+            padding: 5px 30px;
             font-size: $medium-font;
+            text-decoration: none;
+            color: $light-text;
         }
     }
 
     .search-container {
         display: none;
+    }
+
+    .mobile-search-all {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image: url("../img/port.png");
+        background-size: cover;
+        .mobile-search-all-p {
+            color: whitesmoke;
+            text-align: center;
+            width: 100%;
+            padding: 120px 0 15px 0;
+            background-color: $tip-color;
+        }
+    }
+
+    .mobile-search-container {
+        width: 90%;
+        height: fit-content;
+        padding: 15px 0;
+        margin: 15px 0;
+        background-color: rgba(231, 231, 231, 0.9);
+        border-radius: $radius-medium;
+        -webkit-border-radius: $radius-medium;
+        -moz-border-radius: $radius-medium;
+        -ms-border-radius: $radius-medium;
+        -o-border-radius: $radius-medium;
+    }
+
+    .searchbar {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 85%;
+        background-color:rgba(231, 231, 231, 0);
+    }
+
+    .searchbar-filter {
+        width: 95%;
+        background-color: white;
+    }
+
+    .filter-dropdown {
+        z-index: 100;
+        padding-top: 0;
+        gap: 0;
+        width: 100%;
+    }
+
+    .filter-dropdown div {
+        padding-left: 20px;
+    }
+
+    .searchbar-standard {
+        width: 95%;
+        margin-left: 0;
+    }
+
+    .searchbar-button {
+        width: 95%;
+        margin-left: 0;
     }
 
     header {
