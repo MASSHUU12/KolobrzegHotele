@@ -43,13 +43,13 @@
                                         <div class="listing-feature feature-standard"><p>wysoki standard</p></div>
                                     @endif
                                     @if ( array_key_exists('train', $item['features']))
-                                        <div class="listing-feature feature-train"><p>dworzec w poblizu</p></div>
+                                        <div class="listing-feature feature-train"><p>dworzec w pobliżu</p></div>
                                     @endif
                                     @if ( array_key_exists('city_center', $item['features']))
                                         <div class="listing-feature feature-center"><p>blisko centrum</p></div>
                                     @endif
                                     @if ( array_key_exists('greenery', $item['features']))
-                                        <div class="listing-feature feature-center"><p>blisko zieleni</p></div>
+                                        <div class="listing-feature feature-greenery"><p>blisko zieleni</p></div>
                                     @endif
                                 @endif
                             </div>

@@ -715,6 +715,22 @@ html.is-animating .transition-search-container {
   font-weight: 500;
 }
 
+.feature-standard {
+  background-color: rgba(226, 240, 68, 0.5);
+}
+
+.feature-train {
+  background-color: rgba(75, 136, 191, 0.5);
+}
+
+.feature-center {
+  background-color: rgba(240, 192, 68, 0.5);
+}
+
+.feature-greenery {
+  background-color: rgba(123, 240, 68, 0.5);
+}
+
 .listing-bottom {
   width: 100%;
   display: -webkit-box;
