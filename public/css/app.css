@@ -717,18 +717,22 @@ html.is-animating .transition-search-container {
 
 .feature-standard {
   background-color: rgba(226, 240, 68, 0.5);
+  color: #A2A951;
 }
 
 .feature-train {
   background-color: rgba(75, 136, 191, 0.5);
+  color: #4B88BF;
 }
 
 .feature-center {
   background-color: rgba(240, 192, 68, 0.5);
+  color: #C7A141;
 }
 
 .feature-greenery {
   background-color: rgba(123, 240, 68, 0.5);
+  color: #5FA340;
 }
 
 .listing-bottom {
