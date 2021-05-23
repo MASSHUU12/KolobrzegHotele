@@ -41,7 +41,7 @@
         <button class="button-primary" id="cookie-btn">Rozumiem</button>
     </div>
     <div class="help-banner">
-        <span class="iconify" id="help-btn" data-icon="bi:x" data-inline="false"></span>
+        <span class="iconify" id="help-btn" data-icon="bi:x" data-inline="false" onclick="removeHelp()"></span>
         <p>Jesteś tu nowy?<br />Sprawdź jak to działa.</p>
         <button class="button-primary">Pomoc</button>
     </div>
