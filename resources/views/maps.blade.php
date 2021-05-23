@@ -45,7 +45,7 @@
             elseif($param == 'playground')
             echo '
             <div class=" map-container-bottom-txt">
-                <p id="p1">Ul. Mieszka I (na przeciwko stacji benzynowej)</p>
+                <p id="p1">Ul. Mieszka I (naprzeciwko stacji benzynowej)</p>
                 <p id="p2">Ul. Bogusława X (naprzeciwko szkoły podstawowej nr 8)</p>
                 <p id="p3">Ul. Wylotowa 80</p>
                 <p id="p4">Ul. Lazurowa - plac trzech pokoleń</p>
