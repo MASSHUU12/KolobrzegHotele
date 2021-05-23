@@ -63,7 +63,7 @@ class Results extends Controller
             if ($result[$i]['stars'] > 3) $result[$i]['features']['high_standard'] = true;
             if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.181981, 15.570071))*0.015 < 8 || ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.175182, 15.559306))*0.015 < 8) $result[$i]['features']['train'] = true;
             if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.179897, 15.569713))*0.015 < 10) $result[$i]['features']['city_center'] = true;
-            if ($nearestPark < 10) $result[$i]['features']['greenery'] = true;
+            if ($nearestPark < 5) $result[$i]['features']['greenery'] = true;
         }
 
         //sort the results by accuracy
@@ -105,13 +105,14 @@ class Results extends Controller
 
             //get the landmarks to show
             $landmarks = $this->getHttp('landmarks');
+            $sortedLandmarks = $this->sortObjectsByDistance($result, $landmarks);
         }
         else {
             return redirect('/404');
         }
 
         
-        return view('listing', ['results'=>$result, 'landmarks'=>$landmarks]);
+        return view('listing', ['results'=>$result, 'landmarks'=>$sortedLandmarks]);
     }
 
     function getHttp($id) {
@@ -160,6 +161,22 @@ class Results extends Controller
         $closestLocation = $locations[0];
 
         return ceil($closestLocation*0.016);
+    }
+
+    //only works for zabytki
+    function sortObjectsByDistance($hotel, $objects) {
+        if (!is_array($hotel) || !is_array($objects)) {
+            return null;
+        }
+        
+        for ($j=0; $j < count($objects); $j++) { 
+            $objects[$j]['distance'] = ceil(calculateDistance($hotel['x'], $hotel['y'], $objects[$j]['y'], $objects[$j]['x'])*0.015);
+        }
+
+        $keys = array_column($objects, 'distance');
+        array_multisort($keys, SORT_ASC, $objects);
+
+        return $objects;
     }
 
 }

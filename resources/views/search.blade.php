@@ -32,6 +32,9 @@
                                     @for ($i = 0; $i < $item['stars']; $i++)
                                         <span class="iconify" data-icon="ant-design:star-filled" data-inline="false"></span>
                                     @endfor
+                                    @if ($i == 0)
+                                        <p class="listing-type">{{ $item['rodzaj'] }}</p>
+                                    @endif
                                 </div>
                                 <a href="{{ '/search/'.$item['_id'] }}">
                                 <h3>{{$name}}</h3>

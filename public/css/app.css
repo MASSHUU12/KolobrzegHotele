@@ -618,7 +618,7 @@ html.is-animating .transition-search-container {
 .search-single-listing {
   position: relative;
   width: 670px;
-  height: 192px;
+  height: 180px;
   background-color: white;
   border-radius: 20px;
 }
@@ -636,7 +636,7 @@ html.is-animating .transition-search-container {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
-  padding: 20px 20px 15px 20px;
+  padding: 18px 18px 15px 18px;
   background-color: inherit;
   border-radius: 20px;
 }
@@ -653,7 +653,7 @@ html.is-animating .transition-search-container {
 }
 
 .listing-image img {
-  height: 150px;
+  height: 146px;
   width: 200px;
   border-radius: 10px;
 }
@@ -665,6 +665,11 @@ html.is-animating .transition-search-container {
   height: fit-content;
 }
 
+.listing-right a {
+  -webkit-text-decoration-color: #606060;
+          text-decoration-color: #606060;
+}
+
 .listing-name {
   position: absolute;
   top: 20px;
@@ -674,8 +679,8 @@ html.is-animating .transition-search-container {
 
 .listing-name div {
   height: 27px;
-  margin-top: 5px;
-  margin-bottom: -5px;
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 
 .listing-name div .iconify {
@@ -687,6 +692,11 @@ html.is-animating .transition-search-container {
   font-weight: 500;
 }
 
+p.listing-type {
+  font-size: 10px;
+  color: #b1b1b1;
+}
+
 .listing-features {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -695,13 +705,12 @@ html.is-animating .transition-search-container {
       -ms-flex-pack: start;
           justify-content: flex-start;
   gap: 5px;
-  margin-top: 65px;
+  margin-top: 70px;
   min-height: 20px;
 }
 
 .listing-feature {
   padding: 4px 10px;
-  background-color: rgba(240, 192, 68, 0.43);
   border-radius: 6px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -711,28 +720,39 @@ html.is-animating .transition-search-container {
 
 .listing-feature p {
   font-size: 10px;
-  color: #c7a141;
   font-weight: 500;
 }
 
 .feature-standard {
   background-color: rgba(226, 240, 68, 0.5);
-  color: #A2A951;
+}
+
+.feature-standard p {
+  color: #a2a951;
 }
 
 .feature-train {
   background-color: rgba(75, 136, 191, 0.5);
-  color: #4B88BF;
+}
+
+.feature-train p {
+  color: #4b88bf;
 }
 
 .feature-center {
   background-color: rgba(240, 192, 68, 0.5);
-  color: #C7A141;
+}
+
+.feature-center p {
+  color: #c7a141;
 }
 
 .feature-greenery {
   background-color: rgba(123, 240, 68, 0.5);
-  color: #5FA340;
+}
+
+.feature-greenery p {
+  color: #5fa340;
 }
 
 .listing-bottom {

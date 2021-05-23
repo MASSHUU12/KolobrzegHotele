@@ -15,7 +15,7 @@ function searchDetails() {
                 if (listing.classList.contains("active")) {
                     listing.classList.remove("active");
                     icons.classList.remove("active");
-                    gsap.to(listing, {duration: 0.8, height: '192px', ease: 'power4'});
+                    gsap.to(listing, {duration: 0.8, height: '180px', ease: 'power4'});
                     gsap.to(image, {duration: 0.8, height: '150px', width: '200px', y: '0', ease: 'power4'});
                     gsap.to(listing, {delay: 0.8, duration: 0.1, zIndex: 1});
                     gsap.to(button, {duration: 0.8, y:'0', ease: 'power4'});
@@ -31,10 +31,10 @@ function searchDetails() {
                 else {
                     listing.classList.add("active");
                     icons.classList.add("active");
-                    gsap.to(listing, {duration: 0.8, height: '420px', ease: 'power4'});
+                    gsap.to(listing, {duration: 0.8, height: '390px', ease: 'power4'});
                     gsap.to(image, {duration: 0.8, height: '270px', width: '350px', y: '50px', ease: 'power4'});
                     gsap.to(listing, {duration: 0.01, zIndex: 50});
-                    gsap.to(button, {duration: 0.8, y:'180px', ease: 'power4'});
+                    gsap.to(button, {duration: 0.8, y:'165px', ease: 'power4'});
                     gsap.to(icons, {duration: 0, opacity: 0});
                     gsap.to(icons, {delay: 0.8, duration: 0.5, opacity: 1, ease: 'slowmo'});
                     gsap.from(icons, {delay: 0.8, duration: 0.5, y: '-30px', ease: 'slowmo'});       
