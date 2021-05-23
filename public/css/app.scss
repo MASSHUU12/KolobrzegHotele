@@ -458,7 +458,7 @@ html.is-animating .transition-search-container {
     h1 {
         font-weight: 500;
     }
-    p, a {
+    p, a, a:visited {
         color: $light-text;
         text-decoration: none;
     }
@@ -1080,8 +1080,8 @@ a:visited {
         color: whitesmoke;
         text-align: center;
         width: 100%;
-        padding-top: 20px;
-        padding-bottom: 35px;
+        padding-top: 100px;
+        padding-bottom: 15px;
         background-color: $tip-color;
     }
 
@@ -1366,6 +1366,66 @@ a:visited {
 
     .info-top-about {
         padding-top: 0;
+    }
+
+    .single-whole {
+        flex-wrap: wrap;
+        padding: 75px 0 50px 0;
+    }
+
+    .single-left {
+        width: 100%;
+        h1 {
+            margin-bottom: 10px;
+        }
+    }
+
+    .single-left-top {
+        height: fit-content;
+        padding: 60px 15px;
+    }
+
+    .single-left-distances {
+        margin-top: 20px;
+    }
+
+    .single-left-bottom {
+        height: fit-content;
+        padding: 20px 15px;
+    }
+
+    .single-left-bottom-element {
+        height: fit-content;
+        flex-wrap: wrap;
+        div {
+            width: 100%;
+        }
+        a {
+            width: 100%;
+        }
+    }
+
+    .single-map {
+        height: 100%;
+        width: 100%;
+    }
+
+    .single-right {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .single-contact {
+        height: fit-content;
+        padding: 15px;
+    }
+
+    .single-nearby-container {
+        padding: 15px;
+    }
+
+    .single-nearby {
+        height: fit-content;
     }
 
     .cookie-banner {
