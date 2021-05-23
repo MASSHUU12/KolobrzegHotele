@@ -17,7 +17,7 @@ if (window.location.pathname == "/") {
         gsap.from(feature, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'center bottom'
             },
             duration: 1,
@@ -28,7 +28,7 @@ if (window.location.pathname == "/") {
         gsap.from(img, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'bottom bottom'
             },
             duration: 1,
@@ -38,7 +38,7 @@ if (window.location.pathname == "/") {
         gsap.from(text, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'bottom bottom'
             },
             duration: 1,

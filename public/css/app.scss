@@ -256,6 +256,7 @@ html.is-animating .transition-search-container {
     left: 0;
     height: fit-content;
     width: 125px;
+    min-height: 100px;
     display: none;
     flex-direction: column;
     padding-top: 25px;
@@ -324,7 +325,7 @@ html.is-animating .transition-search-container {
 }
 
 .button-secondary:hover {
-    background-color: #d8d6d6;
+    background-color: #f5f5f5;
 }
 
 .btn {
@@ -458,6 +459,7 @@ html.is-animating .transition-search-container {
     h1 {
         font-weight: 500;
     }
+
     p, a, a:visited {
         color: $light-text;
         text-decoration: none;
@@ -514,7 +516,7 @@ html.is-animating .transition-search-container {
 .search-single-listing {
     position: relative;
     width: 670px;
-    height: 192px;
+    height: 180px;
     background-color: white;
     border-radius: $radius-medium;
 }
@@ -530,7 +532,7 @@ html.is-animating .transition-search-container {
     width: 100%;
     display: flex;
     gap: 20px;
-    padding: 20px 20px 15px 20px;
+    padding: 18px 18px 15px 18px;
     background-color: inherit;
     border-radius: $radius-medium;
 }
@@ -541,7 +543,7 @@ html.is-animating .transition-search-container {
     height: fit-content;
     width: fit-content;
     img {
-        height: 150px;
+        height: 146px;
         width: 200px;
         border-radius: $radius-mediumsmall;
     }
@@ -550,15 +552,20 @@ html.is-animating .transition-search-container {
 .listing-right {
     width: 100%;
     height: fit-content;
+    a {
+        text-decoration-color: $light-text;
+    }
 }
 
 .listing-name {
+    position: absolute;
+    top: 20px;
     z-index: 1;
     margin-bottom: 10px;
     div {
         height: 27px;
-        margin-top: 5px;
-        margin-bottom: -5px;
+        margin-top: 10px;
+        margin-bottom: -10px;
         .iconify {
             color: rgb(231, 208, 0);
             margin-right: -3px;
@@ -569,26 +576,55 @@ html.is-animating .transition-search-container {
     }
 }
 
-.listing-bar {
-    display: flex;
-    flex-direction: column;
+p.listing-type {
+    font-size: $smaller-font;
+    color: $lighter-text;
+}
+
+.listing-features {
+    display: inline-flex;
+    justify-content: flex-start;
     gap: 5px;
+    margin-top: 70px;
+    min-height: 20px;
+}
+
+.listing-feature {
+    padding: 4px 10px;
+    border-radius: 6px;
+    user-select: none;
     p {
         font-size: $smaller-font;
-        color: $light-text;
+        font-weight: 500;
     }
 }
 
-.large-bar {
-    height: 15px;
-    width: 250px;
-    background-color: $light-gray;
-    border-radius: $radius-small;
+.feature-standard {
+    background-color: rgba($color: #e2f044, $alpha: 0.5);
+    p {
+        color: #a2a951;
+    }
 }
 
-.large-inner-bar {
-    width: 0%;
-    background-color: $tip-color;
+.feature-train {
+    background-color: rgba($color: #4b88bf, $alpha: 0.5);
+    p {
+        color: #4b88bf;
+    }
+}
+
+.feature-center {
+    background-color: rgba($color: #f0c044, $alpha: 0.5);
+    p {
+        color: #c7a141;
+    }
+}
+
+.feature-greenery {
+    background-color: rgba($color: #7bf044, $alpha: 0.5);
+    p {
+        color: #5fa340;
+    }
 }
 
 .listing-bottom {
@@ -629,7 +665,7 @@ html.is-animating .transition-search-container {
 
 .listing-active-bottom {
     position: absolute;
-    top: 305px;
+    top: 345px;
     display: none;
     p {
         font-size: $smaller-font;
@@ -816,7 +852,8 @@ html.is-animating .transition-search-container {
     gap: 50px;
 }
 
-.info-title, .info-title-about {
+.info-title,
+.info-title-about {
     position: absolute;
     left: 0;
     height: fit-content;
@@ -887,7 +924,8 @@ html.is-animating .transition-search-container {
     }
 }
 
-.info-about, .info-top-about {
+.info-about,
+.info-top-about {
     display: flex;
     justify-content: center;
     gap: 100px;
@@ -957,7 +995,7 @@ html.is-animating .transition-search-container {
 }
 
 .help-banner {
-    background-color: rgba(233,245,248,0.9);
+    background-color: rgba(233, 245, 248, 0.9);
     position: fixed;
     bottom: 70%;
     left: 200%;
@@ -978,7 +1016,7 @@ html.is-animating .transition-search-container {
 
     #help-btn {
         font-size: $medium-font;
-        color: #00385E;
+        color: #00385e;
         cursor: pointer;
         z-index: 101;
     }
@@ -1017,13 +1055,18 @@ footer {
     }
 }
 
-.footer-wave, .footer-wave-2, .footer-wave-3, .footer-sun, .footer-cloud {
+.footer-wave,
+.footer-wave-2,
+.footer-wave-3,
+.footer-sun,
+.footer-cloud {
     position: relative;
     left: -5vw;
     bottom: -5vh;
 }
 
-.footer-wave-2, .footer-wave-3 {
+.footer-wave-2,
+.footer-wave-3 {
     width: 23em;
     height: 13em;
     left: -28vw;
@@ -1045,7 +1088,7 @@ footer {
     height: 200px;
 }
 
-.footer-cloud{
+.footer-cloud {
     width: 200px;
     height: 150px;
     left: -25vw;
