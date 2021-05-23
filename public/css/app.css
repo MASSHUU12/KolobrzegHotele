@@ -1720,6 +1720,22 @@ a:visited {
   .info-top-about {
     padding-top: 0;
   }
+  .search-results-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 25px;
+  }
+  .search-results-container-inner {
+    width: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .map-pin {
+    display: none;
+  }
+  .listing-image {
+    display: none;
+  }
   .single-whole {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

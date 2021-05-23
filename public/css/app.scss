@@ -1411,6 +1411,24 @@ a:visited {
         padding-top: 0;
     }
 
+    .search-results-container {
+        flex-wrap: wrap;
+        padding: 25px;
+    }
+
+    .search-results-container-inner {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .map-pin {
+        display: none;
+    }
+
+    .listing-image {
+        display: none;
+    }
+
     .single-whole {
         flex-wrap: wrap;
         padding: 75px 0 50px 0;
