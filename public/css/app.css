@@ -739,7 +739,7 @@ p.listing-type {
 }
 
 .feature-standard p {
-  color: #a2a951;
+  color: #a2a951 !important;
 }
 
 .feature-train {
@@ -747,7 +747,7 @@ p.listing-type {
 }
 
 .feature-train p {
-  color: #4b88bf;
+  color: #4b88bf !important;
 }
 
 .feature-center {
@@ -755,7 +755,7 @@ p.listing-type {
 }
 
 .feature-center p {
-  color: #c7a141;
+  color: #c7a141 !important;
 }
 
 .feature-greenery {
@@ -763,7 +763,7 @@ p.listing-type {
 }
 
 .feature-greenery p {
-  color: #5fa340;
+  color: #5fa340 !important;
 }
 
 .listing-bottom {
