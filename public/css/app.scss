@@ -1378,43 +1378,39 @@ a:visited {
     }
 
     .sub-container {
+        flex-wrap: wrap;
+        padding: 125px 0 0;
+    }
+
+    .map-container {
         width: 100%;
-        height: 100%;
-        margin-bottom: 25px;
+    }
 
-        h1 {
-            color: whitesmoke;
-            text-align: center;
-            width: 100%;
-            padding: 125px 0 15px;
-            background-color: $tip-color;
+    .map-container-bottom-txt {
+        width: 80%;
+        margin-top: 15px;
+        p {
+            padding-bottom: 10%;
+            font-size: 14px;
         }
+    }
 
-        .all {
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 100%;
-            padding-top: 0;
-
-            .map-container {
-                margin-right: 0;
-                padding: 25px 0 10px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-
-                #sub-map {
-                    height: 40vmax;
-                    width: 40vmax;}
-            }
-
-            .links {
-                padding: 0 25px;
-                height: fit-content;
-                width: 100%;
-            }
+    .map-container-bottom-btns {
+        width: 20%;
+        margin-top: 5%;
+        .button-secondary {
+            width: 15%;
+            margin-bottom: 5%;
         }
+    }
+
+    #sub-map {
+        height: 400px;
+        width: 95%;
+    }
+
+    .links {
+        width: 100%;
     }
 
     .info-page-inner {

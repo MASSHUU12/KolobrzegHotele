@@ -1746,47 +1746,34 @@ a:visited {
     display: none;
   }
   .sub-container {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 25px;
-  }
-  .sub-container h1 {
-    color: whitesmoke;
-    text-align: center;
-    width: 100%;
-    padding: 125px 0 15px;
-    background-color: #00385e;
-  }
-  .sub-container .all {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    padding: 125px 0 0;
+  }
+  .map-container {
     width: 100%;
-    padding-top: 0;
   }
-  .sub-container .all .map-container {
-    margin-right: 0;
-    padding: 25px 0 10px;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .map-container-bottom-txt {
+    width: 80%;
+    margin-top: 15px;
   }
-  .sub-container .all .map-container #sub-map {
-    height: 40vmax;
-    width: 40vmax;
+  .map-container-bottom-txt p {
+    padding-bottom: 10%;
+    font-size: 14px;
   }
-  .sub-container .all .links {
-    padding: 0 25px;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+  .map-container-bottom-btns {
+    width: 20%;
+    margin-top: 5%;
+  }
+  .map-container-bottom-btns .button-secondary {
+    width: 15%;
+    margin-bottom: 5%;
+  }
+  #sub-map {
+    height: 400px;
+    width: 95%;
+  }
+  .links {
     width: 100%;
   }
   .info-page-inner {
