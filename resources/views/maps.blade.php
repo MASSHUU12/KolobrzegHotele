@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Mapa')
+@section('title', 'KołobrzegHotele Mapa')
 
 @section('content')
 
@@ -20,7 +20,7 @@
         @endphp
         <div id="sub-map"></div>
         <div class="sub-map-bottom">
-            <p id="address">Tutaj pojawi się adres wybranego punktu.</p>
+            <p id="address">Na razie nie wybrano żadnego punktu.</p>
             <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;FORM=MBEDLD">Wyświetl
                 większą mapę</a>
             <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;rtp=~pos.54.18165332867221_15.569575309753434____&amp;FORM=MBEDLD">Pokaż
