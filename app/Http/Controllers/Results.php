@@ -7,7 +7,14 @@ use Illuminate\Support\Facades\Http;
 
 class Results extends Controller
 {
-    function getResults(Request $request) {
+    function getResults(Request $request, $lang) {
+        if ($lang == 'pl' || $lang == 'en' || $lang == 'de') {
+            \App::setlocale($lang);
+        }
+        else {
+            \App::setlocale('pl');
+        }
+
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20');
         $responseString = $response;
         $result = $responseString['result']['records'];
@@ -76,7 +83,7 @@ class Results extends Controller
         return view('search', ['results'=>$finalResult]);
     }
 
-    function singleResult($id) {
+    function singleResult($lang, $id) {
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20WHERE%20_id%20=%20%27'.$id.'%27');
         $arrayResponse = json_decode($response->body(), true);
 

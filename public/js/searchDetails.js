@@ -1,6 +1,10 @@
 
 function searchDetails() {
-    if (window.location.pathname == "/search") {
+    var url = window.location.pathname.split("/");
+    url.shift();
+    url.shift();
+    url = url.join('/');
+    if (url == "search") {
         var listings = document.querySelectorAll(".search-single-listing-inner");
 
         listings.forEach((listing) => {

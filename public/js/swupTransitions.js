@@ -11,7 +11,7 @@ const swup = new Swup({
   });
 
   swup.on('willReplaceContent', () => {
-    accuracyBars();
-    searchDetails();
-    searchbarDropdown();
+    accuracyBars(url);
+    searchDetails(url);
+    searchbarDropdown(url);
   });

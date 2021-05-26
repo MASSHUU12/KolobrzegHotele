@@ -8,9 +8,9 @@
     <div class="search-container-image transition-main-image">
         <img src="{{ asset('img/port-low-res.png') }}" data-src="{{ asset('img/port.png') }}" id="main-image">
     </div>
-    <h1 class="main-text">Twój wypoczynek <br> w Kołobrzegu</h1>
+    <h1 class="main-text">{{ __('Twój wypoczynek')}} <br> {{__('w Kołobrzegu')}}</h1>
     <div class="search-container transition-search-container">
-        <p class="search-p transition-search-text">Zaznacz co jest dla ciebie najważniejsze, a my znajdziemy twój idealny nocleg.</p>
+        <p class="search-p transition-search-text">{{__('Zaznacz co jest dla ciebie najważniejsze, a my znajdziemy twój idealny nocleg.')}}</p>
         @include('searchbar')
     </div>
 </section>
