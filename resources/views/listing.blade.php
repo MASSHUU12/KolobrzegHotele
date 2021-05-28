@@ -16,12 +16,12 @@
                 <div>
                     <div>
                         <span class="iconify" id="beach-icon" data-icon="fa-solid:umbrella-beach" data-inline="false"></span>
-                        <p>{{ $results['from_sea'] }} min do plaży</p>
+                        <p>{{ $results['from_sea'] }} min {{__('do plaży')}}</p>
                     </div>
                     <div onclick="GetMap(54.1865043890074, 15.5855419904263, 'plaza');" class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaż</div>
-                            <div class="div-2">na mapie</div>
+                            <div class="div-1">{{__('pokaż')}}</div>
+                            <div class="div-2">{{__('na mapie')}}</div>
                         </a>
                     </div>
                 </div>
@@ -29,16 +29,16 @@
                 <div>
                     <div>
                         <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
-                        <p>{{ $results['from_bike'] }} min do rowerów miejskich</p>
+                        <p>{{ $results['from_bike'] }} min {{__('do rowerów miejskich')}}</p>
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaż</div>
-                            <div class="div-2">na mapie</div>
+                            <div class="div-1">{{__('pokaż')}}</div>
+                            <div class="div-2">{{__('na mapie')}}</div>
                         </a>
                         <a href="/maps?type=bike" class="btn btn-mini">
-                            <div class="div-1">wszystkie</div>
-                            <div class="div-2">stacje</div>
+                            <div class="div-1">{{__('wszystkie')}}</div>
+                            <div class="div-2">{{__('stacje')}}</div>
                         </a>
                     </div>
                 </div>
@@ -50,12 +50,12 @@
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaż</div>
-                            <div class="div-2">na mapie</div>
+                            <div class="div-1">{{__('pokaż')}}</div>
+                            <div class="div-2">{{__('na mapie')}}</div>
                         </a>
                         <a href="/maps?type=recreation" class="btn btn-mini">
-                            <div class="div-1">wszystkie</div>
-                            <div class="div-2">parki</div>
+                            <div class="div-1">{{__('wszystkie')}}</div>
+                            <div class="div-2">{{__('parki')}}</div>
                         </a>
                     </div>
                 </div>
@@ -63,16 +63,16 @@
                 <div>
                     <div>
                         <span class="iconify" data-icon="map:playground" data-inline="false"></span>
-                        <p>{{ $results['from_playground'] }} min do placu zabaw</p>
+                        <p>{{ $results['from_playground'] }} min {{__('do placu zabaw')}}</p>
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaż</div>
-                            <div class="div-2">na mapie</div>
+                            <div class="div-1">{{__('pokaż')}}</div>
+                            <div class="div-2">{{__('na mapie')}}</div>
                         </a>
                         <a href="/maps?type=playground" class="btn btn-mini">
-                            <div class="div-1">wszystkie</div>
-                            <div class="div-2">place zabaw</div>
+                            <div class="div-1">{{__('wszystkie')}}</div>
+                            <div class="div-2">{{__('place zabaw')}}</div>
                         </a>
                     </div>
                 </div>
@@ -80,33 +80,33 @@
                 <div>
                     <div>
                         <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
-                        <p>{{ $results['from_dogpark'] }} min do wybiegu dla psów</p>
+                        <p>{{ $results['from_dogpark'] }} min {{__('do wybiegu dla psów')}}</p>
                     </div>
                     <div class="div-buttons">
                         <a class="btn btn-mini">
-                            <div class="div-1">pokaż</div>
-                            <div class="div-2">na mapie</div>
+                            <div class="div-1">{{__('pokaż')}}</div>
+                            <div class="div-2">{{__('na mapie')}}</div>
                         </a>
                         <a href="/maps?type=dog" class="btn btn-mini">
-                            <div class="div-1">wszystkie</div>
-                            <div class="div-2">wybiegi</div>
+                            <div class="div-1">{{__('wszystkie')}}</div>
+                            <div class="div-2">{{__('wybiegi')}}</div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="single-left-bottom">
-            <h1>Zabytki warte zobaczenia</h1>
+            <h1>{{__('Zabytki warte zobaczenia')}}</h1>
             @for ($i = 0; $i < 3; $i++)
                 <div class="single-left-bottom-element">
                     <div>
                         <h2>{{ $landmarks[$i]['nazwa'] }}</h2>
                         <p>{{ $landmarks[$i]['nazwa_alternatywna'] }}</p>
                     </div>
-                    <p>tylko {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} minut od tego noclegu</p>
+                    <p>tylko {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} minut {{__('od tego noclegu')}}</p>
                     <a onclick="GetMap({{ $landmarks[$i]['y'] }}, {{ $landmarks[$i]['x'] }}, 'zabytek');" class="btn btn-bottom-element">
-                        <div class="div-1">pokaż</div>
-                        <div class="div-2">na mapie</div>
+                        <div class="div-1">{{__('pokaż')}}</div>
+                        <div class="div-2">{{__('na mapie')}}</div>
                     </a>
                 </div>
                 <hr>
@@ -115,7 +115,7 @@
     </div>
     <div class="single-right">
         <div class="single-contact">
-            <h1>Dane kontaktowe</h1>
+            <h1>{{__('Dane kontaktowe')}}</h1>
             @if ($results['telefon'] !== "")
             <div>
                 <span class="iconify" data-icon="ant-design:phone-filled" data-inline="false"></span>
@@ -130,26 +130,26 @@
             @endif
             @if ($results['www'] !== "")
             <a target="_blank" rel="noopener noreferrer" href="{{ 'http://'.$results['www'] }}" class="btn">
-                <div class="div-1">strona</div>
-                <div class="div-2">strona</div>
+                <div class="div-1">{{__('strona')}}</div>
+                <div class="div-2">{{__('strona')}}</div>
             </a>
             @endif
         </div>
         <div class="single-nearby-container">
-            <h1>Inne noclegi w pobliżu</h1>
+            <h1>{{__('Inne noclegi w pobliżu')}}</h1>
             <div class="single-nearby">
                 <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
+                <p>10 min {{__('od tego noclegu')}}</p>
             </div>
             <hr>
             <div class="single-nearby">
                 <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
+                <p>10 min {{__('od tego noclegu')}}</p>
             </div>
             <hr>
             <div class="single-nearby">
                 <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
+                <p>10 min {{__('od tego noclegu')}}</p>
             </div>
         </div>
     </div>
