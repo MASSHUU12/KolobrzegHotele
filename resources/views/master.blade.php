@@ -70,7 +70,7 @@
             </div>
             <div class="footer-item">
                 <h1>Pozostałe</h1>
-                <p><a href="/maps?type=bike">Mapa Stacji Rowerów Miejskich</a></p>
+                <p><a href="{{url(app()->getLocale(), 'maps?type=bike')}}">Mapa Stacji Rowerów Miejskich</a></p>
                 <p><a href="/maps?type=recreation">Mapa Terenów Rekreacyjnych</a></p>
                 <p><a href="/maps?type=playground">Mapa Placów Zabaw</a></p>
                 <p><a href="/maps?type=dog">Mapa Wybiegów dla Psów</a></p>
