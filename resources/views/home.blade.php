@@ -49,10 +49,10 @@
         <div class="feature-text">
             <h1>{{__('Zajrzyj również tutaj')}}</h1>
             <p>
-                <a href="url(app::get(locale), /maps?type=bike)">{{__('Mapa Stacji Rowerów Miejskich')}}</a><br />
-                <a href="/maps?type=recreation">{{__('Mapa Terenów Rekreacyjnych')}}</a><br />
-                <a href="/maps?type=playground">{{__('Mapa Placów Zabaw')}}</a><br />
-                <a href="/maps?type=dog">{{__('Mapa Wybiegów dla Psów')}}</a><br />
+                <a href="{{url(app()->getLocale()).'/maps?type=bike'}}">{{__('Mapa Stacji Rowerów Miejskich')}}</a><br />
+                <a href="{{url(app()->getLocale()).'/maps?type=recreation'}}">{{__('Mapa Terenów Rekreacyjnych')}}</a><br />
+                <a href="{{url(app()->getLocale()).'/maps?type=playground'}}">{{__('Mapa Placów Zabaw')}}</a><br />
+                <a href="{{url(app()->getLocale()).'/maps?type=dog'}}">{{__('Mapa Wybiegów dla Psów')}}</a><br />
             </p>
         </div>
     </div>

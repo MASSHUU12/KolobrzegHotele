@@ -741,12 +741,22 @@ p.listing-type {
 }
 
 .single-left {
+    position: relative;
     width: 760px;
     h1 {
         margin-bottom: 15px;
     }
     p {
         font-size: $small-font;
+    }
+    .listing-go-back {
+        position: absolute;
+        top: 0;
+        margin-top: -18px;
+        margin-left: 30px;
+        font-size: $smaller-font;
+        color: $light-text;
+        cursor: pointer;
     }
 }
 

@@ -109,20 +109,24 @@ class Results extends Controller
             //gets the arrays with information about objects 
             $bike = $this->getHttp('bike');
             $playground = $this->getHttp('playground');
+            $park = $this->getHttp('park');
             $dogPark = $this->getHttp('dogpark');
 
 
             //get the neartest object
             $result['from_sea'] = ceil(calculateDistance($result['x'], $result['y'], 54.186413, $result['y'])*0.016);
 
-            $nearestBike = $this->nearestObject($result, $bike);
-            $result['from_bike'] = $nearestBike;
+            $nearestBike = $this->sortObjectsByDistance($result, $bike);
+            $result['from_bike'] = $nearestBike[0];
 
-            $nearestPlayground = $this->nearestObject($result, $playground);
-            $result['from_playground'] = $nearestPlayground;
+            $nearestPark = $this->sortObjectsByDistance($result, $park);
+            $result['from_park'] = $nearestPark[0];
 
-            $nearestDogpark = $this->nearestObject($result, $dogPark);
-            $result['from_dogpark'] = $nearestDogpark;
+            $nearestPlayground = $this->sortObjectsByDistance($result, $playground);
+            $result['from_playground'] = $nearestPlayground[0];
+
+            $nearestDogpark = $this->sortObjectsByDistance($result, $dogPark);
+            $result['from_dogpark'] = $nearestDogpark[0];
 
             //get the landmarks to show
             $landmarks = $this->getHttp('landmarks');
@@ -139,6 +143,7 @@ class Results extends Controller
         return view('listing', ['results'=>$result, 'landmarks'=>$sortedLandmarks, 'otherHotels'=>$sortedOtherHotels]);
     }
 
+    //makes a http request and returns an array with objects
     private function getHttp($id) {
         switch ($id) {
             case 'bike':
@@ -178,6 +183,7 @@ class Results extends Controller
         
     }
 
+    //shows the distance to the cloest object from an array (only returns the time needed to travel)
     private function nearestObject($hotel, $objects) {
         // stop the function if given variables aren't arrays
         if (!is_array($hotel) || !is_array($objects)) {
