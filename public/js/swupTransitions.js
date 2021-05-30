@@ -11,6 +11,7 @@ const swup = new Swup({
   });
 
   swup.on('willReplaceContent', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     accuracyBars(url);
     searchDetails(url);
     searchbarDropdown(url);

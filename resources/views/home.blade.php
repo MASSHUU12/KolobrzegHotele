@@ -20,9 +20,8 @@
             <img class="feature-img" src="{{ asset('img/ico_main1.png') }}" />
         </div>
         <div class="feature-text">
-            <h1>Wyszukiwarka od <br> turystów dla turystów</h1>
-            <p>Wyszukiwanie dogodnego miejsca nigdy nie było tak proste! Nowoczesny, prosty i elegancki design sprawia, że znalezienie
-                idealnej oferty to kwestia kilku minut.</p>
+            <h1>{{__('Wyszukiwarka od ')}}<br> {{__('turystów dla turystów')}}</h1>
+            <p>{{__('Wyszukiwanie dogodnego miejsca nigdy nie było tak proste! Nowoczesny, prosty i elegancki design sprawia, że znalezienie idealnej oferty to kwestia kilku minut.')}}</p>
         </div>
     </div>
     <div class="feature-both feature-right">
@@ -30,8 +29,8 @@
             <img class="feature-img" src="{{ asset('img/ico_main2.png') }}" />
         </div>
         <div class="feature-text">
-            <h1>Znajdź swoje <br> wymarzone miejsce</h1>
-            <p>Wybierz to, co dla ciebie jest najważniejsze, a my dopasujemy najlepsze miejsca do twoich preferencji, abyś mógł spędzić czas tak jak to zaplanowałeś.</p>
+            <h1>{{__('Znajdź swoje ')}}<br> {{__('wymarzone miejsce')}}</h1>
+            <p>{{__('Wybierz to, co dla ciebie jest najważniejsze, a my dopasujemy najlepsze miejsca do twoich preferencji, abyś mógł spędzić czas tak jak to zaplanowałeś.')}}</p>
         </div>
     </div>
     <div class="feature-both">
@@ -39,8 +38,8 @@
             <img class="feature-img" src="{{ asset('img/ico_main3.png') }}" />
         </div>
         <div class="feature-text">
-            <h1>Jak to działa?</h1>
-            <p>Nasz innowacyjny system wyszukiwania ofert sam dopasuje najlepszy nocleg do twoich preferencji. Wszystko co musisz zrobić, to wybrać jak ważne są dla ciebie podane kategorie.</p>
+            <h1>{{__('Jak to działa?')}}</h1>
+            <p>{{__('Nasz innowacyjny system wyszukiwania ofert sam dopasuje najlepszy nocleg do twoich preferencji. Wszystko co musisz zrobić, to wybrać jak ważne są dla ciebie podane kategorie.')}}</p>
         </div>
     </div>
     <div class="feature-both feature-right">
@@ -48,12 +47,12 @@
             <img class="feature-img" src="{{ asset('img/ico_main4.png') }}" />
         </div>
         <div class="feature-text">
-            <h1>Zajrzyj również tutaj</h1>
+            <h1>{{__('Zajrzyj również tutaj')}}</h1>
             <p>
-                <a href="/maps?type=bike">Mapa Stacji Rowerów Miejskich</a><br />
-                <a href="/maps?type=recreation">Mapa Terenów Rekreacyjnych</a><br />
-                <a href="/maps?type=playground">Mapa Placów Zabaw</a><br />
-                <a href="/maps?type=dog">Mapa Wybiegów dla Psów</a><br />
+                <a href="url(app::get(locale), /maps?type=bike)">{{__('Mapa Stacji Rowerów Miejskich')}}</a><br />
+                <a href="/maps?type=recreation">{{__('Mapa Terenów Rekreacyjnych')}}</a><br />
+                <a href="/maps?type=playground">{{__('Mapa Placów Zabaw')}}</a><br />
+                <a href="/maps?type=dog">{{__('Mapa Wybiegów dla Psów')}}</a><br />
             </p>
         </div>
     </div>

@@ -20,6 +20,11 @@ p {
   font-size: 12px;
 }
 
+a {
+  -webkit-text-decoration-color: #606060;
+          text-decoration-color: #606060;
+}
+
 header {
   z-index: 1000;
   width: 100%;
@@ -46,7 +51,7 @@ header a {
   font-size: 24px;
 }
 
-header ul {
+header .header-links > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,8 +59,57 @@ header ul {
   list-style: none;
 }
 
-header ul li {
+header .header-links > ul > li {
   display: inline;
+}
+
+.header-language {
+  position: relative;
+}
+
+.header-language > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -10px;
+  margin-left: -20px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header-language > div a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #383838;
+  cursor: pointer;
+}
+
+.header-language > div a > div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.header-language > div a:hover {
+  background-color: #f8f8f8;
+}
+
+#language-main-flag:hover + #langauge-dropdown,
+.header-language > div:hover {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .language-flag {
@@ -1137,7 +1191,7 @@ p.listing-type {
 }
 
 .info-title-about {
-  left: -15%;
+  left: -10%;
   padding: 50px 50px 50px 0px;
 }
 
@@ -1402,6 +1456,7 @@ footer p {
   width: 300px;
   padding: 50px;
   text-align: left;
+  z-index: 15;
 }
 
 a:visited {

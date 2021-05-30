@@ -137,20 +137,13 @@
         </div>
         <div class="single-nearby-container">
             <h1>Inne noclegi w pobliżu</h1>
-            <div class="single-nearby">
-                <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
-            </div>
-            <hr>
-            <div class="single-nearby">
-                <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
-            </div>
-            <hr>
-            <div class="single-nearby">
-                <h2>nearby</h2>
-                <p>10 min od tego noclegu</p>
-            </div>
+            @for ($i = 1; $i < 4; $i++)
+                <div class="single-nearby">
+                    <a href="{{ url(app()->getLocale()).'/search/'.$otherHotels[$i]['_id'] }}"><h2>{{ $otherHotels[$i]['nazwa_obiektu'] }}</h2></a>
+                    <p>{{ $otherHotels[$i]['distance'] }} min od tego noclegu</p>
+                </div>
+                <hr>
+            @endfor
         </div>
     </div>
 </section>

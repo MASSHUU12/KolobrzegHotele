@@ -24,9 +24,30 @@
         <div class="header-logo"><a href="/">KołobrzegHotele</a></div>
         <div class="header-links">
             <ul>
-                <li>szukaj</li>
-                <li>lokalizacje</li>
-                <li><img src="{{ asset('img/ico_pl.png') }}" class="language-flag" alt="language"></li>
+                <li>{{__('szukaj')}}</li>
+                <li>{{__('lokalizacje')}}</li>
+                <li>
+                    <div class="header-language">
+                        <img src="{{ asset('img/ico_pl.png') }}" class="language-flag" id="language-main-flag">
+                        <div id="langauge-dropdown">
+                            <a href="/pl">
+                                <div>
+                                    <img src="{{ asset('img/ico_pl.png') }}" class="language-flag" alt="language">polski
+                                </div>
+                            </a>
+                            <a href="/en">
+                                <div>
+                                    <img src="{{ asset('img/ico_us.png') }}" class="language-flag" alt="language">English
+                                </div>
+                            </a>
+                            <a href="/de">
+                                <div>
+                                    <img src="{{ asset('img/ico_ge.png') }}" class="language-flag" alt="language">Deutsch
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <script src="{{ asset('js/headerAnim.js') }}"></script>
@@ -36,14 +57,14 @@
     </main>
     <div class="cookie-banner">
         <span class="iconify" id="cookie-icon" data-icon="la:cookie-bite" data-inline="false"></span>
-        <p>Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, kontynuując korzystanie z serwisu wyrażasz zgodę na ich wykorzystywanie.<br />
-            Więcej informacji znajdziesz w <a class="cookie-banner-a" href="./cookies">polityce plików cookies</a> oraz w <a class="cookie-banner-a" href="./privacy">polityce prywatności.</a></p>
-        <button class="button-primary" id="cookie-btn">Rozumiem</button>
+        <p>{{__('Niniejszy serwis wykorzystuje pliki cookies do prawidłowego działania, kontynuując korzystanie z serwisu wyrażasz zgodę na ich wykorzystywanie.')}}<br />
+            {{__('Więcej informacji znajdziesz w ')}}<a class="cookie-banner-a" href="./cookies">{{__('polityce plików cookies')}}</a>{{__(' oraz w ')}}<a class="cookie-banner-a" href="./privacy">{{__('polityce prywatności.')}}</a></p>
+        <button class="button-primary" id="cookie-btn">{{__(('Rozumiem'))}}</button>
     </div>
     <div class="help-banner">
         <span class="iconify" id="help-btn" data-icon="bi:x" data-inline="false"></span>
-        <p>Jesteś tu nowy?<br />Sprawdź jak to działa.</p>
-        <button class="button-primary">Pomoc</button>
+        <p>{{__('Jesteś tu nowy?')}}<br />{{__('Sprawdź jak to działa.')}}</p>
+        <button class="button-primary">{{__('Pomoc')}}</button>
     </div>
     <script data-swup-ignore-script src="{{ asset('js/cookieConsent.js') }}"></script>
     <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="25em" height="15em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36">
@@ -57,26 +78,26 @@
     <footer>
         <div class="footer-container">
             <div class="footer-item">
-                <h1>Przydatne Linki</h1>
-                <p><a href="/">Strona główna</a></p>
-                <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Portal UM Kołobrzeg</a></p>
-                <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">Kołobrzeskie Otwarte Dane</a></p>
+                <h1>{{__('Przydatne Linki')}}</h1>
+                <p><a href="/">{{__('Strona główna')}}</a></p>
+                <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Portal UM Kołobrzeg')}}</a></p>
+                <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Kołobrzeskie Otwarte Dane')}}</a></p>
             </div>
             <div class="footer-item">
-                <h1>Informacje</h1>
-                <p><a href="/about">O Nas</a></p>
-                <p><a href="/cookies">Polityka Cookies</a></p>
-                <p><a href="/privacy">Polityka Prywatności</a></p>
+                <h1>{{__('Informacje')}}</h1>
+                <p><a href="/about">{{__('O Nas')}}</a></p>
+                <p><a href="/cookies">{{__('Polityka Cookies')}}</a></p>
+                <p><a href="/privacy">{{__('Polityka Prywatności')}}</a></p>
             </div>
             <div class="footer-item">
-                <h1>Pozostałe</h1>
-                <p><a href="{{url(app()->getLocale(), 'maps?type=bike')}}">Mapa Stacji Rowerów Miejskich</a></p>
-                <p><a href="/maps?type=recreation">Mapa Terenów Rekreacyjnych</a></p>
-                <p><a href="/maps?type=playground">Mapa Placów Zabaw</a></p>
-                <p><a href="/maps?type=dog">Mapa Wybiegów dla Psów</a></p>
+                <h1>{{__('Pozostałe')}}</h1>
+                <p><a href="/maps?type=bike">{{__('Mapa Stacji Rowerów Miejskich')}}</a></p>
+                <p><a href="/maps?type=recreation">{{__('Mapa Terenów Rekreacyjnych')}}</a></p>
+                <p><a href="/maps?type=playground">{{__('Mapa Placów Zabaw')}}</a></p>
+                <p><a href="/maps?type=dog">{{__('Mapa Wybiegów dla Psów')}}</a></p>
             </div>
             <div class="footer-item">
-                <h1>Kontakt</h1>
+                <h1>{{__('Kontakt')}}</h1>
                 <p><a href="mailto: kontakt@kontakt.com">kontakt@kontakt.com</a></p>
             </div>
         </div>

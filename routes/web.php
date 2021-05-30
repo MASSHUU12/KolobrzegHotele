@@ -15,7 +15,7 @@ use App\Http\Controllers\Results;
 */
 
 
-//sets the right language
+//sets the right language(temporary, will change if any time is left)
 function handleLocale ($lang) {
     if ($lang == 'pl' || $lang == 'en' || $lang == 'de') {
         App::setlocale($lang);
@@ -25,8 +25,10 @@ function handleLocale ($lang) {
     }
 }
 
+//redirects to pl if no language given
 Route::redirect('/', '/pl');
 
+//routes for all pages
 Route::get('{lang}/', function ($lang) {
     handleLocale ($lang);
     return view('home');

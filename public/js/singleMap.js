@@ -2,6 +2,7 @@ var map;
 var directionsManager;
 
 function GetMap(x1, y1, name) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     map = new Microsoft.Maps.Map('#my-map', {});
 
     //Load the directions module.

@@ -60,7 +60,7 @@
             <input type="hidden" name="park" class="search-input">
             <div class="filter-icon"><span class="iconify" data-icon="maki:park-11" data-inline="false"></span></div>
             <div class="filter-text">
-                <p class="filter-label">Parki</p>
+                <p class="filter-label">{{__('Parki')}}</p>
                 <p class="filter-value filter-end-value">{{__('Bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
@@ -116,7 +116,7 @@
             <input type="hidden" name="dogpark" class="search-input">
             <div class="filter-icon"><span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span></div>
             <div class="filter-text">
-                <p class="filter-label">Wybiegi dla psów</p>
+                <p class="filter-label">{{__('Wybiegi dla psów')}}</p>
                 <p class="filter-value filter-end-value">{{__('Bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
@@ -143,8 +143,8 @@
         <div class="searchbar-filter searchbar-standard">
             <div class="filter-icon"><span class="iconify" data-icon="clarity:star-solid" data-inline="false"></span></div>
             <div class="filter-text">
-                <p class="filter-label">Standard</p>
-                <p class="filter-value">dowolny</p>
+                <p class="filter-label">{{__('Standard')}}</p>
+                <p class="filter-value">{{__('dowolny')}}</p>
             </div>
         </div>
         <button class="searchbar-button button-primary"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" id="search-iconify"></span>&nbsp;&nbsp;&nbsp;&nbsp;{{__('szukaj')}}</button>
