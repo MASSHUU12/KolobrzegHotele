@@ -9,7 +9,7 @@
         <div class="info-title">
             <div>
                 <h1>{{__('Polityka plików ')}}<br> {{__('"cookies"')}}</h1>
-                <p>{{__('Niniejsza Polityka dotyczy plików "cookies" i odnosi się do ')}}<br> {{__(wszystkich podstron tego serwisu.')}}</p>
+                <p>{{__('Niniejsza Polityka dotyczy plików "cookies" i odnosi się do ')}}<br> {{__('wszystkich podstron tego serwisu.')}}</p>
             </div>
         </div>
         <div class="info-top">

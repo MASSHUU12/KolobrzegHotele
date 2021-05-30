@@ -104,7 +104,7 @@
     "Psi wybieg - Ogrody" : "Dog run - Gardens",
     "Psi wybieg - Okopowa" : "Dog run - Okopowa",
     "Psi wybieg - Podczele" : "Dog run - Podczele",
-    "Ul. Mieszka I (na przeciwko stacji benzynowej)" : "Mieszka I Street (in front of the gas station)",
+    "Ul. Mieszka I (naprzeciwko stacji benzynowej)" : "Mieszka I Street (in front of the gas station)",
     "Ul. Bogusława X (naprzeciwko szkoły podstawowej nr 8)" : "Bogusława X Street (in front of the elementary school No. 8)",
     "Ul. Wylotowa 80" : "Wylotowa 80 Street",
     "Ul. Lazurowa - plac trzech pokoleń" : "Lazurowa Street - the Square of Three Generations",
@@ -142,5 +142,7 @@
     "Ul. Arciszewskiego" : "Arciszewskiego Street",
     "Ul. Słowińców" : "Słowińców Street",
     "Ul. Świętego Wojciecha" : "Świętego Wojciecha Street",
-    "Ul. Toruńska" : "Toruńska Street"
+    "Ul. Toruńska" : "Toruńska Street",
+    "zobacz" : "see",
+    "Na razie nie wybrano żadnego punktu." : "As of now, no item has been selected."
 }
