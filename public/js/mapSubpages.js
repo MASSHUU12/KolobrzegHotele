@@ -25,3 +25,10 @@ function GetMap(la, lo) {
         dirEl.setAttribute('href', "https://bing.com/maps/default.aspx?rtp=~pos." + la + "_" + lo + "&rtop=0~1~0")
     }
 }
+
+function setAddress(id) {
+    var address = document.getElementById(id).innerHTML;
+    var where = document.getElementById("address");
+
+    where.innerHTML = address;
+}
