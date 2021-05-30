@@ -79,22 +79,22 @@
         <div class="footer-container">
             <div class="footer-item">
                 <h1>{{__('Przydatne Linki')}}</h1>
-                <p><a href="/">{{__('Strona główna')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/'}}">{{__('Strona główna')}}</a></p>
                 <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Portal UM Kołobrzeg')}}</a></p>
                 <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Kołobrzeskie Otwarte Dane')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Informacje')}}</h1>
-                <p><a href="/about">{{__('O Nas')}}</a></p>
-                <p><a href="/cookies">{{__('Polityka Cookies')}}</a></p>
-                <p><a href="/privacy">{{__('Polityka Prywatności')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/about'}}">{{__('O Nas')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/cookies'}}">{{__('Polityka Cookies')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/privacy'}}">{{__('Polityka Prywatności')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Pozostałe')}}</h1>
-                <p><a href="/maps?type=bike">{{__('Mapa Stacji Rowerów Miejskich')}}</a></p>
-                <p><a href="/maps?type=recreation">{{__('Mapa Terenów Rekreacyjnych')}}</a></p>
-                <p><a href="/maps?type=playground">{{__('Mapa Placów Zabaw')}}</a></p>
-                <p><a href="/maps?type=dog">{{__('Mapa Wybiegów dla Psów')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=bike'}}">{{__('Mapa Stacji Rowerów Miejskich')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=recreation'}}">{{__('Mapa Terenów Rekreacyjnych')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=playground'}}">{{__('Mapa Placów Zabaw')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=dog'}}">{{__('Mapa Wybiegów dla Psów')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Kontakt')}}</h1>
