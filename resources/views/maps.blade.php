@@ -6,32 +6,29 @@
 
 <section class="sub-container">
     <div class="map-container">
-        @php
-        $param = $_GET['type'];
-
-        if($param == "dog")
-        echo '<h1>Wybiegi dla Psów</h1>';
-        if($param == "playground")
-        echo '<h1>Place Zabaw</h1>';
-        if($param == "recreation")
-        echo '<h1>Tereny Rekreacyjne</h1>';
-        if($param == "bike")
-        echo '<h1>Stacje Rowerów Miejskich</h1>';
-        @endphp
+    @php
+    $param = $_GET['type'];
+    @endphp
+    @if($param == "dog")
+    <h1>{{__('Wybiegi dla Psów')}}</h1>
+    @endif
+    @if($param == "playground")
+    <h1>{{__('Place Zabaw')}}</h1>
+    @endif
+    @if($param == "recreation")
+    <h1>{{__('Tereny Rekreacyjne')}}</h1>
+    @endif
+    @if($param == "bike")
+    <h1>{{__('Stacje Rowerów Miejskich')}}</h1>
+    @endif
         <div id="sub-map"></div>
         <div class="sub-map-bottom">
             <p id="address">Na razie nie wybrano żadnego punktu.</p>
-            <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;FORM=MBEDLD">Wyświetl
-                większą mapę</a>
-            <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;rtp=~pos.54.18165332867221_15.569575309753434____&amp;FORM=MBEDLD">Pokaż
-                wskazówki dojazdu</a>
+            <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;FORM=MBEDLD">{{__('Wyświetl większą mapę')}}</a> &nbsp; | &nbsp;
+            <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;rtp=~pos.54.18165332867221_15.569575309753434____&amp;FORM=MBEDLD">{{__('Pokaż wskazówki dojazdu')}}
         </div>
         <div class="map-container-bottom">
-            @php
-            $param = $_GET['type'];
-
-            if($param == "dog")
-            echo '
+            @if($param == "dog")
             <div class="map-container-bottom-txt">
                 <p id="d1">Psi wybieg - Ogrody</p>
                 <p id="d2">Psi wybieg - Okopowa</p>
@@ -41,9 +38,9 @@
                 <button class="button-secondary" onclick="GetMap(54.1792508321551,15.5955672536586);setAddress(\'d1\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1814742334769,15.5786304009721);setAddress(\'d2\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1939644890637,15.6690417298156);setAddress(\'d3\');">pokaż</button>
-            </div>';
-            elseif($param == 'playground')
-            echo '
+            </div>
+            @endif
+            @if($param == 'playground')
             <div class=" map-container-bottom-txt">
                 <p id="p1">Ul. Mieszka I (naprzeciwko stacji benzynowej)</p>
                 <p id="p2">Ul. Bogusława X (naprzeciwko szkoły podstawowej nr 8)</p>
@@ -73,9 +70,9 @@
                 <button class="button-secondary" onclick="GetMap(54.1858272057929,15.5788514566289);setAddress(\'p11\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1927466702085,15.6630502148966);setAddress(\'p12\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1655869438421,15.600621504716);setAddress(\'p13\');">pokaż</button>
-            </div>';
-            elseif($param == "recreation")
-            echo '
+            </div>
+            @endif
+            @if($param == "recreation")
             <div class="map-container-bottom-txt">
                 <p id="r1">Amfiteatr</p>
                 <p id="r2">Park Im. Gen. J. Dąbrowskiego</p>
@@ -105,9 +102,9 @@
                 <button class="button-secondary" onclick="GetMap(54.1855735535522,15.5946252048793);setAddress(\'r11\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1773734035407,15.5756254250356);setAddress(\'r12\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1827278452175,15.5638801455967);setAddress(\'r13\');">pokaż</button>
-            </div>';
-            elseif($param == "bike")
-            echo '
+            </div>
+            @endif
+            @if($param == "bike")
             <div class="map-container-bottom-txt">
                 <p id="b1">Dworzec PKP</p>
                 <p id="b2">Kamienny Szaniec</p>
@@ -137,8 +134,8 @@
                 <button class="button-secondary" onclick="GetMap(54.1759184063292,15.5830657482147);setAddress(\'b11\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.1567487123925,15.5537974834442);setAddress(\'b12\');">pokaż</button>
                 <button class="button-secondary" onclick="GetMap(54.162546,15.548692);setAddress(\'b13\');">pokaż</button>
-            </div>';
-            @endphp
+            </div>
+            @endif
         </div>
     </div>
     <div class="links">

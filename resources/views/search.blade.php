@@ -33,26 +33,26 @@
                                         <span class="iconify" data-icon="ant-design:star-filled" data-inline="false"></span>
                                     @endfor
                                     @if ($i == 0)
-                                        <p class="listing-type">{{ $item['rodzaj'] }}</p>
+                                        <p class="listing-type">{{ __($item['rodzaj']) }}</p>
                                     @endif
                                 </div>
-                                <a href="{{ '/search/'.$item['_id'] }}">
+                                <a href="{{ url(app()->getLocale()).'/search/'.$item['_id'] }}">
                                 <h3>{{$name}}</h3>
                                 </a>
                             </div>
                             <div class="listing-features">
                                 @if ( array_key_exists('features', $item))
                                     @if ( array_key_exists('high_standard', $item['features']))
-                                        <div class="listing-feature feature-standard"><p>wysoki standard</p></div>
+                                        <div class="listing-feature feature-standard"><p>{{__('wysoki standard')}}</p></div>
                                     @endif
                                     @if ( array_key_exists('train', $item['features']))
-                                        <div class="listing-feature feature-train"><p>dworzec w pobliżu</p></div>
+                                        <div class="listing-feature feature-train"><p>{{__('dworzec w pobliżu')}}</p></div>
                                     @endif
                                     @if ( array_key_exists('city_center', $item['features']))
-                                        <div class="listing-feature feature-center"><p>blisko centrum</p></div>
+                                        <div class="listing-feature feature-center"><p>{{__('blisko centrum')}}</p></div>
                                     @endif
                                     @if ( array_key_exists('greenery', $item['features']))
-                                        <div class="listing-feature feature-greenery"><p>blisko zieleni</p></div>
+                                        <div class="listing-feature feature-greenery"><p>{{__('blisko zieleni')}}</p></div>
                                     @endif
                                 @endif
                             </div>
@@ -60,28 +60,28 @@
                                 <div class="listing-bottom-icons">
                                     <div>
                                         <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                        <p>{{ $item['from_sea'] }} min do plazy</p>
+                                        <p>{{ $item['from_sea'] }} min {{__('do plaży')}}</p>
                                     </div>
                                     <div>
                                         <span class="iconify" data-icon="cil:bike" data-inline="false"></span>
-                                        <p>{{ $item['from_bike'] }} min do rowerów</p>
+                                        <p>{{ $item['from_bike'] }} min {{__('do rowerów')}}</p>
                                     </div>
                                     <div class="listing-bottom-icons-dropdown">
                                         <div>
                                             <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ $item['from_park'] }} min do parku</p>
+                                            <p>{{ $item['from_park'] }} min {{__('do parku')}}</p>
                                         </div>
                                         <div>
                                             <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ $item['from_playground'] }} min do placu zabaw</p>
+                                            <p>{{ $item['from_playground'] }} min {{__('do placu zabaw')}}</p>
                                         </div>
                                         <div>
                                             <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ $item['from_dogpark'] }} min do wybiegu dla psów</p>
+                                            <p>{{ $item['from_dogpark'] }} min {{__('do wybiegu dla psów')}}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="button-secondary">więcej</button>
+                                <button class="button-secondary">{{__('więcej')}}</button>
                             </div>
                         </div>
                         <div class="listing-active-bottom">
@@ -91,7 +91,7 @@
                 </div>
             @endforeach
         </div>
-        <button class="button-secondary">Pokaż mniej trafne rezultaty</button>
+        <button class="button-secondary">{{__('Pokaż mniej trafne rezultaty')}}</button>
     </section>
 </div>
 

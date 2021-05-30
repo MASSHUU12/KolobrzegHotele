@@ -1,11 +1,16 @@
-if (window.location.pathname == "/" || window.location.pathname == "/search") {
+var url = window.location.pathname.split("/");
+url.shift();
+url.shift();
+url = url.join('/');
+
+if (url == "" || url == "search") {
     var image = document.getElementById("main-image");
     var newImage = image.getAttribute("data-src");
 
     image.src = newImage
 }
 
-if (window.location.pathname == "/") {
+if (url == "") {
     gsap.registerPlugin(ScrollTrigger);
     var features = document.querySelectorAll(".feature-both");
 

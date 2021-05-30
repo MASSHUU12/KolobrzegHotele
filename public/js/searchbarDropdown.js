@@ -1,4 +1,9 @@
 function searchbarDropdown() {
+    var url = window.location.pathname.split("/");
+    url.shift();
+    url.shift();
+    url = url.join('/');
+
     if (window.location.pathname == "/" || window.location.pathname == "/search" || window.location.pathname == "/mobileSearch") {
         var filterBoxes = document.querySelectorAll(".searchbar-filter");
         var dropdowns = document.querySelectorAll(".filter-dropdown");
