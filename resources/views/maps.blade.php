@@ -25,7 +25,7 @@
         <div class="sub-map-bottom">
             <p id="address">{{__('Na razie nie wybrano żadnego punktu.')}}</p>
             <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;FORM=MBEDLD">{{__('Wyświetl większą mapę')}}</a>
-            <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;rtp=~pos.54.18165332867221_15.569575309753434____&amp;FORM=MBEDLD">{{__('Pokaż wskazówki dojazdu')}}
+            <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=54.18165332867221~15.569575309753434&amp;sty=r&amp;lvl=13&amp;rtp=~pos.54.18165332867221_15.569575309753434____&amp;FORM=MBEDLD">{{__('Pokaż wskazówki dojazdu')}}</a>
         </div>
         <div class="map-container-bottom">
             @if($param == "dog")

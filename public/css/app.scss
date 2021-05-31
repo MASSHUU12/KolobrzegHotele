@@ -1068,7 +1068,7 @@ p.listing-type {
         font-size: $medium-font;
         color: #00385e;
         cursor: pointer;
-        z-index: 101;
+        z-index: 201;
     }
 
     p {
@@ -1223,8 +1223,8 @@ a:visited {
     display: flex;
     flex-direction: column;
     .button-secondary {
-        width: 50%;
         margin-bottom: 15px;
+        margin-right: 10px;
     }
 }
 
