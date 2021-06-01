@@ -146,5 +146,12 @@
     "zobacz" : "see",
     "Na razie nie wybrano żadnego punktu." : "As of now, no item has been selected.",
     "Inne mapy" : "Other maps",
-    "Ośrodek Wypoczynkowy" : "Holiday Resort"
+    "Ośrodek Wypoczynkowy" : "Holiday Resort",
+    "Na górze strony " : "At the top of the ",
+    "głównej" : "homepage",
+    " znajduje się pole wyszukiwania." : " there is a search box.",
+    "W tym polu znajduje się 6 kategorii, są to: plaże, rowery miejskie, parki, place zabaw, wybiegi dla psów oraz standard." : "There are 6 categories in this field, they are: beaches, city bikes, parks, playgrounds, dog runs and standard.",
+    "Abyśmy byli w stanie znaleźć nocleg dopasowany do Twoich preferencji musisz zaznaczyć w poszczególnych kategoriach jak istotne są one dla Ciebie. Możesz to zrobić klikając na daną kategorię oraz wybrać numer od 1 do 5, gdzie 5 oznacza bardzo istotne a 1 nieistotne lub bez znaczenia abyśmy nie brali danej kategorii pod uwagę." : "In order for us to find accommodation that matches your preferences, you have to mark in each category how important it is for you. You can do this by clicking on a category and choosing a number from 1 to 5, where 5 means very important and 1 means unimportant or not important so we don't take the category into account.",
+    "Gdy już wszystko wybierzesz kliknij \"szukaj\" a my zajmiemy się resztą i przekierujemy Ciebie na stronę wyników." : "Once you have selected everything, click \"search\" and we will do the rest and redirect you to the results page.",
+    "Powodzenia!" : "Good luck!"
 }

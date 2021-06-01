@@ -4,6 +4,8 @@ const cookieButton = document.getElementById("cookie-btn");
 const helpBanner = document.querySelector(".help-banner");
 const helpButton = document.getElementById("help-btn");
 
+const helpContentContainer = document.getElementById("helpContentContainer");
+
 //cookie
 cookieButton.addEventListener("click", () => {
     cookieBanner.classList.remove("active");
@@ -35,3 +37,11 @@ setTimeout(() => {
     }
 }, 2000);
 //
+
+function showHelp() {
+    helpContentContainer.classList.add("active");
+}
+
+function hideHelp() {
+    helpContentContainer.classList.remove("active");
+}
