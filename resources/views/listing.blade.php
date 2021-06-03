@@ -8,7 +8,14 @@
     <div class="single-left">
         <a onclick="history.back()" class="listing-go-back">	&lt; cofnij</a>
         <div class="single-left-top">
-            <h1>{{ preg_replace('/\*{2,}/', '', $results['nazwa_obiektu']).' '.substr_count($results['nazwa_obiektu'], "*") }}</h1>
+                <h1>
+                    {{ preg_replace('/\*{2,}/', '', $results['nazwa_obiektu']) }}
+                </h1>
+                <div class="single-stars">
+                    @for ($i = 0; $i < $results['stars']; $i++)
+                        <span class="iconify yellow-star" data-icon="ant-design:star-filled" data-inline="false"></span>
+                    @endfor
+                </div>
             <div class="single-map">
                 <div id="my-map" x="{{$results['x']}}" y="{{$results['y']}}" style="position:relative;width:700px;height:500px;"></div>
             </div>

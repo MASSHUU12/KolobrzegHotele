@@ -20,6 +20,11 @@
 </head>
 
 <body>
+    <noscript>
+        <div class="noscript">
+            Strona wymaga JavaScript do poprawnego działania.
+        </div>
+    </noscript>
     <header>
         <div class="header-logo"><a href="/">KołobrzegHotele</a></div>
         <div class="header-links">
@@ -102,7 +107,6 @@
             </div>
         </div>
     </footer>
-    <script src="{{ asset('js/accuracyBars.js') }}"></script>
     <script src="{{ asset('js/searchDetails.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
@@ -112,5 +116,4 @@
     <script src="{{ asset('js/homeLoading.js') }}" defer></script>
 
 </body>
-
 </html>

@@ -3,7 +3,7 @@ url.shift();
 url.shift();
 url = url.join('/');
 
-if (url == "" || url == "search") {
+if (url == "" || url == "search" || url == "/" || url == "search/") {
     var image = document.getElementById("main-image");
     var newImage = image.getAttribute("data-src");
 

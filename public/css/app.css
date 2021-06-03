@@ -25,6 +25,14 @@ a {
           text-decoration-color: #606060;
 }
 
+.noscript {
+  z-index: 10000;
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background-color: white;
+}
+
 header {
   z-index: 1000;
   width: 100%;
@@ -299,6 +307,10 @@ html.is-animating .transition-search-container {
 
 .iconify {
   color: #00385e;
+}
+
+.yellow-star {
+  color: #e7d000;
 }
 
 #beach-icon {
@@ -738,7 +750,6 @@ html.is-animating .transition-search-container {
 }
 
 .listing-name div .iconify {
-  color: #e7d000;
   margin-right: -3px;
 }
 
@@ -964,6 +975,16 @@ p.listing-type {
   padding: 30px 30px;
   border-radius: 20px;
   background-color: white;
+}
+
+.single-stars {
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
 }
 
 .single-left-distances {

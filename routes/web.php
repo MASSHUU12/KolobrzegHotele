@@ -38,6 +38,8 @@ Route::get('{lang}/search',[Results::class, 'getResults'])->name('search');
 
 Route::get('{lang}/search/{id}',[Results::class, 'singleResult'])->name('searchID');
 
+Route::get('{lang}/compare',[Results::class, 'compare'])->name('compare');
+
 Route::get('{lang}/about', function ($lang) {
     handleLocale ($lang);
     return view('about');

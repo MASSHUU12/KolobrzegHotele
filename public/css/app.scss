@@ -46,6 +46,14 @@ a {
     text-decoration-color: $light-text;
 }
 
+.noscript {
+    z-index: 10000;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background-color: white;
+}
+
 header {
     z-index: 1000;
     width: 100%;
@@ -258,6 +266,10 @@ html.is-animating .transition-search-container {
 
 .iconify {
     color: $tip-color;
+}
+
+.yellow-star {
+    color: rgb(231, 208, 0);
 }
 
 #beach-icon {
@@ -597,7 +609,6 @@ html.is-animating .transition-search-container {
         margin-top: 10px;
         margin-bottom: -10px;
         .iconify {
-            color: rgb(231, 208, 0);
             margin-right: -3px;
         }
     }
@@ -766,6 +777,14 @@ p.listing-type {
     padding: 30px 30px;
     border-radius: $radius-medium;
     background-color: white;
+}
+
+.single-stars {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    display: flex;
+    gap: 2px;
 }
 
 .single-left-distances {

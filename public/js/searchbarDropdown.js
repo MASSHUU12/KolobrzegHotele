@@ -4,7 +4,7 @@ function searchbarDropdown() {
     url.shift();
     url = url.join('/');
 
-    if (url == "" || url == "search") {
+    if (url == "" || url == "search" || url == "/" || url == "search/") {
         var filterBoxes = document.querySelectorAll(".searchbar-filter");
         var dropdowns = document.querySelectorAll(".filter-dropdown");
         var dropdownActive = 0;

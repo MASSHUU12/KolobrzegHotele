@@ -4,10 +4,13 @@ function searchDetails() {
     url.shift();
     url.shift();
     url = url.join('/');
-    if (url == "search") {
+    if (url == "search" || url == "search/") {
+        //select listing on search page
         var listings = document.querySelectorAll(".search-single-listing-inner");
 
+        //iterate over the listings
         listings.forEach((listing) => {
+            //select all the needed elements
             var button = listing.querySelector(".button-secondary");
             var image = listing.querySelector("img");
             var icons = listing.querySelector(".listing-bottom-icons");
@@ -15,6 +18,7 @@ function searchDetails() {
 
             var bottom = listing.querySelector(".listing-active-bottom");
 
+            //animate when the button is pressed
             button.addEventListener('click', () => {
                 if (listing.classList.contains("active")) {
                     listing.classList.remove("active");
