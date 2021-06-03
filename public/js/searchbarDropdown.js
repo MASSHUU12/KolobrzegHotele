@@ -5,8 +5,8 @@ function searchbarDropdown() {
     url = url.join('/');
 
     if (window.location.pathname == "/pl" || window.location.pathname == "/en" || window.location.pathname == "/de" ||
-    window.location.pathname == "/pl/search" || window.location.pathname == "/en/search" || window.location.pathname == "/de/search" ||
-    window.location.pathname == "/pl/mobileSearch" | window.location.pathname == "/en/mobileSearch" || window.location.pathname == "/de/mobileSearch") {
+    window.location.pathname == "/pl/" || window.location.pathname == "/en/" || window.location.pathname == "/de/" ||
+    window.location.pathname == "/pl/search" || window.location.pathname == "/en/search" || window.location.pathname == "/de/search") {
         var filterBoxes = document.querySelectorAll(".searchbar-filter");
         var dropdowns = document.querySelectorAll(".filter-dropdown");
         var dropdownActive = 0;
