@@ -69,7 +69,18 @@
     <div class="help-banner">
         <span class="iconify" id="help-btn" data-icon="bi:x" data-inline="false"></span>
         <p>{{__('Jesteś tu nowy?')}}<br />{{__('Sprawdź jak to działa.')}}</p>
-        <button class="button-primary">{{__('Pomoc')}}</button>
+        <button class="button-primary" onclick="showHelp()">{{__('Pomoc')}}</button>
+    </div>
+    <div class="help-content-container" id="helpContentContainer">
+        <div class="help-content">
+            <span class="iconify" id="help-btn-content" data-icon="bi:x" data-inline="false" onclick="hideHelp()"></span>
+            <h1>{{__('Jak to działa?')}}</h1>
+            <p>{{__('Na górze strony ')}}<a href="{{url(app()->getLocale()).'/'}}">{{__('głównej')}}</a>{{__(' znajduje się pole wyszukiwania.')}}</p>
+            <p>{{__('W tym polu znajduje się 6 kategorii, są to: plaże, rowery miejskie, parki, place zabaw, wybiegi dla psów oraz standard.')}}</p>
+            <p>{{__('Abyśmy byli w stanie znaleźć nocleg dopasowany do Twoich preferencji musisz zaznaczyć w poszczególnych kategoriach jak istotne są one dla Ciebie. Możesz to zrobić klikając na daną kategorię oraz wybrać numer od 1 do 5, gdzie 5 oznacza bardzo istotne a 1 nieistotne lub bez znaczenia abyśmy nie brali danej kategorii pod uwagę.')}}</p>
+            <p>{{__('Gdy już wszystko wybierzesz kliknij "szukaj" a my zajmiemy się resztą i przekierujemy Ciebie na stronę wyników.')}}</p>
+            <p>{{__('Powodzenia!')}}</p>
+        </div>
     </div>
     <script data-swup-ignore-script src="{{ asset('js/cookieConsent.js') }}"></script>
     <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="25em" height="15em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36">
@@ -84,22 +95,22 @@
         <div class="footer-container">
             <div class="footer-item">
                 <h1>{{__('Przydatne Linki')}}</h1>
-                <p><a href="/">{{__('Strona główna')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/'}}">{{__('Strona główna')}}</a></p>
                 <p><a href="http://www.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Portal UM Kołobrzeg')}}</a></p>
                 <p><a href="http://www.opendata.gis.kolobrzeg.pl/" target="_blank" rel="noreferrer noopener">{{__('Kołobrzeskie Otwarte Dane')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Informacje')}}</h1>
-                <p><a href="/about">{{__('O Nas')}}</a></p>
-                <p><a href="/cookies">{{__('Polityka Cookies')}}</a></p>
-                <p><a href="/privacy">{{__('Polityka Prywatności')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/about'}}">{{__('O Nas')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/cookies'}}">{{__('Polityka Cookies')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/privacy'}}">{{__('Polityka Prywatności')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Pozostałe')}}</h1>
-                <p><a href="/maps?type=bike">{{__('Mapa Stacji Rowerów Miejskich')}}</a></p>
-                <p><a href="/maps?type=recreation">{{__('Mapa Terenów Rekreacyjnych')}}</a></p>
-                <p><a href="/maps?type=playground">{{__('Mapa Placów Zabaw')}}</a></p>
-                <p><a href="/maps?type=dog">{{__('Mapa Wybiegów dla Psów')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=bike'}}">{{__('Mapa Stacji Rowerów Miejskich')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=recreation'}}">{{__('Mapa Terenów Rekreacyjnych')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=playground'}}">{{__('Mapa Placów Zabaw')}}</a></p>
+                <p><a href="{{url(app()->getLocale()).'/maps?type=dog'}}">{{__('Mapa Wybiegów dla Psów')}}</a></p>
             </div>
             <div class="footer-item">
                 <h1>{{__('Kontakt')}}</h1>

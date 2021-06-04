@@ -29,9 +29,11 @@ function searchDetails() {
                     gsap.to(button, {duration: 0.8, y:'0', ease: 'power4'});
                     gsap.to(icons, {duration: 0, opacity: 0});
                     gsap.to(icons, {delay: 0.8, duration: 0.8, opacity: 1, ease: 'slowmo'});
-                    gsap.to(name, {delay: 0, duration: 0, opacity: 0, ease: 'slowmo'});
-                    gsap.to(name, {delay: 0.1, duration: 0.1, x: '0', y: '0', ease: 'slowmo'});
-                    gsap.to(name, {delay: 0.6, duration: 0.4, opacity: 1, ease: 'slowmo'});
+                    if (window.innerWidth > 500) {
+                        gsap.to(name, { delay: 0, duration: 0, opacity: 0, ease: 'slowmo' });
+                        gsap.to(name, { delay: 0.1, duration: 0.1, x: '0', y: '0', ease: 'slowmo' });
+                        gsap.to(name, { delay: 0.6, duration: 0.4, opacity: 1, ease: 'slowmo' });
+                    }
                     button.innerHTML = "więcej";
 
                     bottom.classList.remove("active");
@@ -45,17 +47,18 @@ function searchDetails() {
                     gsap.to(button, {duration: 0.8, y:'165px', ease: 'power4'});
                     gsap.to(icons, {duration: 0, opacity: 0});
                     gsap.to(icons, {delay: 0.8, duration: 0.5, opacity: 1, ease: 'slowmo'});
-                    gsap.from(icons, {delay: 0.8, duration: 0.5, y: '-30px', ease: 'slowmo'});       
-                    gsap.to(name, {delay: 0, duration: 0.1, opacity: 0, ease: 'slowmo'});
-                    gsap.to(name, {delay: 0.1, duration: 0.1, x: '-360px', y: '10px', ease: 'slowmo'});
-                    gsap.to(name, {delay: 0.6, duration: 0.4, opacity: 1, y: '-10px', ease: 'slowmo'});
+                    gsap.from(icons, {delay: 0.8, duration: 0.5, y: '-30px', ease: 'slowmo'});
+                    if (window.innerWidth > 500) {
+                        gsap.to(name, { delay: 0, duration: 0.1, opacity: 0, ease: 'slowmo' });
+                        gsap.to(name, { delay: 0.1, duration: 0.1, x: '-360px', y: '10px', ease: 'slowmo' });
+                        gsap.to(name, { delay: 0.6, duration: 0.4, opacity: 1, y: '-10px', ease: 'slowmo' });
+                    }
                     button.innerHTML = "mniej";
-                    
+
                     setTimeout(() => { bottom.classList.add("active"); }, 500);
                 }
             })
         });
-        
     }
 }
 

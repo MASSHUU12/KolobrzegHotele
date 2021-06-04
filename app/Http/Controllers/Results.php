@@ -248,12 +248,12 @@ class Results extends Controller
 
 
         for ($j=0; $j < count($objects); $j++) { 
-            $locations[$j] = calculateDistance($hotel['x'], $hotel['y'], $objects[$j]['x'], $objects[$j]['y']);
+            $locations[$j] = ceil(calculateDistance($hotel['x'], $hotel['y'], $objects[$j]['x'], $objects[$j]['y'])*0.015);
         }
-        asort($locations);
+        sort($locations);
         $closestLocation = $locations[0];
 
-        return ceil($closestLocation*0.016);
+        return $closestLocation;
     }
 
     //only works for zabytki 

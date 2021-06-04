@@ -59,3 +59,7 @@ Route::get('{lang}/maps', function ($lang) {
     handleLocale ($lang);
     return view('maps');
 })->name('maps');
+
+Route::get('/mobileSearch', function () {
+    return view('mobileSearch');
+});
