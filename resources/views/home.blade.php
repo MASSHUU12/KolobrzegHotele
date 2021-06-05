@@ -44,7 +44,7 @@
     </div>
     <div class="feature-both feature-right">
         <div class="feature-image">
-            <img class="feature-img" src="{{ asset('img/ico_main4.png') }}" />
+            <img class="feature-img" src="{{ asset('img/ico_main4.png') }}" id="ico_main4" />
         </div>
         <div class="feature-text">
             <h1>{{__('Zajrzyj również tutaj')}}</h1>
