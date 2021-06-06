@@ -56,7 +56,7 @@
         <div class="info-long">
             <article>
                 <h3>{{__('W jaki sposób wykorzystujemy pliki "cookies"?')}}</h3>
-                <p>{{__('Pliki "cookies" używane są przez nas do przechowywania informacji o tym jakie oferty użytkownik zapisał jako "ulubione" (oraz do późniejszego ich wyświetlenia) oraz o tym które powiadomienia zostały już przez użytkownika zamknięte np. powiadomienie o cookies, te informacje są przechowywane lokalnie na komputerze użytkownika i nie wykorzystujemy ich w żaden inny sposób, mają służyć tylko i wyłącznie wygodzie użytkownika.')}}</p>
+                <p>{{__('Pliki "cookies" używane są przez nas do przechowywania informacji o tym które powiadomienia zostały już przez użytkownika zamknięte np. powiadomienie o cookies, te informacje są przechowywane lokalnie na komputerze użytkownika i nie wykorzystujemy ich w żaden nieodpowiedni sposób, mają służyć tylko i wyłącznie wygodzie użytkownika.')}}</p>
             </article>
             <article>
                 <h3>{{__('Jakich plików "cookies" używamy?')}}</h3>

@@ -1553,42 +1553,6 @@ footer p {
   margin-bottom: 5px;
 }
 
-.footer-top-icons {
-  position: relative;
-}
-
-.footer-wave,
-.footer-wave-2,
-.footer-wave-3,
-.footer-sun {
-  position: absolute;
-  left: -5%;
-  bottom: -3em;
-}
-
-.footer-wave-2,
-.footer-wave-3 {
-  width: 23em;
-  height: 13em;
-  left: -3%;
-  bottom: -15em;
-  color: #202b4e;
-}
-
-.footer-wave-3 {
-  width: 20em;
-  height: 13em;
-  left: 80%;
-  bottom: -13em;
-}
-
-.footer-sun {
-  width: 200px;
-  height: 200px;
-  left: 80%;
-  bottom: 15em;
-}
-
 .footer-container {
   max-width: 100%;
   display: -webkit-box;
@@ -1924,8 +1888,16 @@ a:visited {
     height: -moz-fit-content;
     height: fit-content;
     width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .feature-image {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .feature-image #ico_main4 {
     display: none;
   }
   .feature-text {
@@ -1935,8 +1907,15 @@ a:visited {
         -ms-flex-direction: none;
             flex-direction: none;
   }
+  .feature-text p {
+    font-size: 16px;
+  }
   .feature-right .feature-text {
     padding: 15px 30px;
+  }
+  .feature-right .feature-text p a {
+    text-decoration: none;
+    font-weight: 600;
   }
   .search-results-container {
     -webkit-box-orient: horizontal;
@@ -2196,13 +2175,7 @@ a:visited {
     -o-border-radius: 0;
     padding-top: 0;
   }
-  .footer-wave,
-  .footer-wave-2,
-  .footer-wave-3,
-  .footer-sun,
-  .footer-cloud {
-    display: none;
-  }
+
   .footer-container {
     -ms-flex-line-pack: center;
         align-content: center;
@@ -2213,6 +2186,46 @@ a:visited {
   .footer-item {
     width: 50%;
     padding: 25px;
+  }
+}
+
+@media all and (max-width: 1500px) and (min-width: 501px) {
+  .search-results-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .search-results-container-inner {
+    width: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .info-page-inner {
+    width: 100%;
+  }
+  .sub-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .help-banner {
+    bottom: 70%;
+  }
+  .help-banner.active {
+    left: 100%;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+  .cookie-banner {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+    padding: 30px;
   }
 }
 /*# sourceMappingURL=app.css.map */

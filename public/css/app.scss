@@ -1211,42 +1211,6 @@ footer {
     }
 }
 
-.footer-top-icons {
-    position: relative;
-}
-
-.footer-wave,
-.footer-wave-2,
-.footer-wave-3,
-.footer-sun {
-    position: absolute;
-    left: -5%;
-    bottom: -3em;
-}
-
-.footer-wave-2,
-.footer-wave-3 {
-    width: 23em;
-    height: 13em;
-    left: -3%;
-    bottom: -15em;
-    color: #202b4e;
-}
-
-.footer-wave-3 {
-    width: 20em;
-    height: 13em;
-    left: 80%;
-    bottom: -13em;
-}
-
-.footer-sun {
-    width: 200px;
-    height: 200px;
-    left: 80%;
-    bottom: 15em;
-}
-
 .footer-container {
     max-width: 100%;
     display: flex;
@@ -1507,19 +1471,38 @@ a:visited {
     .feature-both {
         height: fit-content;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .feature-image {
-        display: none;
+        width: 100%;
+        height: fit-content;
+        #ico_main4 {
+            display: none;
+        }
     }
 
     .feature-text {
         width: 100%;
         flex-direction: none;
+        p {
+            font-size: $mediumsmall-font;
+        }
     }
 
     .feature-right .feature-text {
         padding: 15px 30px;
+    }
+
+    .feature-right {
+        .feature-text {
+            p {
+                a {
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
     }
 
     .search-results-container {
@@ -1791,14 +1774,6 @@ a:visited {
         padding-top: 0;
     }
 
-    .footer-wave,
-    .footer-wave-2,
-    .footer-wave-3,
-    .footer-sun,
-    .footer-cloud {
-        display: none;
-    }
-
     .footer-container {
         align-content: center;
         flex-wrap: wrap;
@@ -1808,5 +1783,45 @@ a:visited {
     .footer-item {
         width: 50%;
         padding: 25px;
+    }
+}
+
+@media all and (max-width: 1500px) and (min-width: 501px) {
+    .search-results-container {
+        flex-wrap: wrap;
+    }
+
+    .search-results-container-inner {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .info-page-inner {
+        width: 100%;
+    }
+
+    .sub-container {
+        flex-wrap: wrap;
+    }
+
+    .help-banner {
+        bottom: 70%;
+    }
+
+    .help-banner.active {
+        left: 100%;
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+    }
+
+    .cookie-banner {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 30px;
     }
 }

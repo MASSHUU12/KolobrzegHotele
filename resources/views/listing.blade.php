@@ -38,7 +38,7 @@
                             <div class="div-1">{{__('pokaż')}}</div>
                             <div class="div-2">{{__('na mapie')}}</div>
                         </a>
-                        <a href="/maps?type=bike" class="btn btn-mini">
+                        <a href="{{url(app()->getLocale()).'/maps?type=bike'}}" class="btn btn-mini">
                             <div class="div-1">{{__('wszystkie')}}</div>
                             <div class="div-2">{{__('stacje')}}</div>
                         </a>
@@ -55,7 +55,7 @@
                             <div class="div-1">{{__('pokaż')}}</div>
                             <div class="div-2">{{__('na mapie')}}</div>
                         </a>
-                        <a href="/maps?type=recreation" class="btn btn-mini">
+                        <a href="{{url(app()->getLocale()).'/maps?type=recreation'}}" class="btn btn-mini">
                             <div class="div-1">{{__('wszystkie')}}</div>
                             <div class="div-2">{{__('parki')}}</div>
                         </a>
@@ -72,7 +72,7 @@
                             <div class="div-1">{{__('pokaż')}}</div>
                             <div class="div-2">{{__('na mapie')}}</div>
                         </a>
-                        <a href="/maps?type=playground" class="btn btn-mini">
+                        <a href="{{url(app()->getLocale()).'/maps?type=playground'}}" class="btn btn-mini">
                             <div class="div-1">{{__('wszystkie')}}</div>
                             <div class="div-2">{{__('place zabaw')}}</div>
                         </a>
@@ -89,7 +89,7 @@
                             <div class="div-1">{{__('pokaż')}}</div>
                             <div class="div-2">{{__('na mapie')}}</div>
                         </a>
-                        <a href="/maps?type=dog" class="btn btn-mini">
+                        <a href="{{url(app()->getLocale()).'/maps?type=dog'}}" class="btn btn-mini">
                             <div class="div-1">{{__('wszystkie')}}</div>
                             <div class="div-2">{{__('wybiegi')}}</div>
                         </a>
