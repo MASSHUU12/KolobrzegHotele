@@ -6,7 +6,7 @@
 
 <section class="single-whole">
     <div class="single-left">
-        <a onclick="history.back()" class="listing-go-back">	&lt; cofnij</a>
+        <a onclick="history.back()" class="listing-go-back">	&lt; {{__('cofnij')}}</a>
         <div class="single-left-top">
                 <h1>
                     {{ preg_replace('/\*{2,}/', '', $results['nazwa_obiektu']) }}
@@ -105,7 +105,7 @@
                         <h2>{{ $landmarks[$i]['nazwa'] }}</h2>
                         <p>{{ $landmarks[$i]['nazwa_alternatywna'] }}</p>
                     </div>
-                    <p>tylko {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} minut {{__('od tego noclegu')}}</p>
+                    <p>{{__('tylko')}} {{ ceil(calculateDistance($results['x'], $results['y'], $landmarks[$i]['y'], $landmarks[$i]['x'])*0.015) }} {{__('minut od tego noclegu')}}</p>
                     <a onclick="GetMap({{ $landmarks[$i]['y'] }}, {{ $landmarks[$i]['x'] }}, 'zabytek');" class="btn btn-bottom-element">
                         <div class="div-1">{{__('pokaż')}}</div>
                         <div class="div-2">{{__('na mapie')}}</div>

@@ -7,7 +7,7 @@ url = url.join('/');
 //assign the color depending on the url
 var color = '#00385E';
 
-if (url == "" || url == "search" || url == "/" || url == "search/") {
+if (url == "" || url == "search" || url == "/" || url == "search/" || url == "searchquery" || url == "searchquery/") {
     color = 'transparent';
 }
 
@@ -25,3 +25,20 @@ document.addEventListener('scroll', () => {
         gsap.to('header', {duration: 0.3, backgroundColor: color, padding: '30px 150px 30px 120px', ease: 'slowmo'});
     }
 });
+
+//header language flags
+var urlLang = document.location.href.split('/');
+urlLang = urlLang[3];
+var lang = document.getElementById('language-main-flag');
+if (urlLang == 'en') {
+    lang.src = lang.getAttribute('data-en');
+}
+else if (urlLang == 'de') {
+    lang.src = lang.getAttribute('data-de');
+}
+else {
+    lang.src = lang.getAttribute('data-pl');
+}
+
+
+

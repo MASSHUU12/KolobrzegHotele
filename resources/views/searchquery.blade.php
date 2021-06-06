@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Porównaj moclegi')
+@section('title', 'Szukaj noclegu')
 
 @section('content')
 
@@ -15,7 +15,8 @@
     </section>
 
     <section class="search-results-container">
-        {{-- <div class="search-results-container-inner">
+        @if ($results != null)
+        <div class="search-results-container-inner">
             @foreach ($results as $item)
             @php
                 $name = substr($item['nazwa_obiektu'], 0, 30);
@@ -54,6 +55,9 @@
                                     @if ( array_key_exists('greenery', $item['features']))
                                         <div class="listing-feature feature-greenery"><p>{{__('blisko zieleni')}}</p></div>
                                     @endif
+                                    @if ( array_key_exists('lighthouse', $item['features']))
+                                        <div class="listing-feature feature-lighthouse"><p>{{__('blisko latarni morskiej')}}</p></div>
+                                    @endif
                                 @endif
                             </div>
                             <div class="listing-bottom">
@@ -68,15 +72,15 @@
                                     </div>
                                     <div class="listing-bottom-icons-dropdown">
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ $item['from_park'] }} min {{__('do parku')}}</p>
+                                            <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
+                                            <p>{{ $item['from_park'] }} min {{__('do terenu rekreacyjnego')}}</p>
                                         </div>
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                            <span class="iconify" data-icon="map:playground" data-inline="false"></span>
                                             <p>{{ $item['from_playground'] }} min {{__('do placu zabaw')}}</p>
                                         </div>
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                            <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
                                             <p>{{ $item['from_dogpark'] }} min {{__('do wybiegu dla psów')}}</p>
                                         </div>
                                     </div>
@@ -91,11 +95,17 @@
                 </div>
             @endforeach
         </div>
-        <button class="button-secondary">{{__('Pokaż mniej trafne rezultaty')}}</button> --}}
+        <button class="button-secondary">{{__('Pokaż mniej trafne rezultaty')}}</button>      
+        @else
+        <div class="empty-box">
+            <h2>brak rezultatów</h2>
+            <img src="{{ asset('img/no-results.svg') }}">
+        </div>
+        @endif
     </section>
 </div>
 
-<script src="{{ asset('js/compare.js') }}"></script>
+<script src="{{ asset('js/rangeSlider.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 

@@ -18,7 +18,7 @@ class Results extends Controller
 
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20');
         if ($response->successful() == 0) {
-            return abort(404);
+            return abort(500);
         }
         $responseString = $response;
         $result = $responseString['result']['records'];
@@ -74,6 +74,7 @@ class Results extends Controller
             if ($result[$i]['stars'] > 3) $result[$i]['features']['high_standard'] = true;
             if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.181981, 15.570071))*0.015 < 8 || ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.175182, 15.559306))*0.015 < 8) $result[$i]['features']['train'] = true;
             if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.179897, 15.569713))*0.015 < 10) $result[$i]['features']['city_center'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186329, 15.554450))*0.015 < 10) $result[$i]['features']['lighthouse'] = true;
             if ($nearestPark < 5) $result[$i]['features']['greenery'] = true;
         }
 
@@ -97,7 +98,7 @@ class Results extends Controller
 
         $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20WHERE%20_id%20=%20%27'.$id.'%27');
         if ($response->successful() == 0) {
-            return abort(404);
+            return abort(500);
         }
         $arrayResponse = json_decode($response->body(), true);
 
@@ -140,14 +141,14 @@ class Results extends Controller
 
         }
         else {
-            return abort(404);
+            return view('404');
         }
 
         
         return view('listing', ['results'=>$result, 'landmarks'=>$sortedLandmarks, 'otherHotels'=>$sortedOtherHotels]);
     }
 
-    function compare(Request $request, $lang) {
+    function searchquery(Request $request, $lang) {
         if ($lang == 'pl' || $lang == 'en' || $lang == 'de') {
             \App::setlocale($lang);
         }
@@ -155,48 +156,62 @@ class Results extends Controller
             \App::setlocale('pl');
         }
 
-        $query = $request->q;
+        $query = strtoupper($request->q);
 
-        $hotels = explode(',', $query);
+        $foundMatches = array();
 
-        $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20');
-        if ($response->successful() == 0) {
-            return abort(404);
-        }
-        $arrayResponse = json_decode($response->body(), true);
+        $response = Http::get('http://www.opendata.gis.kolobrzeg.pl/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d38fc37b-a515-46a8-9905-8f7bdbd7b2c3%22%20WHERE%20upper%28nazwa_obiektu%29%20LIKE%20%27%'.$query.'%%27');
+            if ($response->successful() == 0) {
+                return abort(500);
+            }
+            $arrayResponse = json_decode($response->body(), true);
 
-            //check if the given id is valid
-        if (array_key_exists('result', $arrayResponse) == true && array_key_exists('records', $arrayResponse['result']) && array_key_exists(0, $arrayResponse['result']['records'])) {
-            $result = $arrayResponse['result']['records'];
-        }
-
-            // //get the neartest object
-            // $result['from_sea'] = ceil(calculateDistance($result['x'], $result['y'], 54.186413, $result['y'])*0.016);
-
-            // $nearestBike = $this->sortObjectsByDistance($result, $bike);
-            // $result['from_bike'] = $nearestBike[0];
-
-            // $nearestPark = $this->sortObjectsByDistance($result, $park);
-            // $result['from_park'] = $nearestPark[0];
-
-            // $nearestPlayground = $this->sortObjectsByDistance($result, $playground);
-            // $result['from_playground'] = $nearestPlayground[0];
-
-            // $nearestDogpark = $this->sortObjectsByDistance($result, $dogPark);
-            // $result['from_dogpark'] = $nearestDogpark[0];
-
-            // //get the landmarks to show
-            // $landmarks = $this->getHttp('landmarks');
-            // $sortedLandmarks = $this->sortObjectsByDistanceZ($result, $landmarks);
-
-            // $otherHotels = $this->getHttp('allHotels');
-            // $sortedOtherHotels = $this->sortObjectsByDistance($result, $otherHotels);
-
-            // //count the stars
-            // $result['stars'] = substr_count($result['nazwa_obiektu'], "*");
-
+                //check if the given id is valid
+            if (array_key_exists('result', $arrayResponse) == true && array_key_exists('records', $arrayResponse['result']) && array_key_exists(0, $arrayResponse['result']['records'])) {
+                $result = $arrayResponse['result']['records'];
+            }
+            else {
+                return view('searchquery', ['results'=>null, 'query'=>$request->q]);
+            }
         
-        return view('compare', ['results'=>json_encode($result)]);
+        //gets the arrays with information about objects        
+        $bike = $this->getHttp('bike');
+        $playground = $this->getHttp('playground');
+        $park = $this->getHttp('park');
+        $dogPark = $this->getHttp('dogpark');
+
+        //gets the arrays with information about objects for each hotel
+        for ($i=0; $i < count($result); $i++) { 
+            $result[$i]['from_sea'] = ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186413, $result[$i]['y'])*0.016);
+
+            $nearestBike = $this->nearestObject($result[$i], $bike);
+            $result[$i]['from_bike'] = $nearestBike;
+
+            $nearestPlayground = $this->nearestObject($result[$i], $playground);
+            $result[$i]['from_playground'] = $nearestPlayground;
+
+            $nearestPark = $this->nearestObject($result[$i], $park);
+            $result[$i]['from_park'] = $nearestPark;
+
+            $nearestDogpark = $this->nearestObject($result[$i], $dogPark);
+            $result[$i]['from_dogpark'] = $nearestDogpark;
+
+            //extract stars from the name
+            $result[$i]['stars'] = substr_count($result[$i]['nazwa_obiektu'], "*");
+            $result[$i]['nazwa_obiektu'] = preg_replace('/\*{2,}/', '', $result[$i]['nazwa_obiektu']);
+
+            //assign the features
+            if ($result[$i]['stars'] > 3) $result[$i]['features']['high_standard'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.181981, 15.570071))*0.015 < 8 || ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.175182, 15.559306))*0.015 < 8) $result[$i]['features']['train'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.179897, 15.569713))*0.015 < 10) $result[$i]['features']['city_center'] = true;
+            if (ceil(calculateDistance($result[$i]['x'], $result[$i]['y'], 54.186329, 15.554450))*0.015 < 10) $result[$i]['features']['lighthouse'] = true;
+            if ($nearestPark < 5) $result[$i]['features']['greenery'] = true;
+        }
+        
+        //get only a certain number of hotels
+        $finalResult = array_slice($result, 0, 8, true);
+
+        return view('searchquery', ['results'=>$finalResult, 'query'=>$request->q]);
     }
 
     //makes a http request and returns an array with objects

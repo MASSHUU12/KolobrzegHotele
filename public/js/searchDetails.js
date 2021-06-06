@@ -4,7 +4,7 @@ function searchDetails() {
     url.shift();
     url.shift();
     url = url.join('/');
-    if (url == "search" || url == "search/") {
+    if (url == "search" || url == "search/" || url == "searchquery" || url == "searchquery/") {
         //select listing on search page
         var listings = document.querySelectorAll(".search-single-listing-inner");
 

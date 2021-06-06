@@ -54,6 +54,9 @@
                                     @if ( array_key_exists('greenery', $item['features']))
                                         <div class="listing-feature feature-greenery"><p>{{__('blisko zieleni')}}</p></div>
                                     @endif
+                                    @if ( array_key_exists('lighthouse', $item['features']))
+                                        <div class="listing-feature feature-lighthouse"><p>{{__('blisko latarni morskiej')}}</p></div>
+                                    @endif
                                 @endif
                             </div>
                             <div class="listing-bottom">
@@ -68,15 +71,15 @@
                                     </div>
                                     <div class="listing-bottom-icons-dropdown">
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
-                                            <p>{{ $item['from_park'] }} min {{__('do parku')}}</p>
+                                            <span class="iconify" data-icon="maki:park-11" data-inline="false"></span>
+                                            <p>{{ $item['from_park'] }} min {{__('do terenu rekreacyjnego')}}</p>
                                         </div>
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                            <span class="iconify" data-icon="map:playground" data-inline="false"></span>
                                             <p>{{ $item['from_playground'] }} min {{__('do placu zabaw')}}</p>
                                         </div>
                                         <div>
-                                            <span class="iconify" data-icon="fa-solid:umbrella-beach" data-inline="false" id="beach-icon"></span>
+                                            <span class="iconify" data-icon="fluent:animal-dog-20-filled" data-inline="false"></span>
                                             <p>{{ $item['from_dogpark'] }} min {{__('do wybiegu dla psów')}}</p>
                                         </div>
                                     </div>
