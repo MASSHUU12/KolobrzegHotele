@@ -1,5 +1,10 @@
 function searchbarDropdown() {
-    if (window.location.pathname == "/" || window.location.pathname == "/search") {
+    var url = window.location.pathname.split("/");
+    url.shift();
+    url.shift();
+    url = url.join('/');
+
+    if (url == "" || url == "search" || url == "/" || url == "search/") {
         var filterBoxes = document.querySelectorAll(".searchbar-filter");
         var dropdowns = document.querySelectorAll(".filter-dropdown");
         var dropdownActive = 0;
@@ -9,6 +14,12 @@ function searchbarDropdown() {
         }
 
         filterBoxes.forEach((filterBox) => {
+            var inputTextValue = filterBox.querySelector(".range-value");
+            var valueToChange = filterBox.querySelectorAll(".filter-end-value");
+            if (inputTextValue.innerHTML != 'bez znaczenia') {
+                valueToChange[0].innerHTML = inputTextValue.innerHTML;
+            }
+
             filterBox.addEventListener('click', () => {
             var dropdown = filterBox.querySelectorAll(".filter-dropdown");
             var filterIcon = filterBox.querySelectorAll(".filter-icon");
@@ -25,21 +36,14 @@ function searchbarDropdown() {
                 dropdown[0].classList.add("trigger-flex");
                 var options = dropdown[0].querySelectorAll(".filter-dropdown-element");
                 var hiddenInput = filterBox.querySelectorAll(".search-input");
-                var valueToChange = filterBox.querySelectorAll(".filter-end-value");
+                
+                
 
                 gsap.from(dropdown[0], {duration: 0.5, opacity: '0.3', y: '-10px', ease: 'expo'})
                 gsap.to(filterIcon[0], {duration: 0.5, y: '-9px', x: '5px', transform: 'scale(0.7)', ease: 'slowmo'})
                 dropdownActive = 1;
-                var delay = 0.2;
-                options.forEach((option) => {
-                    gsap.from(option, {delay: delay, duration: 0.4, opacity: '0', x: '-5px', ease: 'slowmo'})
-                    delay = delay+0.1;
-                    var optionValue = option.querySelectorAll("p");
-                    option.addEventListener('click', () => {
-                        var optionText = optionValue[0].innerHTML;
-                        hiddenInput[0].value = optionText;
-                        valueToChange[0].innerHTML = optionText;
-                    });
+                hiddenInput[0].addEventListener('input', () => {
+                    valueToChange[0].innerHTML = inputTextValue.innerHTML;
                 });
             }
             });

@@ -1,11 +1,16 @@
-if (window.location.pathname == "/" || window.location.pathname == "/search") {
+var url = window.location.pathname.split("/");
+url.shift();
+url.shift();
+url = url.join('/');
+
+if (url == "" || url == "search" || url == "/" || url == "search/" || url == "searchquery" || url == "searchquery/") {
     var image = document.getElementById("main-image");
     var newImage = image.getAttribute("data-src");
 
     image.src = newImage
 }
 
-if (window.location.pathname == "/") {
+if (url == "") {
     gsap.registerPlugin(ScrollTrigger);
     var features = document.querySelectorAll(".feature-both");
 
@@ -17,7 +22,7 @@ if (window.location.pathname == "/") {
         gsap.from(feature, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'center bottom'
             },
             duration: 1,
@@ -28,7 +33,7 @@ if (window.location.pathname == "/") {
         gsap.from(img, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'bottom bottom'
             },
             duration: 1,
@@ -38,7 +43,7 @@ if (window.location.pathname == "/") {
         gsap.from(text, {
             scrollTrigger: {
                 trigger: text,
-                toggleActions: 'play complete none reset',
+                toggleActions: 'play complete none reverse',
                 start: 'bottom bottom'
             },
             duration: 1,

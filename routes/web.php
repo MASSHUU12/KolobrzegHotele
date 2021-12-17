@@ -14,26 +14,53 @@ use App\Http\Controllers\Results;
 |
 */
 
-Route::get('/', function () {
+
+//sets the right language(temporary, will change if any time is left)
+function handleLocale ($lang) {
+    if ($lang == 'pl' || $lang == 'en' || $lang == 'de') {
+        App::setlocale($lang);
+    }
+    else {
+        App::setlocale('pl');
+    }
+}
+
+//redirects to pl if no language given
+Route::redirect('/', '/pl');
+
+//routes for all pages
+Route::get('{lang}/', function ($lang) {
+    handleLocale ($lang);
     return view('home');
-});
+})->name('home');
 
-Route::get('/search',[Results::class, 'getResults']);
+Route::get('{lang}/search',[Results::class, 'getResults'])->name('search');
 
-Route::get('/search/{id}',[Results::class, 'singleResult']);
+Route::get('{lang}/search/{id}',[Results::class, 'singleResult'])->name('searchID');
 
-Route::get('/about', function () {
+Route::get('{lang}/searchquery',[Results::class, 'searchquery'])->name('searchquery');
+
+Route::get('{lang}/about', function ($lang) {
+    handleLocale ($lang);
     return view('about');
-});
+})->name('about');
 
-Route::get('/cookies', function () {
+Route::get('{lang}/cookies', function ($lang) {
+    handleLocale ($lang);
     return view('cookies');
-});
+})->name('cookies');
 
-Route::get('/privacy', function () {
+Route::get('{lang}/privacy', function ($lang) {
+    handleLocale ($lang);
     return view('privacy');
-});
+})->name('privacy');
 
-Route::get('/maps', function () {
+Route::get('{lang}/maps', function ($lang) {
+    handleLocale ($lang);
     return view('maps');
-});
+})->name('maps');
+
+Route::get('{lang}/{url}', function ($lang) {
+    handleLocale ($lang);
+    return view('404');
+})->name('404');

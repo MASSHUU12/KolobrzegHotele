@@ -1,3 +1,4 @@
+//initiate swup
 const swup = new Swup({
     plugins: [
         new SwupScriptsPlugin({
@@ -10,8 +11,12 @@ const swup = new Swup({
     ] 
   });
 
+  //do things on every transition
   swup.on('willReplaceContent', () => {
-    accuracyBars();
-    searchDetails();
-    searchbarDropdown();
+    //scroll to top on every page change
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    //reload scripts that otherwise don't work
+    searchDetails(url);
+    searchbarDropdown(url);
   });

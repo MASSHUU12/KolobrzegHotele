@@ -10,11 +10,12 @@
             <img src="{{ asset('img/port-low-res.png') }}" data-src="{{ asset('img/port.png') }}" id="main-image">
         </div>
         <div class="search-container">
-            @include('searchbar')
+            @include('searchfield')
         </div>
     </section>
 
     <section class="search-results-container">
+        @if ($results != null)
         <div class="search-results-container-inner">
             @foreach ($results as $item)
             @php
@@ -94,10 +95,17 @@
                 </div>
             @endforeach
         </div>
-        <button class="button-secondary">{{__('Pokaż mniej trafne rezultaty')}}</button>
+        <button class="button-secondary">{{__('Pokaż mniej trafne rezultaty')}}</button>      
+        @else
+        <div class="empty-box">
+            <h2>brak rezultatów</h2>
+            <img src="{{ asset('img/no-results.svg') }}">
+        </div>
+        @endif
     </section>
 </div>
 
+<script src="{{ asset('js/rangeSlider.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
