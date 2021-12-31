@@ -1,13 +1,19 @@
 $(() => {
-    if (getCookie("cookieConsentRead") == "true") $("#c-window").remove();
+    if (getCookie("helpBannerDisplayed") == "true") $("#h-window").remove();
 });
 
-$("#c-btn").click(() => {
-    document.cookie = "cookieConsentRead=true"; //creation of a cookie
-    $("#c-window").fadeOut(200, () => {
-        $("#c-window").remove();
+$("#h-btn").click(() => {
+    document.cookie = "helpBannerDisplayed=true"; //creation of a cookie
+    $("#h-window").fadeOut(200, () => {
+        $("#h-window").remove();
     });
 });
+
+function help(show) {
+    show
+        ? $("#h-container").css("display", "flex")
+        : $("#h-container").css("display", "none");
+}
 
 // A function to search for a cookie and return its contents
 function getCookie(cname) {
