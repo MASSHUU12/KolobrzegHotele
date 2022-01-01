@@ -23,6 +23,8 @@
                     <div class="listing-image">
                         <img src="{{"https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/".$item['x']."%2C".$item['y']."/15?mapSize=400,300&format=png&key=ArnGjMKK1i1pqfVUfvKGlq33gKNMEgcV5wFmJ3L2QLm65AgaekhL44ZlGvAktUQ_"
 
+
+
                         }}" alt="Bing Map" class="search-img" >
                         <span
                             class="iconify map-pin"
@@ -159,11 +161,6 @@
     </section>
 </div>
 
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-    integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
-    crossorigin="anonymous"
-></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-
+@endsection @section('scripts')
+<script src="{{ asset('js/searchDetails.js') }}"></script>
 @endsection

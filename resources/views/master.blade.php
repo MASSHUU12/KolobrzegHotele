@@ -15,10 +15,6 @@
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-        <script src="{{ asset('js/swup.js') }}" defer></script>
-        <script src="{{ asset('js/swupScriptsPlugin.min.js') }}" defer></script>
-        <script src="{{ asset('js/swupFormsPlugin.min.js') }}" defer></script>
-        <script src="{{ asset('js/swupTransitions.js') }}" defer></script>
     </head>
 
     <body>
@@ -101,7 +97,7 @@
             <script src="{{ asset('js/headerAnim.js') }}"></script>
         </header>
 
-        <main id="swup" class="transition-main">@yield('content')</main>
+        <main class="transition-main">@yield('content')</main>
 
         {{-- cookie banner --}}
         <div class="cookie-banner" id="c-window">
@@ -326,15 +322,10 @@
             crossorigin="anonymous"
         ></script>
 
-        <script
-            data-swup-ignore-script
-            src="{{ asset('js/cookieConsent.js') }}"
-        ></script>
-        <script
-            data-swup-ignore-script
-            src="{{ asset('js/helpBanner.js') }}"
-        ></script>
-        <script src="{{ asset('js/searchDetails.js') }}"></script>
+        @yield('scripts')
+
+        <script src="{{ asset('js/cookieConsent.js') }}"></script>
+        <script src="{{ asset('js/helpBanner.js') }}"></script>
         <script src="{{ asset('js/searchbarDropdown.js') }}"></script>
         <script src="{{ asset('js/homeLoading.js') }}" defer></script>
     </body>

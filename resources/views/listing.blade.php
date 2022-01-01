@@ -240,7 +240,7 @@
             <h1>{{ __("Inne noclegi w pobliżu") }}</h1>
             @for ($i = 1; $i < 4; $i++)
             <div class="single-nearby">
-                <a href="{{ /search/.$otherHotels[$i]['_id'] }}"
+                <a href="{{ '/search/'.$otherHotels[$i]['_id'] }}"
                     ><h2>{{ $otherHotels[$i]["nazwa_obiektu"] }}</h2></a
                 >
                 <p>

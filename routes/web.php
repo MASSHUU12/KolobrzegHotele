@@ -32,7 +32,7 @@ Route::get('/search', [Results::class, 'getResults'])->name('search');
 
 Route::get('/search/{id}', [Results::class, 'singleResult'])->name('searchID');
 
-Route::get('/searchquery', [Results::class, 'searchquery'])->name('searchquery');
+Route::get('/searchquery', [Search::class, 'searchquery'])->name('searchquery');
 
 Route::get('/about', function () {
     return view('about');

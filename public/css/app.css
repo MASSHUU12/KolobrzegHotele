@@ -1154,6 +1154,7 @@ p.listing-type {
   right: 0;
   padding: 20px 32px;
   border-radius: 20px 0 0 20px;
+  z-index: 201;
   -webkit-animation: 1s ease-out 1s 1 helpBannerAnim forwards;
           animation: 1s ease-out 1s 1 helpBannerAnim forwards;
 }

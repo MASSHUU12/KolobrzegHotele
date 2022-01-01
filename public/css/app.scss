@@ -1133,6 +1133,7 @@ p.listing-type {
     right: 0;
     padding: 20px 32px;
     border-radius: $radius-medium 0 0 $radius-medium;
+    z-index: 201;
 
     svg {
         font-size: $medium-font;
