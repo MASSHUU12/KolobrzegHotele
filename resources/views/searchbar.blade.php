@@ -7,14 +7,14 @@
                 <p class="filter-value filter-end-value">{{__('bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">bardzo ważne</p>
+                <p class="slider-p">{{__('bardzo ważne')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="sea">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">bez znaczenia</p>
+                <p class="slider-p">{{__('bez znaczenia')}}</p>
             </div>
         </div>
         <div class="searchbar-filter">
@@ -24,14 +24,14 @@
                 <p class="filter-value filter-end-value">{{__('bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">bardzo ważne</p>
+                <p class="slider-p">{{__('bardzo ważne')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="bike">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">bez znaczenia</p>
+                <p class="slider-p">{{__('bez znaczenia')}}</p>
             </div>
         </div>
         <div class="searchbar-filter">
@@ -41,14 +41,14 @@
                 <p class="filter-value filter-end-value">{{__('bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">bardzo ważne</p>
+                <p class="slider-p">{{__('bardzo ważne')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="park">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">bez znaczenia</p>
+                <p class="slider-p">{{__('bez znaczenia')}}</p>
             </div>
         </div>
         <div class="searchbar-filter">
@@ -58,14 +58,14 @@
                 <p class="filter-value filter-end-value">{{__('bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">bardzo ważne</p>
+                <p class="slider-p">{{__('bardzo ważne')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="playground">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">bez znaczenia</p>
+                <p class="slider-p">{{__('bez znaczenia')}}</p>
             </div>
         </div>
         <div class="searchbar-filter">
@@ -75,14 +75,14 @@
                 <p class="filter-value filter-end-value">{{__('bez znaczenia')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">bardzo ważne</p>
+                <p class="slider-p">{{__('bardzo ważne')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="dogpark">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">bez znaczenia</p>
+                <p class="slider-p">{{__('bez znaczenia')}}</p>
             </div>
         </div>
         <div class="searchbar-filter searchbar-standard">
@@ -92,14 +92,14 @@
                 <p class="filter-value">{{__('dowolny')}}</p>
             </div>
             <div class="filter-dropdown">
-                <p class="slider-p">wysoki</p>
+                <p class="slider-p">{{__('wysoki')}}</p>
                 <div class="outer-slider">
                     <div class="range-slider">
                         <input class="input-range search-input" orient="vertical" type="range" step="1" value="0" min="1" max="50" name="standard">
-                    </div> 
+                    </div>
                     <span class="range-value"></span>
                 </div>
-                <p class="slider-p">niski</p>
+                <p class="slider-p">{{__('niski')}}</p>
             </div>
         </div>
         <button class="searchbar-button button-primary"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" id="search-iconify"></span>&nbsp;&nbsp;&nbsp;&nbsp;{{__('szukaj')}}</button>

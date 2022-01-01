@@ -84,6 +84,7 @@ header .header-links > ul {
 
 .header-language {
     position: relative;
+
     > div {
         position: absolute;
         top: 0;
@@ -96,6 +97,7 @@ header .header-links > ul {
         list-style: none;
         background-color: white;
         border-radius: $radius-medium;
+
         a {
             padding: 10px 20px;
             border-radius: $radius-medium;
@@ -107,6 +109,7 @@ header .header-links > ul {
                 gap: 10px;
             }
         }
+
         a:hover {
             background-color: $light-gray;
         }
@@ -1060,12 +1063,22 @@ p.listing-type {
     gap: 0;
 }
 
+/* cookie consent */
+@keyframes cookieConsentAnim {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-150%);
+    }
+}
+
 .cookie-banner {
     position: fixed;
     display: flex;
     justify-content: center;
     gap: 70px;
-    bottom: -100%;
+    bottom: -150px;
     left: 0;
     right: 0;
     background-color: white;
@@ -1073,15 +1086,15 @@ p.listing-type {
     color: #00385e;
     padding: 30px 0;
     max-width: 100%;
-    transition: 500ms;
-    -webkit-transition: 500ms;
-    -moz-transition: 500ms;
-    -ms-transition: 500ms;
-    -o-transition: 500ms;
     z-index: 100;
+
     p {
         font-size: $small-font;
+        display: flex;
+        flex-direction: column;
     }
+
+    animation: 1s ease-out 1s 1 cookieConsentAnim forwards;
 }
 
 #cookie-icon {
@@ -1096,39 +1109,36 @@ p.listing-type {
     color: #1c2541;
 }
 
-.cookie-banner.active {
-    bottom: 0;
-}
-
 #cookie-btn {
     height: 40px;
+}
+/* end cookie consent */
+
+/* help banner*/
+@keyframes helpBannerAnim {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
 }
 
 .help-banner {
     background-color: rgba(233, 245, 248, 0.9);
     position: fixed;
     bottom: 70%;
-    left: 200%;
+    left: 115%;
     width: 20%;
     right: 0;
     padding: 20px 32px;
-    transition: 300ms;
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -ms-transition: 300ms;
-    -o-transition: 300ms;
-    z-index: 100;
     border-radius: $radius-medium 0 0 $radius-medium;
-    -webkit-border-radius: $radius-medium 0 0 $radius-medium;
-    -moz-border-radius: $radius-medium 0 0 $radius-medium;
-    -ms-border-radius: $radius-medium 0 0 $radius-medium;
-    -o-border-radius: $radius-medium 0 0 $radius-medium;
+    z-index: 201;
 
-    #help-btn {
+    svg {
         font-size: $medium-font;
         color: #00385e;
         cursor: pointer;
-        z-index: 201;
     }
 
     p {
@@ -1137,10 +1147,7 @@ p.listing-type {
         color: #00385e;
         padding-bottom: 15px;
     }
-}
-
-.help-banner.active {
-    left: 85%;
+    animation: 1s ease-out 1s 1 helpBannerAnim forwards;
 }
 
 .help-content-container {
@@ -1162,10 +1169,7 @@ p.listing-type {
     background-color: $light-blue;
     padding: 15px;
     border-radius: $radius-mediumsmall;
-    -webkit-border-radius: $radius-mediumsmall;
-    -moz-border-radius: $radius-mediumsmall;
-    -ms-border-radius: $radius-mediumsmall;
-    -o-border-radius: $radius-mediumsmall;
+
     h1 {
         color: $tip-color;
     }
@@ -1177,17 +1181,15 @@ p.listing-type {
             text-decoration: none;
         }
     }
-    #help-btn-content {
+
+    svg {
         font-size: $medium-font;
         color: #00385e;
         cursor: pointer;
         z-index: 201;
     }
 }
-
-.help-content-container.active {
-    display: flex;
-}
+/* end help banner*/
 
 footer {
     width: 100%;
