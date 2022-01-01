@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Results;
+use App\Http\Controllers\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,6 @@ use App\Http\Controllers\Results;
 |
 */
 
-
 // Route for locale change
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
@@ -23,16 +23,15 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-//routes for all pages
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/search', [Results::class, 'getResults'])->name('search');
+Route::get('/search', [Results::class, "getResults"])->name('search');
 
-Route::get('/search/{id}', [Results::class, 'singleResult'])->name('searchID');
+Route::get('/search/{id}', [Results::class, "singleResult"])->name('searchID');
 
-Route::get('/searchquery', [Search::class, 'searchquery'])->name('searchquery');
+Route::get('/searchquery', [Search::class, "searchquery"])->name('searchquery');
 
 Route::get('/about', function () {
     return view('about');
