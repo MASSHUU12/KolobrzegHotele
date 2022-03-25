@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('node_modules/swup/dist/swup.js', 'public/js', [
-        //
-    ]);
+mix.js("resources/js/app.js", "public/js")
+    .js("resources/js/compare.js", "public/js")
+    .js("resources/js/cookieConsent.js", "public/js")
+    .js("resources/js/headerAnim.js", "public/js")
+    .js("resources/js/helpBanner.js", "public/js")
+    .js("resources/js/homeLoading.js", "public/js")
+    .js("resources/js/mapSubpages.js", "public/js")
+    .js("resources/js/rangeSlider.js", "public/js")
+    .js("resources/js/scripts-plugin.js", "public/js")
+    .js("resources/js/searchbarDropdown.js", "public/js")
+    .js("resources/js/searchDetails.js", "public/js")
+    .js("resources/js/singleMap.js", "public/js")
+    .sass("resources/css/app.scss", "public/css")
+    .copy("resources/img/*", "public/img")
+    .version()
+    .disableNotifications();
