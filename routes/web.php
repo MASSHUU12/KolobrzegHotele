@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Localizationcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Results;
 use App\Http\Controllers\Search;
@@ -16,12 +17,7 @@ use App\Http\Controllers\Search;
 */
 
 // Route for locale change
-Route::get('language/{locale}', function ($locale) {
-    app()->setLocale($locale);
-    session()->put('locale', $locale);
-
-    return redirect()->back();
-});
+Route::get('language/{locale}', [Localizationcontroller::class, 'handleLocalization']);
 
 Route::get('/', function () {
     return view('home');
