@@ -24,7 +24,7 @@ Accommodation search engine in Kolobrzeg created for the purpose of competition.
 ~~You can check out the site in action [here](https://www.jakubdev.vxm.pl).~~
 
 <h3 style="color:red">
-  <b>There's a high likelihood that the site won't do its main job of finding accommodation due to the fact that it relies on an external API that almost certainly won't work.</b>
+  <b>The city has disabled the API on which the site's core functionality was based</b>
 </h3>
 
 <br />
